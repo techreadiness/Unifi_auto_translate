@@ -14,7 +14,7 @@
 
 ## 2025년 11월 17일
 
-[미니 Dapp SDK v1.4.8](https://docs.dappportal.io/~/revisions/sbqdWFuLuLxu3d5IxusJ/mini-dapp/mini-dapp-sdk/release-note/v1.4.8) 출시 (Bitget 지갑 연동 개선)
+[미니 Dapp SDK v1.4.8](https://docs.dappportal.io/~/revisions/sbqdWFuLuLxu3d5IxusJ/mini-dapp/mini-dapp-sdk/release-note/v1.4.8) 출시 (Bitget 지갑 통합 개선)
 
 ## 2025년 11월 6일
 
@@ -26,15 +26,15 @@
 
 ## 2025년 9월 22일
 
-[미니 댑 SDK v1.4.5](mini-dapp/mini-dapp-sdk/release-note/v1.4.5.md)가 출시되었습니다 (OA 프로모션 2단계 추가)
+[미니 앱 SDK v1.4.5](mini-dapp/mini-dapp-sdk/release-note/v1.4.5.md)가 출시되었습니다 (OA 프로모션 2단계 추가)
 
 ## 2025년 9월 5일
 
-[미니 댑 SDK v1.4.4](mini-dapp/mini-dapp-sdk/release-note/v1.4.4.md)가 출시되었습니다 (내부 로직의 사소한 개선)
+[미니 Dapp SDK v1.4.4](mini-dapp/mini-dapp-sdk/release-note/v1.4.4.md)가 출시되었습니다 (내부 로직의 사소한 개선)
 
 ## 2025년 8월 21일
 
-[미니 Dapp SDK v1.4.3](mini-dapp/mini-dapp-sdk/release-note/v1.4.2-and-v1.4.3.md) 출시 (내부 로직 소폭 개선)
+[미니 앱 SDK v1.4.3](mini-dapp/mini-dapp-sdk/release-note/v1.4.2-and-v1.4.3.md) 출시 (내부 로직 소규모 개선)
 
 ## 2025년 8월 19일
 
@@ -42,7 +42,7 @@
 
 ## 2025년 8월 1일
 
-미니 댑 SDK에서 USDT 결제가 지원됩니다 (SDK v1.4.0부터)
+미니 댑 SDK에서 USDT 결제가 지원됩니다. (SDK v1.4.0부터)
 
 ## 2025년 7월 28일
 
@@ -54,11 +54,11 @@ STRIPE 결제를 위한 USDT 청구를 위한 [가이드](mini-dapp/mini-dapp-sd
 
 ## 2025년 7월 11일
 
-[미니 앱 SDK v1.3.8](mini-dapp/mini-dapp-sdk/release-note/v1.3.8.md)이 출시되었습니다 (Kaia Wallet 앱의 사소한 버그 수정).
+[미니 앱 SDK v1.3.8](mini-dapp/mini-dapp-sdk/release-note/v1.3.8.md) 출시 (Kaia Wallet 앱의 사소한 버그 수정)
 
 ## 2025년 7월 10일
 
-[미니 댑 SDK v1.3.7](mini-dapp/mini-dapp-sdk/release-note/v1.3.7.md)이 출시되었습니다 (카이아 지갑 앱 IAB 최적화)
+[미니 앱 SDK v1.3.7](mini-dapp/mini-dapp-sdk/release-note/v1.3.7.md)이 출시되었습니다 (Kaia Wallet App IAB 최적화)
 
 ## 2025년 7월 8일
 
@@ -137,7 +137,7 @@ KAIA 결제에 대한 [최저 가격 정책](https://docs.dappportal.io/mini-dap
 
 ## 2025년 3월 6일
 
-[Mini Dapp SDK v1.2.9](https://docs.dappportal.io/mini-dapp/mini-dapp-sdk/release-note/v1.2.9) 출시
+[미니 Dapp SDK v1.2.9](https://docs.dappportal.io/mini-dapp/mini-dapp-sdk/release-note/v1.2.9)가 출시되었습니다
 
 ## 2025년 3월 5일
 
