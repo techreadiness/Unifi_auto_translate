@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi/how-to-mint-nfts-and-set-up-drops./how-to-mint-nft
+---
+
 # How to mint NFT
 
 All NFTs must be minted by the Unifi Apps team. Please refer to the information below for the minting method and structure.

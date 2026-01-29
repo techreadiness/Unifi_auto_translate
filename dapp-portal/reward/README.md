@@ -1,3 +1,9 @@
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/dapp-portal/reward
+---
+
 # Reward
 
 **※ The distribution of Tokens (KAIA or USDT), NFTs, and Points based on specific condition fulfillment must be implemented directly within the Dapp, and only missions with these features fully implemented can be listed on the Dapp portal.&#x20;**<mark style="color:red;">**(NFT minting must be carried out exclusively through the Dapp portal)**</mark>

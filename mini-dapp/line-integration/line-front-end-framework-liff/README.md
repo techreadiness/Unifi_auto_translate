@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/mini-dapp/line-integration/line-front-end-framework-liff
+---
+
 # LINE Front-end Framework (LIFF)
 
 <mark style="color:red;">**Mini Dapp should build web application as LINE version with LIFF SDK.**</mark>

@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/extra-packages-1/growth-competition/playbook-for-teams
+---
+
 # Playbook for Teams
 
 #### Ranking & Metrics <a href="#ranking-and-metrics" id="ranking-and-metrics"></a>

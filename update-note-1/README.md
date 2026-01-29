@@ -1,5 +1,8 @@
 ---
 hidden: true
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/update-note-1
 ---
 
 # Update Note

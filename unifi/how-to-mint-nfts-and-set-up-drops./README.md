@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi/how-to-mint-nfts-and-set-up-drops.
+---
+
 # How to mint NFTs and set up Drops.
 
 {% stepper %}

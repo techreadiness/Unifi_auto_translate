@@ -1,11 +1,15 @@
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/
+---
+
 # LINE's Mini Dapp & Dapp Portal
 
 ## Introduction
 
 Mini Dapps powered by Kaia Blockchain are lightweight Web3 applications that run inside LINE Messenger with Mini Dapp SDK, without requiring any separate app installation. \
-Mini Dapps span across categories such as Games, DeFi, AI, and more, all accessible through the Dapp Portal.
-
-\
+Mini Dapps span across categories such as Games, DeFi, AI, and more, all accessible through the Dapp Portal.\
 Within the Dapp Portal, users can easily:
 
 * Discover and access a variety of Mini Dapps

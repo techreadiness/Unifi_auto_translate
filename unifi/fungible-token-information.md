@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi/fungible-token-information
+---
+
 # Fungible Token Information
 
 If you want to expose it in the Apps Wallet or Kaia Wallet's search list, please submit it.

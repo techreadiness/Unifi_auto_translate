@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps-sdk/wallet-provider/domain-verification-via-reown
+---
+
 # Domain Verification via Reown
 
 ## How to Integrate Bitget Wallet using Unifi Apps SDK

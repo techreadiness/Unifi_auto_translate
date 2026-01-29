@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps-sdk/payment-provider/settlement
+---
+
 # Settlement
 
 **The contents of this document are subject to change based on future circumstances or policy revisions.**

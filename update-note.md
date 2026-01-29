@@ -1,3 +1,9 @@
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/update-note
+---
+
 # Update Note
 
 ## 16 January 2026

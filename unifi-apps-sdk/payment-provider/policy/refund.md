@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps-sdk/payment-provider/policy/refund
+---
+
 # Refund
 
 <mark style="color:red;">**Unifi Apps should establish and communicate a clear and fair non-refund policy to users, considering the following principles.**</mark>

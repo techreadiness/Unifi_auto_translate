@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps-sdk/web3-provider/gas-fee-delegation
+---
+
 # Gas Fee Delegation
 
 ## Kaia Fee Delegation Program for Kaia Wave Builders
