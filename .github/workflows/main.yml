@@ -1,4 +1,4 @@
-name: Unifi-Professional-Translation-Fix
+name: Unifi-Professional-Translation-All-Files
 
 on:
   push:
@@ -12,14 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Create Glossary and Translate (Debug Mode)
+      - name: Create Glossary and Translate All Files
         env:
           DEEPL_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: |
           # 1. 용어집(Glossary) 생성
           GLOSSARY_RESPONSE=$(curl -s -X POST 'https://api-free.deepl.com/v2/glossaries' \
             -H "Authorization: DeepL-Auth-Key $DEEPL_KEY" \
-            -d "name=Unifi_Glossary_v2" \
+            -d "name=Unifi_Glossary_All" \
             -d "source_lang=en" \
             -d "target_lang=ko" \
             -d "entries=Unifi Apps	Unifi Apps
@@ -32,46 +32,60 @@ jobs:
           Featured	피처드
           Onboarding	온보딩")
 
-          GLOSSARY_ID=$(echo $GLOSSARY_ID | jq -r '.glossary_id')
+          # JSON 파싱하여 ID 추출 (변수명 수정: GLOSSARY_RESPONSE 사용)
+          GLOSSARY_ID=$(echo $GLOSSARY_RESPONSE | jq -r '.glossary_id')
           
           if [ "$GLOSSARY_ID" == "null" ] || [ -z "$GLOSSARY_ID" ]; then
              echo "Glossary Creation Failed: $GLOSSARY_RESPONSE"
-             # 용어집 생성 실패 시, 용어집 없이 번역 진행을 위해 변수 비움 (선택 사항)
+             # 실패 시 용어집 없이 진행하려면 아래 주석 해제
              # GLOSSARY_PARAM="" 
-             # 또는 에러 처리 후 종료
-             # exit 1
           else
              echo "Glossary Created: $GLOSSARY_ID"
              GLOSSARY_PARAM="-d glossary_id=$GLOSSARY_ID"
           fi
 
-          # 2. 번역 실행
-          mkdir -p ko
-          for file in *.md; do
-            if [ -f "$file" ]; then
-              echo "Translating $file..."
-              
-              # API 호출 및 응답 전체 저장 (디버깅용)
-              curl -s -X POST 'https://api-free.deepl.com/v2/translate' \
-                -H "Authorization: DeepL-Auth-Key $DEEPL_KEY" \
-                -d "target_lang=KO" \
-                $GLOSSARY_PARAM \
-                -d "tag_handling=xml" \
-                -d "ignore_tags=code,pre,var" \
-                --data-urlencode "text=$(cat "$file")" > response.json
-              
-              # 응답 확인
-              cat response.json
-              
-              # 번역 결과 추출
-              TRANSLATED_TEXT=$(jq -r '.translations[0].text' response.json)
-              
-              if [ "$TRANSLATED_TEXT" != "null" ] && [ -n "$TRANSLATED_TEXT" ]; then
-                echo "$TRANSLATED_TEXT" > "ko/$file"
-                echo "Saved translation to ko/$file"
-              else
-                echo "Error: Translation failed for $file. Check logs above."
-              fi
+          # 2. 번역 대상 파일 찾기 및 번역 실행
+          # .md, .txt, .html, .json, .yaml 확장자를 가진 파일을 찾음 (ko 폴더와 .git 폴더 제외)
+          find . -type f \( -name "*.md" -o -name "*.txt" -o -name "*.html" -o -name "*.json" -o -name "*.yaml" \) -not -path "./ko/*" -not -path "./.git/*" -not -path "./.github/*" | while read file; do
+            
+            echo "Processing $file..."
+            
+            # 원본 파일 내용 읽기
+            original_text=$(cat "$file")
+            
+            # 파일 내용이 비어있으면 건너뜀
+            if [ -z "$original_text" ]; then
+                echo "Skipping empty file: $file"
+                continue
+            fi
+
+            # 대상 경로 생성 (ko/원본경로)
+            # 예: ./folder/doc.md -> ko/folder/doc.md
+            # sed로 맨 앞의 ./ 제거
+            clean_path=$(echo "$file" | sed 's/^\.\///')
+            target_path="ko/$clean_path"
+            target_dir=$(dirname "$target_path")
+            
+            mkdir -p "$target_dir"
+
+            # API 호출
+            curl -s -X POST 'https://api-free.deepl.com/v2/translate' \
+              -H "Authorization: DeepL-Auth-Key $DEEPL_KEY" \
+              -d "target_lang=KO" \
+              $GLOSSARY_PARAM \
+              -d "tag_handling=xml" \
+              -d "ignore_tags=code,pre,var" \
+              --data-urlencode "text=$original_text" > response.json
+            
+            # 번역 결과 추출
+            TRANSLATED_TEXT=$(jq -r '.translations[0].text' response.json)
+            
+            if [ "$TRANSLATED_TEXT" != "null" ] && [ -n "$TRANSLATED_TEXT" ]; then
+              echo "$TRANSLATED_TEXT" > "$target_path"
+              echo "Saved translation to $target_path"
+            else
+              echo "Error: Translation failed for $file"
+              cat response.json # 에러 확인용 출력
             fi
           done
 
@@ -81,4 +95,4 @@ jobs:
           git config --global user.email "bot@unifi.network"
           git add ko/
           # 변경사항이 있을 때만 커밋
-          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: 한국어 번역 수정 완료 (Null 해결)" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: 모든 파일(md,txt,html,json) 한국어 번역 완료" && git push)
