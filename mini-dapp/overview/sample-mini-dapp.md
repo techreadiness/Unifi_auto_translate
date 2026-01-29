@@ -1,6 +1,6 @@
 # Sample Mini Dapp
 
-## Explorer Various Mini Dapps from Dapp Portal
+## Explore Various Mini Dapps from Dapp Portal
 
 * LINE Version : [https://liff.line.me/2006533014-8gD06D64](https://liff.line.me/2006533014-8gD06D64)
 * Web Version : [https://dappportal.io](https://www.dappportal.io/)&#x20;
