@@ -1,35 +1,45 @@
-name: Unifi-Professional-Translation
+name: Translate Documentation
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
   translate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
-      # 에러가 발생한 지점을 대체하여 공식 DeepL 액션 등을 활용한 방식으로 변경
-      - name: DeepL Translate
-        uses: andreasonny83/deepl-test-action@v1.1.0 # 대체된 검증된 액션
-        with:
-          key: ${{ secrets.DEEPL_API_KEY }}
-          source_lang: EN
-          target_lang: KO
-          files: "**/*.md" # 모든 마크다운 파일 대상
-          dest: "ko/" # 한국어 폴더로 저장
-          # 전문 톤앤매너는 DeepL API 자체의 formality 설정을 따름
-          formality: 'formal'
-
-      - name: Commit & Push Changes
+      - name: Translate Markdown Files
+        env:
+          DEEPL_AUTH_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: |
-          git config --global user.name "Unifi-Translation-Bot"
-          git config --global user.email "bot@unifi.network"
-          git add .
-          git commit -m "docs: 전문 가이드라인 준수 한국어 업데이트" || exit 0
+          mkdir -p ko
+          for file in *.md; do
+            if [ -f "$file" ]; then
+              echo "Translating $file..."
+              RESPONSE=$(curl -s -X POST 'https://api-free.deepl.com/v2/translate' \
+                -H "Authorization: DeepL-Auth-Key $DEEPL_AUTH_KEY" \
+                -d "target_lang=KO" \
+                -d "text=$(cat "$file")")
+              
+              TRANSLATED_TEXT=$(echo $RESPONSE | jq -r '.translations[0].text')
+              
+              if [ "$TRANSLATED_TEXT" != "null" ]; then
+                echo "$TRANSLATED_TEXT" > "ko/$file"
+              else
+                echo "Failed to translate $file"
+              fi
+            fi
+          done
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add ko/
+          git commit -m "Translated documentation to Korean"
           git push
