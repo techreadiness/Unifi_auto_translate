@@ -1,4 +1,4 @@
-name: Unifi-Professional-Translation
+name: Unifi-Professional-Translation-Fix
 
 on:
   push:
@@ -12,15 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Create Glossary and Translate
+      - name: Create Glossary and Translate (Debug Mode)
         env:
           DEEPL_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: |
           # 1. 용어집(Glossary) 생성
-          # 질문자님의 용어 가이드라인을 DeepL에 등록합니다.
-          GLOSSARY_ID=$(curl -s -X POST 'https://api-free.deepl.com/v2/glossaries' \
+          GLOSSARY_RESPONSE=$(curl -s -X POST 'https://api-free.deepl.com/v2/glossaries' \
             -H "Authorization: DeepL-Auth-Key $DEEPL_KEY" \
-            -d "name=Unifi_Glossary" \
+            -d "name=Unifi_Glossary_v2" \
             -d "source_lang=en" \
             -d "target_lang=ko" \
             -d "entries=Unifi Apps	Unifi Apps
@@ -31,9 +30,20 @@ jobs:
           Gas Fee	가스비
           Reward	리워드
           Featured	피처드
-          Onboarding	온보딩" | jq -r '.glossary_id')
+          Onboarding	온보딩")
+
+          GLOSSARY_ID=$(echo $GLOSSARY_ID | jq -r '.glossary_id')
           
-          echo "Glossary Created: $GLOSSARY_ID"
+          if [ "$GLOSSARY_ID" == "null" ] || [ -z "$GLOSSARY_ID" ]; then
+             echo "Glossary Creation Failed: $GLOSSARY_RESPONSE"
+             # 용어집 생성 실패 시, 용어집 없이 번역 진행을 위해 변수 비움 (선택 사항)
+             # GLOSSARY_PARAM="" 
+             # 또는 에러 처리 후 종료
+             # exit 1
+          else
+             echo "Glossary Created: $GLOSSARY_ID"
+             GLOSSARY_PARAM="-d glossary_id=$GLOSSARY_ID"
+          fi
 
           # 2. 번역 실행
           mkdir -p ko
@@ -41,17 +51,27 @@ jobs:
             if [ -f "$file" ]; then
               echo "Translating $file..."
               
-              # API 호출 시 glossary_id와 formality 적용
+              # API 호출 및 응답 전체 저장 (디버깅용)
               curl -s -X POST 'https://api-free.deepl.com/v2/translate' \
                 -H "Authorization: DeepL-Auth-Key $DEEPL_KEY" \
                 -d "target_lang=KO" \
-                -d "glossary_id=$GLOSSARY_ID" \
+                $GLOSSARY_PARAM \
                 -d "tag_handling=xml" \
                 -d "ignore_tags=code,pre,var" \
-                --data-urlencode "text=$(cat "$file")" > result.json
+                --data-urlencode "text=$(cat "$file")" > response.json
               
-              # 결과 저장
-              jq -r '.translations[0].text' result.json > "ko/$file"
+              # 응답 확인
+              cat response.json
+              
+              # 번역 결과 추출
+              TRANSLATED_TEXT=$(jq -r '.translations[0].text' response.json)
+              
+              if [ "$TRANSLATED_TEXT" != "null" ] && [ -n "$TRANSLATED_TEXT" ]; then
+                echo "$TRANSLATED_TEXT" > "ko/$file"
+                echo "Saved translation to ko/$file"
+              else
+                echo "Error: Translation failed for $file. Check logs above."
+              fi
             fi
           done
 
@@ -59,6 +79,6 @@ jobs:
         run: |
           git config --global user.name "Unifi-Translation-Bot"
           git config --global user.email "bot@unifi.network"
-          git add .
-          git commit -m "docs: 전문 용어집 적용 한국어 번역 완료" || exit 0
-          git push
+          git add ko/
+          # 변경사항이 있을 때만 커밋
+          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: 한국어 번역 수정 완료 (Null 해결)" && git push)
