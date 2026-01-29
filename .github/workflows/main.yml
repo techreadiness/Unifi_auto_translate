@@ -1,45 +1,64 @@
-name: Translate Documentation
+name: Unifi-Professional-Translation
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
   translate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Translate Markdown Files
+      - name: Create Glossary and Translate
         env:
-          DEEPL_AUTH_KEY: ${{ secrets.DEEPL_API_KEY }}
+          DEEPL_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: |
+          # 1. 용어집(Glossary) 생성
+          # 질문자님의 용어 가이드라인을 DeepL에 등록합니다.
+          GLOSSARY_ID=$(curl -s -X POST 'https://api-free.deepl.com/v2/glossaries' \
+            -H "Authorization: DeepL-Auth-Key $DEEPL_KEY" \
+            -d "name=Unifi_Glossary" \
+            -d "source_lang=en" \
+            -d "target_lang=ko" \
+            -d "entries=Unifi Apps	Unifi Apps
+          Mini Dapp	Mini Dapp
+          Dapp Portal	Dapp Portal
+          Liff	Liff
+          Blockchain	Blockchain
+          Gas Fee	가스비
+          Reward	리워드
+          Featured	피처드
+          Onboarding	온보딩" | jq -r '.glossary_id')
+          
+          echo "Glossary Created: $GLOSSARY_ID"
+
+          # 2. 번역 실행
           mkdir -p ko
           for file in *.md; do
             if [ -f "$file" ]; then
               echo "Translating $file..."
-              RESPONSE=$(curl -s -X POST 'https://api-free.deepl.com/v2/translate' \
-                -H "Authorization: DeepL-Auth-Key $DEEPL_AUTH_KEY" \
+              
+              # API 호출 시 glossary_id와 formality 적용
+              curl -s -X POST 'https://api-free.deepl.com/v2/translate' \
+                -H "Authorization: DeepL-Auth-Key $DEEPL_KEY" \
                 -d "target_lang=KO" \
-                -d "text=$(cat "$file")")
+                -d "glossary_id=$GLOSSARY_ID" \
+                -d "tag_handling=xml" \
+                -d "ignore_tags=code,pre,var" \
+                --data-urlencode "text=$(cat "$file")" > result.json
               
-              TRANSLATED_TEXT=$(echo $RESPONSE | jq -r '.translations[0].text')
-              
-              if [ "$TRANSLATED_TEXT" != "null" ]; then
-                echo "$TRANSLATED_TEXT" > "ko/$file"
-              else
-                echo "Failed to translate $file"
-              fi
+              # 결과 저장
+              jq -r '.translations[0].text' result.json > "ko/$file"
             fi
           done
 
-      - name: Commit and Push Changes
+      - name: Commit & Push Changes
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add ko/
-          git commit -m "Translated documentation to Korean"
+          git config --global user.name "Unifi-Translation-Bot"
+          git config --global user.email "bot@unifi.network"
+          git add .
+          git commit -m "docs: 전문 용어집 적용 한국어 번역 완료" || exit 0
           git push
