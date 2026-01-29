@@ -10,7 +10,7 @@
 
 ## 2025년 12월 30일
 
-[미니 Dapp SDK v1.5.0](https://docs.dappportal.io/mini-dapp/mini-dapp-sdk/release-note/v1.5.0) 출시 (Dapp 포털 리브랜딩 지원을 위한 소규모 개선)
+[미니 Dapp SDK v1.5.0](https://docs.dappportal.io/mini-dapp/mini-dapp-sdk/release-note/v1.5.0)이 출시되었습니다 (Dapp 포털 리브랜딩 지원을 위한 사소한 개선 사항)
 
 ## 2025년 11월 17일
 
@@ -30,11 +30,11 @@
 
 ## 2025년 9월 5일
 
-[미니 Dapp SDK v1.4.4](mini-dapp/mini-dapp-sdk/release-note/v1.4.4.md)가 출시되었습니다 (내부 로직의 사소한 개선)
+[미니 댑 SDK v1.4.4](mini-dapp/mini-dapp-sdk/release-note/v1.4.4.md)가 출시되었습니다 (내부 로직의 사소한 개선)
 
 ## 2025년 8월 21일
 
-[미니 앱 SDK v1.4.3](mini-dapp/mini-dapp-sdk/release-note/v1.4.2-and-v1.4.3.md) 출시 (내부 로직 소규모 개선)
+[미니 Dapp SDK v1.4.3](mini-dapp/mini-dapp-sdk/release-note/v1.4.2-and-v1.4.3.md) 출시 (내부 로직 소규모 개선)
 
 ## 2025년 8월 19일
 
@@ -86,7 +86,7 @@ STRIPE 결제를 위한 USDT 청구를 위한 [가이드](mini-dapp/mini-dapp-sd
 
 ## 2025년 5월 27일
 
-[미니 Dapp SDK v1.3.0](https://app.gitbook.com/o/JrXbEzQU7Die7Vyqr5PZ/s/juuhQ1BuKwYKE7NR6geM/~/changes/222/mini-dapp/mini-dapp-sdk/release-note/v1.3.0) 출시 (Bitget Wallet 통합을 위한)
+[미니 Dapp SDK v1.3.0](https://app.gitbook.com/o/JrXbEzQU7Die7Vyqr5PZ/s/juuhQ1BuKwYKE7NR6geM/~/changes/222/mini-dapp/mini-dapp-sdk/release-note/v1.3.0) 출시 (Bitget Wallet 통합용)
 
 ## 2025년 5월 21일
 
@@ -129,7 +129,7 @@ KAIA 결제에 대한 [최저 가격 정책](https://docs.dappportal.io/mini-dap
 
 ## 2025년 3월 18일
 
-[Dapp 포털 등록 가이드](https://docs.dappportal.io/dapp-portal)가 업데이트되었습니다.
+[Dapp 포털 등록 가이드](https://docs.dappportal.io/dapp-portal)가 업데이트되었습니다
 
 ## 2025년 3월 17일
 
@@ -155,7 +155,7 @@ KAIA 결제에 대한 [최저 가격 정책](https://docs.dappportal.io/mini-dap
 
 ## 2025년 2월 26일
 
-미니 Dapp 구축 가이드 업데이트
+미니 앱 구축 가이드 업데이트
 
 * [연결된 지갑 정보 제공 &gt;](https://docs.dappportal.io/lines-mini-dapp-and-dapp-portal/how-to-build-successful-mini-dapp#provision-of-information-about-connected-wallet)
 * [결제 상태 제공 &gt;](https://docs.dappportal.io/lines-mini-dapp-and-dapp-portal/how-to-build-successful-mini-dapp#provision-of-payment-status)
