@@ -29,6 +29,6 @@ Please follow the guide below to complete the domain verification and share the 
 
 ### 2. Submit ProjectId to Dapp Portal team
 
-* Sumit `ProjectId` after verification to add it to Mini Dapp SDK.
+* Submit `ProjectId` after verification to add it to Mini Dapp SDK.
 * Telegram: <mark style="color:blue;">**@dappportal\_official**</mark>
   * If you are using a technical support channel through a different route, you can share `ProjectId` through that channel.
