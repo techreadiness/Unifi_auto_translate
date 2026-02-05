@@ -34,7 +34,7 @@ Both run inside the LINE mobile app and are implemented using the **LIFF SDK**, 
 | LIFF SDK Usage       | Yes                                                                        | Yes                                                                                          |
 | Unifi Apps SDK Usage | <ul><li>Yes</li><li>WalletProvider</li><li>PaymentProvider (IAP)</li></ul> | <ul><li>Yes</li><li>WalletProvider</li><li>PaymentProvider<br>(Crypto/Stripe Fiat)</li></ul> |
 
-📌 Refer to [**LINE Integration**](../mini-dapp/line-integration/) documentation for detailed instructions.\
+📌 Refer to [**LINE Integration**](/broken/pages/5VQ742WdOmsr45HSQTxD) documentation for detailed instructions.\
 📌 LINE MINI App and LINE Login LIFF are technically implemented by first integrating the Unifi Apps SDK into a base Web service, and then adding the LIFF SDK on top of it.\
 Therefore, the Web and Unifi Apps SDK environment is inherently included from a technical perspective.
 
@@ -57,7 +57,7 @@ Unifi Apps SDK enables wallet features such as account creation and ownership ve
 | LINE Login LIFF | <ul><li>LINE (Liff)</li><li>OKX, Bitget Wallet</li></ul>                                   |
 | Web             | <ul><li>Social Login (Web)</li><li>Kaia Wallet App/Extension, OKX, Bitget Wallet</li></ul> |
 
-📌 Refer to [**Wallet Provider**](../mini-dapp/mini-dapp-sdk/wallet/) documentation for detailed instructions.
+📌 Refer to [**Wallet Provider**](/broken/pages/TztC1dqlf55oLrwPPVyP) documentation for detailed instructions.
 
 ### ④ Payment Integration (PaymentProvider)
 
@@ -69,7 +69,7 @@ To support monetization, all Unifi Apps **must provide in-app item purchases**.
 | LINE Login LIFF | Crypto & Stripe (Fiat) payments |
 | Web             | Crypto & Stripe (Fiat) payments |
 
-📌 Refer to [Payment Provider](../mini-dapp/mini-dapp-sdk/payment/) documentation for detailed instructions.
+📌 Refer to [Payment Provider](/broken/pages/WU4tuXstJKXul0zL5vx6) documentation for detailed instructions.
 
 ### ⑤ App Review — Quality & Compliance Check
 

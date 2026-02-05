@@ -11,7 +11,7 @@ metaLinks:
 
 <figure><img src="../../../.gitbook/assets/usdt_claim.png" alt=""><figcaption></figcaption></figure>
 
-The settlement of Stripe payment revenue follows the policy [here](../../../mini-dapp/mini-dapp-sdk/payment/settlement.md).
+The settlement of Stripe payment revenue follows the policy [here](/broken/pages/pF4k278dDKi2UnxzLwcO).
 
 1. Retrieve an information for creating **transaction** for the claim from the Unifi.
 2. Sign the transaction using the **address currently receiving Kaia-based settlements.**

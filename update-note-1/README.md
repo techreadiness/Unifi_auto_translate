@@ -33,19 +33,19 @@ metaLinks:
 
 ## 22 September 2025
 
-[Mini Dapp SDK v1.4.5](../mini-dapp/mini-dapp-sdk/release-note/v1.4.5.md) has been released (Added OA Promotion Phase 2)
+[Mini Dapp SDK v1.4.5](/broken/pages/5GGX6KACCsRt77PDGANY) has been released (Added OA Promotion Phase 2)
 
 ## 5 September 2025
 
-[Mini Dapp SDK v1.4.4](../mini-dapp/mini-dapp-sdk/release-note/v1.4.4.md) has been released (Minor improvement of internal logic)
+[Mini Dapp SDK v1.4.4](/broken/pages/B9YDUjWlB6w8c8cn78O1) has been released (Minor improvement of internal logic)
 
 ## 21 August 2025
 
-[Mini Dapp SDK v1.4.3](../mini-dapp/mini-dapp-sdk/release-note/v1.4.2-and-v1.4.3.md)  has been released (Minor improvement of internal logic)
+[Mini Dapp SDK v1.4.3](/broken/pages/8GdoJW4yrwhm3gcBK6Pk)  has been released (Minor improvement of internal logic)
 
 ## 19 August 2025
 
-[Mini Dapp SDK v1.4.1](../mini-dapp/mini-dapp-sdk/release-note/#latest-version-v1.4.1) has been released (Added OA Popup Event)
+[Mini Dapp SDK v1.4.1](/broken/pages/7B2ujbUKtKIBJarXUaiQ#latest-version-v1.4.1) has been released (Added OA Popup Event)
 
 ## 1 August 2025
 
@@ -53,23 +53,23 @@ USDT Payment has been supported from Mini Dapp SDK. (from SDK v1.4.0)
 
 ## 28 July 2025
 
-Updated [guide](../mini-dapp/mini-dapp-sdk/payment/policy/how-to-claim-usdt-for-stripe-transaction.md) to claim USDT for STRIPE Payment
+Updated [guide](/broken/pages/OFOwZJZaHOqOfoGM38b2) to claim USDT for STRIPE Payment
 
 ## 25 July 2025
 
-[Mini Dapp SDK v1.4.0](../mini-dapp/mini-dapp-sdk/release-note/v1.4.0.md) has been released
+[Mini Dapp SDK v1.4.0](/broken/pages/zdWC0EEimVLt3ozQ0iLv) has been released
 
 ## 11 July 2025
 
-[Mini Dapp SDK v1.3.8](../mini-dapp/mini-dapp-sdk/release-note/v1.3.8.md) has been released (fixed minor bug for Kaia Wallet App)
+[Mini Dapp SDK v1.3.8](/broken/pages/4ARs3crG88cojBDPzZXy) has been released (fixed minor bug for Kaia Wallet App)
 
 ## 10 July 2025
 
-[Mini Dapp SDK v1.3.7](../mini-dapp/mini-dapp-sdk/release-note/v1.3.7.md) has been released (optimization of Kaia Wallet App IAB)
+[Mini Dapp SDK v1.3.7](/broken/pages/VXRsRimNTqhTatGDGQnL) has been released (optimization of Kaia Wallet App IAB)
 
 ## 8 July 2025
 
-[Mini Dapp SDK v1.3.6](../mini-dapp/mini-dapp-sdk/release-note/v1.3.6.md) has been released
+[Mini Dapp SDK v1.3.6](/broken/pages/S56j0gp7I7Uk7ZrAVifF) has been released
 
 ## 16 June 2025
 
