@@ -5,98 +5,87 @@ metaLinks:
       https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps-sdk/payment-provider/settlement
 ---
 
-# Settlement
+# 정산
 
-**The contents of this document are subject to change based on future circumstances or policy revisions.**
+**본 문서의 내용은 향후 상황 또는 정책 변경에 따라 변경될 수 있습니다.**
 
-This guide provides an overview of the payment system offered by the Unifi. \
-It includes detailed information on payment policies, refund policies, and settlement policies.
+본 가이드는 유니피가 제공하는 결제 시스템에 대한 개요를 제공합니다. \
+결제 정책, 환불 정책, 정산 정책에 대한 상세 정보를 포함합니다.
 
-## Cash Flow
+## 현금 흐름
 
-* Product Price: Product sales amount
-* Platform Fee (Service Fee): The fee LINE NEXT receives for providing the platform.
-* Royalty Fee (Contents Fee): The fee that the Unifi Apps receives as royalty for NFT C2C transactions.
-* Payment Solution Fee: Payment fee collected by the payment processor for providing the payment solution.
+* 상품 가격: 상품 판매 금액
+* 플랫폼 수수료(서비스 수수료): 플랫폼 제공에 대해 LINE NEXT가 받는 수수료.
+* 로열티 수수료(콘텐츠 수수료): Unifi 앱이 NFT C2C 거래에 대한 로열티로 받는 수수료.
+* 결제 솔루션 수수료: 결제 솔루션 제공을 위해 결제 프로세서가 징수하는 수수료.
 
-## Unifi Apps in-app Items&#x20;
+## 유니파이 앱 내 아이템
 
-### 1-1. Fiat Payment (B2C)
+### 1-1. 법정화폐 결제 (B2C)
 
-Payout: Product Price - Platform Fee - Payment Solution Fee - All other costs\*
+지급액: 제품 가격 - 플랫폼 수수료 - 결제 솔루션 수수료 - 기타 모든 비용\*
 
-* All other costs: OTC conversion fee, etc.
+* 기타 모든 비용: OTC 전환 수수료 등.
 
-<figure><img src="../../../.gitbook/assets/Fiat Payment.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Fiat Payment.png" alt=""><figcaption></figcaption></figure>### 1-2. 법정화폐 정산
 
-### 1-2. Fiat Settlement
+#### a. 정산 통화
 
-#### a. Settlement Currency
+정산 자금은 Kaia 블록체인을 기반으로 USDT로 지급됩니다.
 
-The settlement funds are paid in USDT based on Kaia blockchain
+#### b. 정산 주기
 
-#### b. Settlement Frequency
+월간 정산 (N월에 발생한 거래에 대한 정산 자금 지급은 N+1일에 이루어짐)
 
-Monthly settlement (payment of settlement funds in N+1 for transactions occurring during N)
+#### c. 정산 절차
 
-#### c. Settlement Procedure
+* 결제 처리사가 거래 수수료를 공제하고 결제 금액을 확정 후 LINE NEXT에 지급 (N+1 주 1~2).
+* LINE NEXT가 플랫폼 수수료를 공제하고 잔액을 USDT로 전환 (N+1 주 3).
+* 관련 비용 전액 공제 후, Unifi Apps는 결제 보고서를 통해 최종 결제 금액을 확인하고 직접 청구하여 지급받음 (N+1 주 4).
 
-* The Payment Processor deducts transaction fees and confirms the settlement amount, then pays it to LINE NEXT (N+1 W1\~W2).
-* LINE NEXT deducts platform fees and converts the remaining balance into USDT (N+1 W3).
-* After deducting all related costs, Unifi Apps can see the final settlement amount in the settlement report and claim directly to get paid. (N+1 W4).
+#### d. 예시
 
-#### d. Example
+3월 결제 건 기준
 
-For payments made in March
+* 4월 W1\~W2: 결제 대행사가 결제 수수료를 공제하고 최종 정산 금액을 확정하여 LINE NEXT로 송금
+* 4월 W3: LINE NEXT가 플랫폼 수수료를 공제하고 잔여 금액을 암호화폐로 전환
+* 4월 W4: 유니파이 앱은 정산 보고서에서 최종 정산 금액을 확인하고 직접 청구하여 지급받을 수 있습니다.
 
-* April W1\~W2: Payment Processor deducts the payment fee, finalizes the settlement amount, and sends it to LINE NEXT
-* April W3: LINE NEXT deducts the platform fee and converts the remaining difference into crypto.
-* April W4: Unifi Apps can see the final settlement amount in the settlement report and claim directly to get paid.
+#### e. 법정화폐 정산 정보
 
-#### e. Fiat Settlement Info
+<table><thead><tr><th width="208.62353515625">정보</th><th>설명</th></tr></thead><tbody><tr><td>결제 통화</td><td><a href="https://kaiascan.io/token/0xd077a400968890eacc75cdc901f0356c943e4fdb?tabId=tokenTransfer&#x26;page=1">USDT</a> (카이아 블록체인 기반 USD 페그 스테이블코인)</td></tr><tr><td>지급 주기</td><td>월간 (N월에 지급 -&gt; N+1월에 청구)</td></tr><tr><td>결제 운영사</td><td>Unifi Apps에서 직접 청구 가능</td></tr><tr><td>청구 방법</td><td><p>2025년 7월 말 예정된 4월~6월 STRIPE 수익 정산부터 다음 시스템이 적용됩니다. 7월 수익 정산 이후에도 동일한 월별 정산 구조가 지속됩니다.</p><p></p><ol><li><p><a href="../../../mini-dapp/mini-dapp-sdk/payment/policy/how-to-claim-usdt-for-stripe-transaction.md"><strong>제공된 가이드</strong></a><strong>에 따라 청구 API를 직접 호출</strong></p><ol><li>청구 API 사용법은 유니피 앱스 문서에 사전에 게시될 예정입니다.</li><li>이는 7월 말에 진행될 4월~6월 피아트 수익 정산부터 적용되며, 8월부터는 매월 동일한 절차로 정산이 진행됩니다.</li><li>향후 전용 청구 페이지도 제공되어 직접 API 통합 없이도 간편하게 청구가 가능할 예정입니다.</li></ol></li><li><strong>수익 정산을 위해 USDT는 Unifi Apps 지정 지갑 주소로 온체인 전송됩니다.</strong></li></ol></td></tr><tr><td>청구 가능 주소</td><td>온보딩 계약상의 주소.<br>(암호화폐 정산용 주소와 동일)</td></tr><tr><td>인출 마감일</td><td>인출 기간이 시작되면 Unifi Apps는 자유롭게 인출할 수 있습니다.</td></tr></tbody></table>### 2-1. 암호화폐 결제 (B2C)
 
-<table><thead><tr><th width="208.62353515625">Information</th><th>Description</th></tr></thead><tbody><tr><td>Currency for Settlement</td><td><a href="https://kaiascan.io/token/0xd077a400968890eacc75cdc901f0356c943e4fdb?tabId=tokenTransfer&#x26;page=1">USDT</a> (USD pegged stable coin based on Kaia blockchain)</td></tr><tr><td>Payout Cycle</td><td>Monthly (Paid in N -> Claim from N+1)</td></tr><tr><td>Settlement Operator</td><td>Unifi Apps can claim directly</td></tr><tr><td>How to Claim</td><td><p>Starting from the settlement of STRIPE revenue for April to June, scheduled for the end of July 2025, the following system will be applied. From the July revenue settlement onward, the same monthly settlement structure will continue.</p><p></p><ol><li><p><strong>Call the Claim API directly based on the</strong> <a href="/broken/pages/OFOwZJZaHOqOfoGM38b2"><strong>provided guide</strong></a></p><ol><li>Usage instructions for the Claim API will be published in advance on the Unifi Apps Docs.</li><li>This will be applied starting with the settlement of April–June Fiat revenue at the end of July, and from August onward, monthly settlements will follow the same process.</li><li>A dedicated Claim page will also be provided in the future to allow easy claiming without the need for direct API integration.</li></ol></li><li><strong>USDT will be sent on-chain to the Unifi Apps designated wallet address for revenue settlement.</strong></li></ol></td></tr><tr><td>Claimable Address</td><td>Address on onboarding contracts. <br>(Same with address for crypto settlement)</td></tr><tr><td>Withdrawal Deadline</td><td>Unifi Apps can freely withdraw once the withdrawal period begins.</td></tr></tbody></table>
+지급액: 제품 가격 - 플랫폼 수수료
 
-### 2-1. Crypto Payment (B2C)
+<figure><img src="../../../.gitbook/assets/Crypto Payment(B2C) (1).png" alt=""><figcaption></figcaption></figure>### 2-2. 암호화폐 정산
 
-Payout: Product Price - Platform Fee
+#### a. 정산 통화
 
-<figure><img src="../../../.gitbook/assets/Crypto Payment(B2C) (1).png" alt=""><figcaption></figcaption></figure>
+정산 자금은 암호화폐로 지급됩니다.
 
-### 2-2. Crypto Settlement
+#### b. 정산 주기
 
-#### a. Settlement Currency
+실시간 정산
 
-The settlement funds are paid in crypto
+#### c. 정산 절차
 
-#### b. Settlement Frequency
+* 스마트 계약이 상품 가격을 기반으로 관련 수수료 금액을 자동 계산하여 잔액을 판매자에게 지급합니다.
+* LINE NEXT는 분기별 정산 보고서(N+3일차)를 제공합니다.
 
-Real-time settlement
+## NFT
 
-#### c. Settlement Procedure
+### 1. 암호화폐 결제 (B2C)
 
-* The smart contract automatically calculates the related fee amounts based on the Product Price and pays the balance to the seller.
-* LINE NEXT provides a quarterly settlement report (N+3)
+지급액: 상품 가격 - 플랫폼 수수료
 
-## NFTs
+* 플랫폼 수수료: 프로모션 기간 중 할인된 수수료율이 적용됩니다.
 
-### 1. Crypto Payment (B2C)
+<figure><img src="../../../.gitbook/assets/Crypto Payment(B2C) (2).png" alt=""><figcaption></figcaption></figure>### 2. 암호화폐 결제 (C2C)
 
-Payout: Product Price - Platform Fee
+지급액: 로열티 수수료\*
 
-* Platform Fee: Discounted fee rates available during promotional periods.
+* 제품 가격의 0~10% 범위 내에서 유니파이 앱이 직접 설정합니다.
 
-<figure><img src="../../../.gitbook/assets/Crypto Payment(B2C) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Crypto Payment(C2C).png" alt=""><figcaption></figcaption></figure>### 3. NFT 암호화폐 정산
 
-### 2. Crypto Payment (C2C)
-
-Payout: Royalty fee\*
-
-* Rate set directly by the Unifi Apps within the range of 0\~10% of the Product Price.
-
-<figure><img src="../../../.gitbook/assets/Crypto Payment(C2C).png" alt=""><figcaption></figcaption></figure>
-
-### 3. Crypto Settlement for NFTs
-
-It is instantly settled same as Unifi Apps in-app items.
-
+유니파이 앱 내 아이템과 동일하게 즉시 정산됩니다.
