@@ -5,41 +5,41 @@ metaLinks:
       https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps-sdk/payment-provider/policy/chargeback
 ---
 
-# Chargeback
+# 차지백
 
-## Chargeback Policy
+## 차지백 정책
 
-### Overview
+### 개요
 
-A chargeback is a procedure where a customer or the customer’s bank cancels a transaction following a dispute regarding payment.\
-Unifi continuously monitors all transactions, and when a chargeback occurs, a fee will be applied.
+차지백은 고객 또는 고객의 은행이 결제 관련 분쟁 후 거래를 취소하는 절차입니다.
+유니피는 모든 거래를 지속적으로 모니터링하며, 차지백이 발생할 경우 수수료가 부과됩니다.
 
-### Chargeback Fee Policy
+### 차지백 수수료 정책
 
-* A **base fee of $15** will be charged for every chargeback.
-* This fee applies regardless of whether you choose to enter the dispute resolution process.
-* The fee is automatically deducted from your settlement payment.
-* If you proceed with a dispute, additional fees may apply depending on the outcome.
+* 차지백 발생 시 건당 **기본 수수료 $15**가 부과됩니다.
+* 이 수수료는 분쟁 해결 절차 참여 여부와 무관하게 적용됩니다.
+* 해당 수수료는 정산 금액에서 자동 공제됩니다.
+* 분쟁 절차를 진행할 경우 결과에 따라 추가 수수료가 발생할 수 있습니다.
 
-### Dispute Resolution Process
+### 분쟁 해결 절차
 
-1. When a chargeback occurs, a **notification** will be sent to you within Unifi.
-2. If you wish to proceed with dispute resolution, please refer to the table below and send a request email to the contact provided.
+1. 차지가 발생하면 유니피 내에서 **알림**이 발송됩니다.
+2. 분쟁 해결을 진행하려면 아래 표를 참고하여 제공된 연락처로 요청 이메일을 보내주십시오.
 
-* **Contact:** dl\_dapp\_chargeback@linecorp.com
+* **연락처:** dl_dapp_chargeback@linecorp.com
 
-### Fee Structure by Case
+### 사례별 수수료 구조
 
-| Case                       | Base Fee | Additional Fee | Refund-Related Fee | Total Fee | Notes                                                                  |
+| 사례                       | 기본 수수료 | 추가 수수료 | 환불 관련 수수료 | 총 수수료 | 참고사항                                                                  |
 | -------------------------- | -------- | -------------- | ------------------ | --------- | ---------------------------------------------------------------------- |
-| **Case 1: No Dispute**     | $15      | -              | -                  | $15       | No dispute resolution requested                                        |
-| **Case 2: Dispute → Win**  | $15      | $30            | $15                | $30       | Final settlement = Transaction amount - Refund-related fee - Total Fee |
-| **Case 3: Dispute → Lost** | $15      | $30            | -                  | $45       | Higher cost if dispute is lost                                         |
+| **사례 1: 분쟁 없음**     | $15      | -              | -                  | $15       | 분쟁 해결 요청 없음                                        |
+| **사례 2: 분쟁 → 승소**  | $15      | $30            | $15                | $30       | 최종 정산액 = 거래 금액 - 환불 관련 수수료 - 총 수수료 |
+| **사례 3: 분쟁 → 패소** | $15      | $30            | -                  | $45       | 분쟁 패소 시 더 높은 비용                                         |
 
-### Important Notes
+### 중요 참고 사항
 
-* Even if you do not participate in dispute resolution, a **$15 fee is always charged**.
-* If you proceed with a dispute:
-  * If you win the case, part of the fees will be refunded.
-  * If you lose the case, the total fee will be $45.
-* Please carefully consider the potential costs before deciding whether or not to dispute..
+* 분쟁 해결에 참여하지 않더라도 **항상 $15 수수료가 부과됩니다**.
+* 분쟁을 진행할 경우:
+  * 승소 시, 수수료 일부가 환불됩니다.
+  * 패소 시, 총 수수료는 $45입니다.
+* 분쟁 여부를 결정하기 전에 잠재적 비용을 신중히 고려하시기 바랍니다.
