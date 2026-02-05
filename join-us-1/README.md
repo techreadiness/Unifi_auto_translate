@@ -7,7 +7,7 @@ metaLinks:
 
 # Join Us
 
-## ✅ Unifi Apps 온보딩 가이드 test test
+## ✅ Unifi Apps 온보딩 가이드
 
 Unifi Apps는 다양한 버전 조합을 통해 온보딩할 수 있습니다. 개발자는 자신의 서비스 아키텍처와 타겟 사용자에게 가장 적합한 옵션을 선택할 수 있습니다.
 
