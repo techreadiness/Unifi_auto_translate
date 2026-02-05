@@ -1,5 +1,4 @@
 ---
-hidden: true
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-and-unifi-apps
@@ -26,7 +25,7 @@ Unifi Apps는 스테이블코인 기반 리워드 프로그램을 통해 프로�
 
 ## Unifi Apps의 주요 기능 및 이점
 
-<figure><img src="../.gitbook/assets/unnamed.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/unnamed.jpg" alt=""><figcaption></figcaption></figure>
 
 Unifi Apps SDK는 Mini App 개발자가 자신의 서비스에 Web3 기능을 더 쉽고 간편하게 통합할 수 있도록 지원합니다. (주요 환경: LINE, Web)
 
