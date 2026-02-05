@@ -32,7 +32,7 @@
       * [How to Claim USDT for STRIPE transaction](unifi-apps-sdk/payment-provider/settlement/how-to-claim-usdt-for-stripe-transaction.md)
     * [Policy](unifi-apps-sdk/payment-provider/policy/README.md)
       * [결제](unifi-apps-sdk/payment-provider/policy/payment.md)
-      * [Refund](unifi-apps-sdk/payment-provider/policy/refund.md)
+      * [환불](unifi-apps-sdk/payment-provider/policy/refund.md)
       * [Chargeback](unifi-apps-sdk/payment-provider/policy/chargeback.md)
       * [Cancellation](unifi-apps-sdk/payment-provider/policy/cancellation.md)
   * [Event Provider](unifi-apps-sdk/event-provider.md)
