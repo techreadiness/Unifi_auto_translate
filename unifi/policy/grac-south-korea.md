@@ -7,34 +7,34 @@ metaLinks:
 
 # GRAC(South Korea)
 
-## Purpose
+## 목적
 
-For users accessing from IP based on South Korea, only Unifi Apps that have obtained a reting classification from GRAC(Game Rating and Administration Committee) may be served normally.
+한국 기반 IP로 접속하는 사용자에게는 GRAC(게임등급위원회)로부터 등급 분류를 획득한 유니파이 앱만 정상적으로 제공됩니다.
 
-If Unifi Apps is game-like and lacks a valid rating, Users from Korean IPs will see a "This service is not available in your country" notice and access will be blocked when users execute the Unifi Apps.
+유니파이 앱이 게임과 유사한 특성을 가지면서 유효한 등급을 보유하지 않은 경우, 한국 IP 사용자는 해당 앱 실행 시 &quot;이 서비스는 귀하의 국가에서 이용하실 수 없습니다&quot;라는 안내를 확인하게 되며 접근이 차단됩니다.
 
-You can find detailed policies on the [GRAC website](https://www.grac.or.kr/).
+자세한 정책은 [GRAC 웹사이트](https://www.grac.or.kr/)에서 확인하실 수 있습니다.
 
-## Scope
+## 적용 범위
 
-* Applies to Unifi Apps with **game-like characteristics** (core game mechanics such as progression, rewards, competition, chance-based items, etc.).
-* Non-game utilities are generally out of scope, subject to review.
+* **게임적 특성**(진행, 보상, 경쟁, 확률형 아이템 등 핵심 게임 메커니즘)을 지닌 유니파이 앱에 적용됩니다.
+* 비게임 유틸리티는 일반적으로 적용 대상에서 제외되나 검토 대상입니다.
 
-## Effective Date
+## 시행일
 
-* Start Date: From August 22, 2025
+* 시작일: 2025년 8월 22일부터
 
-## Policy Summary
+## 정책 요약
 
-* Allow: Korean IP AND approved GRAC Status
-* Block: Korean IP AND no approved GRAC status
-* Exception: Non-game Unifi Apps
+* 허용: 한국 IP AND 승인된 GRAC 등급
+* 차단: 한국 IP AND 승인되지 않은 GRAC 등급
+* 예외: 비게임 유니피 앱
 
-## What Developers Must Provide
+## 개발자가 반드시 제공해야 할 사항
 
-* GRAC rating info (rating, decision number, decision date)
-* Evidence (certificate PDF/image and/or official lookup URL)
+* GRAC 등급 정보 (등급, 결정 번호, 결정 날짜)
+* 증빙 자료 (인증서 PDF/이미지 및/또는 공식 조회 URL)
 
-## Checklist for determining whether it qualifies as a game contents
+## 게임 콘텐츠 여부 판단 체크리스트
 
-<table><thead><tr><th width="209.80078125">Characteristics</th><th>Description</th></tr></thead><tbody><tr><td>Entertainment Purpose</td><td>Is the primary purpose of the Unifi Apps to provide entertainment or fun?</td></tr><tr><td>Interactivity</td><td>Do different outcomes occur based on user actions?</td></tr><tr><td>Rules System</td><td>Are there clear rules and constraints?</td></tr><tr><td>Progression Structure</td><td>Is there a game-like flow with start, progress and end?</td></tr><tr><td>Challenges and Achievements</td><td>Are there obstacles to overcome and a sense of accomplishment?</td></tr></tbody></table>
+<table><thead><tr><th width="209.80078125">특징</th><th>설명</th></tr></thead><tbody><tr><td>오락 목적</td><td>유니파이 앱의 주요 목적이 오락이나 재미 제공인가?</td></tr><tr><td>상호작용성</td><td>사용자의 행동에 따라 다른 결과가 발생합니까?</td></tr><tr><td>규칙 체계</td><td>명확한 규칙과 제약이 존재하는가?</td></tr><tr><td>진행 구조</td><td>시작, 진행, 끝이 있는 게임 같은 흐름이 존재하는가?</td></tr><tr><td>도전과 성취</td><td>극복해야 할 장애물과 성취감이 존재하는가?</td></tr></tbody></table>

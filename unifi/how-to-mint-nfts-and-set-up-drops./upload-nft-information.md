@@ -5,24 +5,23 @@ metaLinks:
       https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi/how-to-mint-nfts-and-set-up-drops./upload-nft-information
 ---
 
-# Upload NFT Information
+# NFT 정보 업로드
 
-## A. Original Contents(Mandatory) <a href="#b.-original-contents" id="b.-original-contents"></a>
+## A. 원본 콘텐츠(필수)<a href="#b.-original-contents" id="b.-original-contents"></a>
 
-<table><thead><tr><th>Label</th><th width="412.5865478515625">Guide</th><th>Example</th></tr></thead><tbody><tr><td>Collection Name</td><td>Please enter one of the issued collections.</td><td>Fate Genesis 99</td></tr><tr><td>Meta</td><td>Please input the NFT's metadata in the specified format and upload it.<br>This must be a file containing all the attributes of the NFT you wish to mint. If you are minting 10,000 NFTs, there must be 10,000 lines of input data. Even if all the information is identical, please input all 10,000 lines.</td><td>Please refer to the sample file linked below.</td></tr></tbody></table>
+<table><thead><tr><th>라벨</th><th width="412.5865478515625">가이드</th><th>예시</th></tr></thead><tbody><tr><td>컬렉션 이름</td><td>발행된 컬렉션 중 하나를 입력해 주세요.</td><td>Fate Genesis 99</td></tr><tr><td>메타</td><td>지정된 형식으로 NFT의 메타데이터를 입력하고 업로드하십시오.<br>이는 민팅하려는 NFT의 모든 속성을 포함하는 파일이어야 합니다. 10,000개의 NFT를 민팅하는 경우, 입력 데이터가 10,000줄이어야 합니다. 모든 정보가 동일하더라도 10,000줄 모두 입력하십시오.</td><td>아래 링크된 샘플 파일을 참고하십시오.</td></tr></tbody></table>
 
-{% file src="../../.gitbook/assets/meta sample.csv" %}
+{% file src=&quot;../../.gitbook/assets/meta sample.csv&quot; %}
 
 
 
-## B. Pre-reveal(Optional) <a href="#a.-pre-reveal" id="a.-pre-reveal"></a>
+## B. 사전 공개(선택 사항)<a href="#a.-pre-reveal" id="a.-pre-reveal"></a>
 
-This feature is used when original content needs to be disclosed at a specific time. It is unnecessary if the NFT at the time of purchase is the same as the one being held.
+이 기능은 원본 콘텐츠를 특정 시점에 공개해야 할 때 사용됩니다. 구매 시점의 NFT가 보유 중인 NFT와 동일하다면 필요하지 않습니다.
 
-| Label                 | Guide                                                        | Example                                      |
+| 레이블                 | 가이드                                                        | 예시                                      |
 | --------------------- | ------------------------------------------------------------ | -------------------------------------------- |
-| Collection Name       | Please enter one of the issued collections.                  | Fate Genesis 99                              |
-| Pre-reveal Image      | Image Size: 600x600                                          |                                              |
-| Description           | List of Supported languages in the Unifi Apps                | This NFT will be revealed on January 1, 2026 |
-| Requested Reveal Date | Only complete this field if a pre-reveal is being conducted. | yyyy-mm-dd tt:mm (in UTC)                    |
-
+| 컬렉션 이름       | 발행된 컬렉션 중 하나를 입력하세요.                  | Fate Genesis 99                              |
+| 사전 공개 이미지      | 이미지 크기: 600x600                                          |                                              |
+| 설명           | Unifi 앱에서 지원하는 언어 목록                | 이 NFT는 2026년 1월 1일에 공개됩니다. |
+| 요청된 공개 날짜 | 사전 공개를 진행하는 경우에만 이 필드를 작성하십시오. | yyyy-mm-dd tt:mm (UTC 기준)                    |

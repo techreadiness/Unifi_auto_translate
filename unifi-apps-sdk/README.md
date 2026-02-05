@@ -7,122 +7,120 @@ metaLinks:
 
 # Unifi Apps SDK
 
-## 1. Getting Started
+## 1. 시작하기
 
-### Latest Version
+### 최신 버전
 
 * npm: [https://www.npmjs.com/package/@linenext/dapp-portal-sdk/v/1.5.2](https://www.npmjs.com/package/@linenext/dapp-portal-sdk/v/1.5.2)
 * cdn: [https://static.kaiawallet.io/js/dapp-portal-sdk-1.5.2.js](https://static.kaiawallet.io/js/dapp-portal-sdk-1.5.2.js)
 
-### How to get SDK Access(clientId & clientSecret)
+### SDK 액세스(clientId 및 clientSecret) 획득 방법
 
-To integrate Unifi Apps SDK, you need to receive a `clientId` and `clientSecret` from the Unifi team.
+Unifi Apps SDK를 통합하려면 Unifi 팀으로부터 `clientId`와 `clientSecret`을 받아야 합니다.
 
-**Steps:**
+**단계:**
 
-1. [Submit the SDK Terms & Conditions form](https://docs.dappportal.io/join-us#mini-dapp-sdk), including your Unifi Apps information.
-2. Receive your `clientId` and `clientSecret` via the submitted email.
+1.  [SDK 이용 약관 동의서 제출](https://docs.dappportal.io/join-us#mini-dapp-sdk) 시 Unifi Apps 정보를 포함하세요.
+2. 제출한 이메일로 `clientId`와 `clientSecret`을 수신하세요.
 
-⚠️ **Never expose `clientSecret` publicly.** If it has been compromised, request regeneration via Tech Support.
+⚠️ **`clientSecret`을 절대 공개하지 마십시오.** 유출된 경우 기술 지원팀을 통해 재생성을 요청하세요.
 
-### Project Setup & Domain Registration
+### 프로젝트 설정 및 도메인 등록
 
-* Your `clientId` becomes active only when a domain is registered.
-  * For testing purposes, you may use `http://localhost:3000`.&#x20;
-  * For external test domains, please request whitelisting via Tech Support or email.
-* Payments via `paymentProvider` require a valid `clientSecret`.
+* `clientId`는 도메인이 등록된 경우에만 활성화됩니다.
+  * 테스트 목적으로 `http://localhost:3000`을 사용할 수 있습니다. 
+  * 외부 테스트 도메인의 경우 기술 지원팀 또는 이메일을 통해 화이트리스트 등록을 요청하십시오.
+* `paymentProvider`를 통한 결제는 유효한 `clientSecret`이 필요합니다.
 
-### Install SDK
+### SDK 설치
 
-Install the SDK via npm, yarn, or pnpm
+npm, yarn 또는 pnpm을 통해 SDK를 설치하십시오.
 
 ```
 npm install @linenext/dapp-portal-sdk
-# or
+# 또는
 yarn add @linenext/dapp-portal-sdk
-# or
+# 또는
 pnpm add @linenext/dapp-portal-sdk
 ```
 
-## 2. SDK Initialization
+## 2. SDK 초기화
 
-### Initialize the SDK
+### SDK 초기화
 
-You **must initialize the SDK** each time the Unifi Apps is loaded.
+Unifi Apps가 로드될 때마다 **반드시 SDK를 초기화**해야 합니다.
 
 ```javascript
-import DappPortalSDK from '@linenext/dapp-portal-sdk'
+import DappPortalSDK from &#x27;@linenext/dapp-portal-sdk&#x27;
 
 const sdk = await DappPortalSDK.init({
-  clientId: '<CLIENT_ID>',
-  chainId: '1001', // or '8217' for mainnet
+  clientId: &#x27;<client_id>&#x27;,
+  chainId: &#x27;1001&#x27;, // 메인넷의 경우 &#x27;8217&#x27;
 });
 ```
 
-**Parameters**
+**매개변수**
 
-| Name                                                                       | Description                                                                                                       |
+| 이름                                                                       | 설명                                                                                                       |
 | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| <p>clientId<mark style="color:$danger;">*required</mark> </p><p>string</p> | the clientId provided when applying for the SDK                                                                   |
-| <p>chainId </p><p>string</p>                                               | The default value is **1001**(testnet). To use the mainnet after development, set the value to **8217**(mainnet). |
+|<p>클라이언트 <mark style="color:$danger;">ID*필수</mark> </p><p>문자열</p>  | SDK 신청 시 제공된 clientId                                                                   |
+|                                                <p>체인 ID </p><p>문자열</p>| 기본값은 **1001**(테스트넷)입니다. 개발 후 메인넷을 사용하려면 값을 **8217**(메인넷)으로 설정하세요. |
 
-**Response**
+**응답**
 
-Returns a `DappPortalSDK` object through which the following methods can be called.
+다음 메서드를 호출할 수 있는 `DappPortalSDK` 객체를 반환합니다.
 
 ```
 DappPortalSDK
 ```
 
-### **⚠️ LINE MINI App and LINE Login LIFF version note**
+### **⚠️ LINE MINI 앱 및 LINE 로그인 LIFF 버전 참고사항**
 
-* Call `liff.init()` **before** calling `DappPortalSDK.init()`.
-* Do **not** trigger wallet connection(`connectWallet`) on LINE MINI App or LINE Login LIFF entry. Only connect when needed(e.g., item purchase, on-chain rewards).
-* This ensures accurate tracking of active users and attribution via LINE.
+* `DappPortalSDK.init()` 호출 **전**에 `liff.init()`를 호출하세요.
+* LINE MINI 앱 또는 LINE 로그인 LIFF 진입 시 지갑 연결(`connectWallet`)을 **트리거하지 마세요**. 필요한 경우에만 연결하세요(예: 아이템 구매, 온체인 보상).
+* 이는 LINE을 통한 활성 사용자 추적 및 어트리뷰션의 정확성을 보장합니다.
 
-### 💡 **Best Practice**
+### 💡 **권장 사항**
 
-* **Initialize the SDK only once** and manage the `DappPortalSDK` instance as a **singleton**.
-* Avoid calling `DappPortalSDK.init()` multiple times—it may cause **unexpected behavior or malfunctions**.
+* **SDK는 단 한 번만 초기화**하고 `DappPortalSDK` 인스턴스를 **싱글톤**으로 관리하십시오.
+* `DappPortalSDK.init()`을 여러 번 호출하지 마십시오—**예상치 못한 동작이나 오작동**을 유발할 수 있습니다.
 
-We **do not enforce** singleton usage by default to allow **multi-configuration setups**(e.g., using both **testnet** and **mainnet** in a single app).\
-In such cases, manage **one singleton instance per configuration**(e.g., one for testnet, one for mainnet).
+기본적으로 싱글톤 사용을 **강제하지 않음**. 이는 **다중 구성 설정**(예: 단일 앱에서 **테스트넷**과 **메인넷** 동시 사용)을 허용하기 위함입니다.
+이러한 경우 **구성당 하나의 싱글톤 인스턴스**를 관리하십시오(예: 테스트넷용 하나, 메인넷용 하나).
 
-## 3. SDK API Reference
+## 3. SDK API 참조
 
-### **DappPortalSDK Class**
+### **DappPortalSDK 클래스**
 
-#### **Constructor**
+#### **생성자**
 
 `DappPortalSDK(config: DappPortalSDKClientConfig)`
 
-Initializes the SDK using your credentials.
+인증 정보를 사용하여 SDK를 초기화합니다.
 
-* `clientId: string` (Provided by the Unifi team)
-* `chainId: string` ("1001" for testnet, "8217" for mainnet)
+* `clientId: string` (Unifi 팀에서 제공)
+* `chainId: string` (테스트넷: &quot;1001&quot;, 메인넷: &quot;8217&quot;)
 
-#### **Instance Methods**
+#### **인스턴스 메서드**
 
 **`getWalletProvider(): WalletProvider`**
 
-Returns EIP-1193-compatible wallet provider instance.
+EIP-1193 호환 지갑 제공자 인스턴스를 반환합니다.
 
-* This allows you to send transactions, sign messages, and interact with wallets.
+* 이를 통해 트랜잭션 전송, 메시지 서명, 지갑 상호작용이 가능합니다.
 
 **`getPaymentProvider(): PaymentProvider`**
 
-Returns the object for managing payments and transaction history.
+결제 및 트랜잭션 내역 관리를 위한 객체를 반환합니다.
 
 **`isSupportedBrowser(): boolean`**
 
-Checks if the current browser is compatible.
+현재 브라우저의 호환성을 확인합니다.
 
 **`showUnsupportedBrowserGuide(): Promise<void>`**
 
-Displays a guide prompting the user to open in a supported browser.
+지원되는 브라우저에서 열도록 사용자에게 안내하는 가이드를 표시합니다.
 
-## 4. Security Guidelines
+## 4. 보안 지침
 
-* Keep `clientSecret` confidential.
-* Never commit it to source control.
-* If exposed, rotate it immediately via Tech Support.
+* `clientSecret`을 기밀로 유지하십시오.
