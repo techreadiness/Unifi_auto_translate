@@ -1,13 +1,6 @@
 # Table of contents
 
-* [Extra Packages](README.md)
-  * [Gas Fee Delegation](extra-packages/gas-fee-delegation.md)
-  * [Growth Competition](extra-packages/growth-competition/README.md)
-    * [Playbook for Teams](extra-packages/growth-competition/playbook-for-teams.md)
-    * [Historical Data](https://docs.google.com/spreadsheets/d/1sY_CYFk3AlVNNyw0CBkvnfHLKlF_zcaeTHtz-3a-5Ew/edit?gid=338955112#gid=338955112)
-* [Review Guidelines](review-guidelines.md)
-* [Update Note](update-note.md)
-* [Unifi & Unifi Apps](unifi-and-unifi-apps/README.md)
+* [Unifi & Unifi Apps](README.md)
   * [Unifi 마이그레이션 가이드](unifi-and-unifi-apps/unifi.md)
 * [Join Us](join-us-1/README.md)
   * [Unifi Apps](join-us-1/unifi-apps/README.md)
