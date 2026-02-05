@@ -16,7 +16,7 @@
 * [Unifi Apps 심사 가이드라인](unifi-apps/README.md)
   * [LINE MINI App 버전 심사 가이드라인](unifi-apps/line-mini-app.md)
   * [LINE Login LIFF & Web 버전 심사 가이드라인](unifi-apps/line-login-liff-and-web.md)
-  * [How to build successful Unifi Apps](unifi-apps/how-to-build-successful-unifi-apps.md)
+  * [성공적인 Unifi 앱 구축 가이드](unifi-apps/how-to-build-successful-unifi-apps.md)
 * [Unifi Apps](unifi-apps-1/README.md)
   * [LINE 연동](unifi-apps-1/line-integration/README.md)
     * [LINE MINI App](unifi-apps-1/line-integration/line-mini-app.md)
