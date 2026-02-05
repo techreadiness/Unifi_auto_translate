@@ -5,16 +5,18 @@ metaLinks:
       https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps-sdk/payment-provider/settlement/how-to-claim-usdt-for-stripe-transaction
 ---
 
-# STRIPE 거래에 대한 USDT 청구 방법
+# Stripe 결제에 대한 USDT 수령 방법
 
 ## 청구 절차
 
-<figure><img src="../../../.gitbook/assets/usdt_claim.png" alt=""><figcaption></figcaption></figure>Stripe 결제 수익 정산은 [여기](../../../mini-dapp/mini-dapp-sdk/payment/settlement.md)의 정책을 따릅니다.
+<figure><img src="../../../.gitbook/assets/usdt_claim.png" alt=""><figcaption></figcaption></figure>
+
+Stripe 결제 수익 정산은 \[여기]\(../../../mini-dapp/mini-dapp-sdk/payment/settlement.md)의 정책을 따릅니다.
 
 1. Unifi에서 청구용 **거래** 생성 정보를 가져옵니다.
 2. **현재 Kaia 기반 정산을 수령 중인 주소**로 거래에 서명합니다.
 3. 서명된 거래를 브로드캐스트합니다.
-   1. **수수료 위임이 활성화된 경우**, 서명된 거래를 **수수료 지불 서버(Fee Payer Server)**로 전송합니다.
+   1. **수수료 위임이 활성화된 경우**, 서명된 거래를 \*\*수수료 지불 서버(Fee Payer Server)\*\*로 전송합니다.
    2. **수수료 위임을 사용하지 않는 경우**, 서명된 거래를 **Kaia 노드에 직접** 브로드캐스트합니다.
 
 ## 서명되지 않은 거래 생성 정보 조회 API
@@ -23,38 +25,42 @@ USDT로 STRIPE 결제 수익을 수령하기 위한 요청 API
 
 ### API
 
- <mark style="background-color:blue;">경로 **get**</mark>
+<mark style="background-color:blue;">경로</mark> <mark style="background-color:blue;"></mark><mark style="background-color:blue;">**get**</mark>
 
 /api/b2b-v1/dapp-settlements/{client\_id}/signed-receivable
 
-<table><thead><tr><th width="194.8154296875"></th><th></th></tr></thead><tbody><tr><td>도메인</td><td>https://api.dappportal.io</td></tr><tr><td>경로</td><td>/api/b2b-v1/dapp-settlements/{client_id}/signed-receivable</td></tr></tbody></table>### 인증 정보
+<table><thead><tr><th width="194.8154296875"></th><th></th></tr></thead><tbody><tr><td>도메인</td><td>https://api.dappportal.io</td></tr><tr><td>경로</td><td>/api/b2b-v1/dapp-settlements/{client_id}/signed-receivable</td></tr></tbody></table>
+
+\### 인증 정보
 
 이 API는 Unifi 인증이 필요합니다.
 
 인증용으로 요청 헤더에 다음 정보를 포함하십시오
 
-<table><thead><tr><th width="252.3251953125">### 인증 정보  이 API는 Unifi 인증이 필요합니다.  인증용으로 요청 헤더에 다음 정보를 포함</th><th>설명</th></tr></thead><tbody><tr><td><strong>client_id</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(경로)</em></td><td>지원팀으로부터 받은 클라이언트 식별자 문자열(36바이트)</td></tr><tr><td><strong>X-Auth-Client-Id</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(헤더)</em></td><td>지원팀으로부터 받은 클라이언트 식별자 문자열(36바이트)</td></tr><tr><td><strong>X-Auth-Timestamp</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(헤더)</em></td><td>유닉스 에포크 형식의 현재 시간</td></tr><tr><td><strong>X-Auth-Salt</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(헤더)</em></td><td>무작위로 생성된 UUID 문자열(36바이트)</td></tr><tr><td><strong>X-Auth-Signature</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(헤더)</em></td><td>(*) 요청의 진위성을 증명하는 HMAC 기반 서명</td></tr></tbody></table>`(*) base64encode(hmac(&quot;{clientId}|GET|/api/b2b-v1/dapp-settlements/{clientId}/signed-receivable|{timestamp}|{salt}&quot;))`
+<table><thead><tr><th width="252.3251953125">### 인증 정보 이 API는 Unifi 인증이 필요합니다. 인증용으로 요청 헤더에 다음 정보를 포함</th><th>설명</th></tr></thead><tbody><tr><td><strong>client_id</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(경로)</em></td><td>지원팀으로부터 받은 클라이언트 식별자 문자열(36바이트)</td></tr><tr><td><strong>X-Auth-Client-Id</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(헤더)</em></td><td>지원팀으로부터 받은 클라이언트 식별자 문자열(36바이트)</td></tr><tr><td><strong>X-Auth-Timestamp</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(헤더)</em></td><td>유닉스 에포크 형식의 현재 시간</td></tr><tr><td><strong>X-Auth-Salt</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(헤더)</em></td><td>무작위로 생성된 UUID 문자열(36바이트)</td></tr><tr><td><strong>X-Auth-Signature</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(헤더)</em></td><td>(*) 요청의 진위성을 증명하는 HMAC 기반 서명</td></tr></tbody></table>
+
+\`(\*) base64encode(hmac("{clientId}|GET|/api/b2b-v1/dapp-settlements/{clientId}/signed-receivable|{timestamp}|{salt}"))\`
 
 ### 응답
 
-<table><thead><tr><th width="134.3388671875">필드</th><th width="95.6796875">유형</th><th>설명</th><th>예시</th></tr></thead><tbody><tr><td>거래</td><td></td><td></td><td></td></tr><tr><td><ul><li>to</li></ul></td><td>문자열</td><td>호출할 계약 주소</td><td><code>&quot;0xdce5...&quot;</code></td></tr><tr><td><ul><li>값</li></ul></td><td>String</td><td>전송할 네이티브 토큰의 양</td><td><code>&quot;0x0&quot;</code></td></tr><tr><td><ul><li>데이터</li></ul></td><td>문자열</td><td>스마트 계약 데이터</td><td><code>&quot;0x....&quot;</code></td></tr></tbody></table>
+<table><thead><tr><th width="134.3388671875">필드</th><th width="95.6796875">유형</th><th>설명</th><th>예시</th></tr></thead><tbody><tr><td>거래</td><td></td><td></td><td></td></tr><tr><td><ul><li>to</li></ul></td><td>문자열</td><td>호출할 계약 주소</td><td><code>"0xdce5..."</code></td></tr><tr><td><ul><li>값</li></ul></td><td>String</td><td>전송할 네이티브 토큰의 양</td><td><code>"0x0"</code></td></tr><tr><td><ul><li>데이터</li></ul></td><td>문자열</td><td>스마트 계약 데이터</td><td><code>"0x...."</code></td></tr></tbody></table>
 
 <pre><code>{
-<strong>  &quot;receivable&quot;: {
-</strong>    &quot;claimer_id&quot;: &quot;&quot;,
-    &quot;sequence_begin&quot;: &quot;&quot;,
-    &quot;sequence_end&quot;: &quot;&quot;,
-    &quot;vault_address&quot;: &quot;&quot;,
-    &quot;recipient_address&quot;: &quot;&quot;,
-    &quot;token_address&quot;: &quot;&quot;,
-    &quot;amount&quot;: &quot;&quot;,
-    &quot;deadline&quot;: &quot;&quot;
+<strong>  "receivable": {
+</strong>    "claimer_id": "",
+    "sequence_begin": "",
+    "sequence_end": "",
+    "vault_address": "",
+    "recipient_address": "",
+    "token_address": "",
+    "amount": "",
+    "deadline": ""
   },
-  &quot;signature&quot;: &quot;&quot;,
-  &quot;transaction&quot;: {
-    &quot;to&quot;: &quot;&quot;,
-    &quot;data&quot;: &quot;&quot;,
-    &quot;value&quot;: &quot;&quot;
+  "signature": "",
+  "transaction": {
+    "to": "",
+    "data": "",
+    "value": ""
   }
 }
 </code></pre>
@@ -136,7 +142,7 @@ async function load(domain, clientId, clientSecret) {
 
 ### 샘플 코드
 
-**⚠️** 이 샘플 코드는 **Kaia Wallet (웹 확장 프로그램)**을 사용하는 경우에 적용됩니다.
+**⚠️** 이 샘플 코드는 \*\*Kaia Wallet (웹 확장 프로그램)\*\*을 사용하는 경우에 적용됩니다.
 
 API를 통해 획득한 서명되지 않은 트랜잭션을 다른 방법으로 서명하기로 선택한 경우, 선택한 접근 방식에 적합한 서명 방법을 사용해야 합니다.
 

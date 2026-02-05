@@ -29,7 +29,7 @@ metaLinks:
 
 ## 2025년 10월 15일
 
-[미니 Dapp SDK v1.4.6](https://app.gitbook.com/o/JrXbEzQU7Die7Vyqr5PZ/s/juuhQ1BuKwYKE7NR6geM/~/changes/332/mini-dapp/mini-dapp-sdk/release-note/v1.4.6) 출시 (내부 로직의 사소한 개선)
+[미니 Dapp SDK v1.4.6](https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/mini-dapp/mini-dapp-sdk/release-note/v1.4.6) 출시 (내부 로직의 사소한 개선)
 
 ## 2025년 9월 22일
 
@@ -93,7 +93,7 @@ STRIPE 결제를 위한 USDT 청구를 위한 [가이드](mini-dapp/mini-dapp-sd
 
 ## 2025년 5월 27일
 
-[미니 Dapp SDK v1.3.0](https://app.gitbook.com/o/JrXbEzQU7Die7Vyqr5PZ/s/juuhQ1BuKwYKE7NR6geM/~/changes/222/mini-dapp/mini-dapp-sdk/release-note/v1.3.0) 출시 (Bitget Wallet 통합용)
+[미니 Dapp SDK v1.3.0](https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/mini-dapp/mini-dapp-sdk/release-note/v1.3.0) 출시 (Bitget Wallet 통합용)
 
 ## 2025년 5월 21일
 
@@ -107,8 +107,7 @@ STRIPE 결제를 위한 USDT 청구를 위한 [가이드](mini-dapp/mini-dapp-sd
 
 ## 2025년 5월 9일
 
-[결제 정보 조회 API](https://docs.dappportal.io/mini-dapp/mini-dapp-sdk/payment-provider#id-2.-get-payment-information)의 응답에 환불 및 차지백 항목이 포함되도록 업데이트되었습니다.
-[결제 상태](https://docs.dappportal.io/mini-dapp/mini-dapp-sdk/payment-provider#id-05.-payment-status)에 환불 및 차지백 항목이 추가되었습니다.
+[결제 정보 조회 API](https://docs.dappportal.io/mini-dapp/mini-dapp-sdk/payment-provider#id-2.-get-payment-information)의 응답에 환불 및 차지백 항목이 포함되도록 업데이트되었습니다. [결제 상태](https://docs.dappportal.io/mini-dapp/mini-dapp-sdk/payment-provider#id-05.-payment-status)에 환불 및 차지백 항목이 추가되었습니다.
 
 ## 2025년 4월 23일
 
@@ -154,7 +153,7 @@ KAIA 결제에 대한 [최저 가격 정책](https://docs.dappportal.io/mini-dap
 
 ## 2025년 2월 27일
 
-[getWalletType() 업데이트 &gt;](https://docs.dappportal.io/mini-dapp/mini-dapp-sdk/wallet-provider#a.-getwallettype-wallettype-or-null) ; WalletType.OKX 추가
+[getWalletType() 업데이트 >](https://docs.dappportal.io/mini-dapp/mini-dapp-sdk/wallet-provider#a.-getwallettype-wallettype-or-null) ; WalletType.OKX 추가
 
 [미니 Dapp SDK v1.2.8](https://docs.dappportal.io/mini-dapp/mini-dapp-sdk/release-note/v1.2.8) 출시
 
@@ -164,5 +163,5 @@ KAIA 결제에 대한 [최저 가격 정책](https://docs.dappportal.io/mini-dap
 
 미니 앱 구축 가이드 업데이트
 
-* [연결된 지갑 정보 제공 &gt;](https://docs.dappportal.io/lines-mini-dapp-and-dapp-portal/how-to-build-successful-mini-dapp#provision-of-information-about-connected-wallet)
-* [결제 상태 제공 &gt;](https://docs.dappportal.io/lines-mini-dapp-and-dapp-portal/how-to-build-successful-mini-dapp#provision-of-payment-status)
+* [연결된 지갑 정보 제공 >](https://docs.dappportal.io/lines-mini-dapp-and-dapp-portal/how-to-build-successful-mini-dapp#provision-of-information-about-connected-wallet)
+* [결제 상태 제공 >](https://docs.dappportal.io/lines-mini-dapp-and-dapp-portal/how-to-build-successful-mini-dapp#provision-of-payment-status)
