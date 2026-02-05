@@ -1,7 +1,7 @@
 # Table of contents
 
 * [LINE's Mini Dapp & Dapp Portal](README.md)
-  * [How to build successful Mini Dapp](lines-mini-dapp-and-dapp-portal/how-to-build-successful-mini-dapp.md)
+  * [How to build successful Mini Dapp](readme/how-to-build-successful-mini-dapp.md)
 * [Join Us](join-us/README.md)
   * [Contact Us](join-us/contact-us.md)
   * [Kaia Wave: Builder Support Program](join-us/kaia-wave-builder-support-program/README.md)
