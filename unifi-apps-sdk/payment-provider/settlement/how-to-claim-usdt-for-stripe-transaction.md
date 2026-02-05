@@ -5,72 +5,68 @@ metaLinks:
       https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps-sdk/payment-provider/settlement/how-to-claim-usdt-for-stripe-transaction
 ---
 
-# How to Claim USDT for STRIPE transaction
+# STRIPE 거래에 대한 USDT 청구 방법
 
-## Claim Process
+## 청구 절차
 
-<figure><img src="../../../.gitbook/assets/usdt_claim.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/usdt_claim.png" alt=""><figcaption></figcaption></figure>Stripe 결제 수익 정산은 [여기](../../../mini-dapp/mini-dapp-sdk/payment/settlement.md)의 정책을 따릅니다.
 
-The settlement of Stripe payment revenue follows the policy [here](/broken/pages/pF4k278dDKi2UnxzLwcO).
+1. Unifi에서 청구용 **거래** 생성 정보를 가져옵니다.
+2. **현재 Kaia 기반 정산을 수령 중인 주소**로 거래에 서명합니다.
+3. 서명된 거래를 브로드캐스트합니다.
+   1. **수수료 위임이 활성화된 경우**, 서명된 거래를 **수수료 지불 서버(Fee Payer Server)**로 전송합니다.
+   2. **수수료 위임을 사용하지 않는 경우**, 서명된 거래를 **Kaia 노드에 직접** 브로드캐스트합니다.
 
-1. Retrieve an information for creating **transaction** for the claim from the Unifi.
-2. Sign the transaction using the **address currently receiving Kaia-based settlements.**
-3. Broadcast signed transaction.
-   1. **If fee delegation is enabled**, transfer the signed transaction to the **Fee Payer Server.**
-   2. **If fee delegation is not used**, broadcast the signed transaction **directly to a Kaia node.**
+## 서명되지 않은 거래 생성 정보 조회 API
 
-## API to retrieve information to create unsigned transaction
+USDT로 STRIPE 결제 수익을 수령하기 위한 요청 API
 
-Request API to receive STRIPE payment revenue in USDT
+### API
 
-### API Path
+ <mark style="background-color:blue;">경로 **get**</mark>
 
-&#x20;<mark style="background-color:blue;">**get**</mark> /api/b2b-v1/dapp-settlements/{client\_id}/signed-receivable
+/api/b2b-v1/dapp-settlements/{client\_id}/signed-receivable
 
-<table><thead><tr><th width="194.8154296875"></th><th></th></tr></thead><tbody><tr><td>Domain</td><td>https://api.dappportal.io</td></tr><tr><td>Path</td><td>/api/b2b-v1/dapp-settlements/{client_id}/signed-receivable</td></tr></tbody></table>
+<table><thead><tr><th width="194.8154296875"></th><th></th></tr></thead><tbody><tr><td>도메인</td><td>https://api.dappportal.io</td></tr><tr><td>경로</td><td>/api/b2b-v1/dapp-settlements/{client_id}/signed-receivable</td></tr></tbody></table>### 인증 정보
 
-### Authentication Information
+이 API는 Unifi 인증이 필요합니다.
 
-This API requires Unifi authentication.
+인증용으로 요청 헤더에 다음 정보를 포함하십시오
 
-Please include the following information in the request headers for authentication
+<table><thead><tr><th width="252.3251953125">### 인증 정보  이 API는 Unifi 인증이 필요합니다.  인증용으로 요청 헤더에 다음 정보를 포함</th><th>설명</th></tr></thead><tbody><tr><td><strong>client_id</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(경로)</em></td><td>지원팀으로부터 받은 클라이언트 식별자 문자열(36바이트)</td></tr><tr><td><strong>X-Auth-Client-Id</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(헤더)</em></td><td>지원팀으로부터 받은 클라이언트 식별자 문자열(36바이트)</td></tr><tr><td><strong>X-Auth-Timestamp</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(헤더)</em></td><td>유닉스 에포크 형식의 현재 시간</td></tr><tr><td><strong>X-Auth-Salt</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(헤더)</em></td><td>무작위로 생성된 UUID 문자열(36바이트)</td></tr><tr><td><strong>X-Auth-Signature</strong> <mark style="color:red;">*필수</mark><br>문자열<br><em>(헤더)</em></td><td>(*) 요청의 진위성을 증명하는 HMAC 기반 서명</td></tr></tbody></table>`(*) base64encode(hmac(&quot;{clientId}|GET|/api/b2b-v1/dapp-settlements/{clientId}/signed-receivable|{timestamp}|{salt}&quot;))`
 
-<table><thead><tr><th width="252.3251953125">Name</th><th>Description</th></tr></thead><tbody><tr><td><strong>client_id</strong> <mark style="color:red;">*required</mark><br>string<br><em>(path)</em></td><td>Client identifier string (36 bytes) obtained from support team</td></tr><tr><td><strong>X-Auth-Client-Id</strong> <mark style="color:red;">*required</mark><br>string<br><em>(header)</em></td><td>Client identifier string (36 bytes) obtained from support team</td></tr><tr><td><strong>X-Auth-Timestamp</strong> <mark style="color:red;">*required</mark><br>string<br><em>(header)</em></td><td>Current time in Unix epoch format</td></tr><tr><td><strong>X-Auth-Salt</strong> <mark style="color:red;">*required</mark><br>string<br><em>(header)</em></td><td>Randomly generated UUID string (36 bytes)</td></tr><tr><td><strong>X-Auth-Signature</strong> <mark style="color:red;">*required</mark><br>string<br><em>(header)</em></td><td>(*) HMAC-based signature proving request authenticity</td></tr></tbody></table>
+### 응답
 
-`(*) base64encode(hmac("{clientId}|GET|/api/b2b-v1/dapp-settlements/{clientId}/signed-receivable|{timestamp}|{salt}"))`
-
-### Response
-
-<table><thead><tr><th width="134.3388671875">field</th><th width="95.6796875">type</th><th>description</th><th>example</th></tr></thead><tbody><tr><td>transaction</td><td></td><td></td><td></td></tr><tr><td><ul><li>to</li></ul></td><td>String</td><td>contract address to call</td><td><code>"0xdce5..."</code></td></tr><tr><td><ul><li>value</li></ul></td><td>String</td><td>native token's amount to send</td><td><code>"0x0"</code></td></tr><tr><td><ul><li>data</li></ul></td><td>String</td><td>data of smart contract</td><td><code>"0x...."</code></td></tr></tbody></table>
+<table><thead><tr><th width="134.3388671875">필드</th><th width="95.6796875">유형</th><th>설명</th><th>예시</th></tr></thead><tbody><tr><td>거래</td><td></td><td></td><td></td></tr><tr><td><ul><li>to</li></ul></td><td>문자열</td><td>호출할 계약 주소</td><td><code>&quot;0xdce5...&quot;</code></td></tr><tr><td><ul><li>값</li></ul></td><td>String</td><td>전송할 네이티브 토큰의 양</td><td><code>&quot;0x0&quot;</code></td></tr><tr><td><ul><li>데이터</li></ul></td><td>문자열</td><td>스마트 계약 데이터</td><td><code>&quot;0x....&quot;</code></td></tr></tbody></table>
 
 <pre><code>{
-<strong>  "receivable": {
-</strong>    "claimer_id": "",
-    "sequence_begin": "",
-    "sequence_end": "",
-    "vault_address": "",
-    "recipient_address": "",
-    "token_address": "",
-    "amount": "",
-    "deadline": ""
+<strong>  &quot;receivable&quot;: {
+</strong>    &quot;claimer_id&quot;: &quot;&quot;,
+    &quot;sequence_begin&quot;: &quot;&quot;,
+    &quot;sequence_end&quot;: &quot;&quot;,
+    &quot;vault_address&quot;: &quot;&quot;,
+    &quot;recipient_address&quot;: &quot;&quot;,
+    &quot;token_address&quot;: &quot;&quot;,
+    &quot;amount&quot;: &quot;&quot;,
+    &quot;deadline&quot;: &quot;&quot;
   },
-  "signature": "",
-  "transaction": {
-    "to": "",
-    "data": "",
-    "value": ""
+  &quot;signature&quot;: &quot;&quot;,
+  &quot;transaction&quot;: {
+    &quot;to&quot;: &quot;&quot;,
+    &quot;data&quot;: &quot;&quot;,
+    &quot;value&quot;: &quot;&quot;
   }
 }
 </code></pre>
 
-### Sample Code
+### 샘플 코드
 
-Retrieve transaction executing load() function from Unifi.
+Unifi에서 load() 함수를 실행하는 트랜잭션 조회.
 
 ```javascript
 function toBase64(buffer) {
     const bytes = new Uint8Array(buffer);
-    let binary = '';
+    let binary = &#x27;&#x27;;
     for (let b of bytes) {
         binary += String.fromCharCode(b);
     }
@@ -81,25 +77,25 @@ async function calcHmac(clientSecret, clientId, method, path, timestamp, salt) {
     const msg = `${clientId}|${method.toUpperCase()}|${path}|${timestamp}|${salt}`;
     const enc = new TextEncoder();
     const key = await crypto.subtle.importKey(
-        'raw',
+        &#x27;raw&#x27;,
         enc.encode(clientSecret),
-        {name: 'HMAC', hash: {name: 'SHA-256'}},
+        {name: &#x27;HMAC&#x27;, hash: {name: &#x27;SHA-256&#x27;}},
         false,
-        ['sign'],
+        [&#x27;sign&#x27;],
     );
-    const sig = await crypto.subtle.sign('HMAC', key, enc.encode(msg));
+    const sig = await crypto.subtle.sign(&#x27;HMAC&#x27;, key, enc.encode(msg));
     return toBase64(sig);
 }
  
 async function load(domain, clientId, clientSecret) {
     const request = {
-        method: 'GET',
+        method: &#x27;GET&#x27;,
         path: `/api/b2b-v1/dapp-settlements/${clientId}/signed-receivable`,
         timestamp: Math.floor(Date.now() / 1000).toString(),
         salt: crypto.randomUUID()
     };
  
-    // prepare the hmac
+    // hmac 준비
     const signature = await calcHmac(
         clientSecret,
         clientId,
@@ -109,56 +105,56 @@ async function load(domain, clientId, clientSecret) {
         request.salt,
     );
  
-    // load the transaction
+    // 트랜잭션 로드
     const response = await fetch(
         `${domain}${request.path}`, {
             method: request.method,
             headers: {
-                'X-Auth-Client-Id': clientId,
-                'X-Auth-Timestamp': request.timestamp,
-                'X-Auth-Salt': request.salt,
-                'X-Auth-Signature': signature,
+                &#x27;X-Auth-Client-Id&#x27;: clientId,
+                &#x27;X-Auth-Timestamp&#x27;: request.timestamp,
+                &#x27;X-Auth-Salt&#x27;: request.salt,
+                &#x27;X-Auth-Signature&#x27;: signature,
             },
         });
     return await response.json();
 }
 ```
 
-## Create and Sign Transaction
+## 트랜잭션 생성 및 서명
 
-1. Create transaction with response from Unifi.
-   1. to, value, data
-2. Sign the transaction using the address currently receiving Kaia-based settlements.
-3. Broadcast signed transaction.
-   1. **If fee delegation is enabled**, transfer the signed transaction to the **Fee Payer Server.**
-      1. Domain: [https://fee-delegation.kaia.io](https://fee-delegation.kaia.io)
-      2. Path: /api/signAsFeePayer
+1. Unifi 응답으로 트랜잭션 생성.
+   1. 수신자, 금액, 데이터
+2. Kaia 기반 정산을 수신 중인 주소로 트랜잭션 서명.
+3. 서명된 트랜잭션 브로드캐스트.
+   1. **수수료 위임이 활성화된 경우**, 서명된 트랜잭션을 **수수료 지불 서버**로 전송.
+      1. 도메인: [https://fee-delegation.kaia.io](https://fee-delegation.kaia.io)
+      2. 경로: /api/signAsFeePayer
       3. POST (application/json)\
          { userSignedTx: {rawSignedTx} }
-      4. Add `type: 49` while creating transaction to use fee delegation
-   2. **If fee delegation is not used**, broadcast the signed transaction **directly to a Kaia node.**
+      4. 수수료 위임을 사용하려면 트랜잭션 생성 시 `type: 49`를 추가하십시오.
+   2. **수수료 위임을 사용하지 않는 경우**, 서명된 트랜잭션을 **Kaia 노드에 직접** 브로드캐스트하십시오.
 
-### Sample Code
+### 샘플 코드
 
-**⚠️** This sample code applies to cases where the **Kaia Wallet (Web Extension)** is used.
+**⚠️** 이 샘플 코드는 **Kaia Wallet (웹 확장 프로그램)**을 사용하는 경우에 적용됩니다.
 
-If you choose to sign the unsigned transaction (obtained via API) using a different method, please make sure to use the signing method appropriate for your chosen approach.
+API를 통해 획득한 서명되지 않은 트랜잭션을 다른 방법으로 서명하기로 선택한 경우, 선택한 접근 방식에 적합한 서명 방법을 사용해야 합니다.
 
 ```bash
 async function connect() {
     const provider = window.klaytn;
     await provider.request({
-        method: 'klay_requestAccounts',
+        method: &#x27;klay_requestAccounts&#x27;,
         params: [],
     });
 }
 
-#In case of broadcasting signed tx directly
+#직접 서명된 트랜잭션 브로드캐스팅 시
 async function claim(transaction) {
-    // sign the transaction
+    // 트랜잭션 서명
     const provider = window.klaytn;
-    const gasPrice = await provider.send('klay_gasPrice', []);
-    const sufficientGas = '0x40000';
+    const gasPrice = await provider.send(&#x27;klay_gasPrice&#x27;, []);
+    const sufficientGas = &#x27;0x40000&#x27;;
     const tx = {
         from: provider.selectedAddress,
         to: transaction.to,
@@ -167,15 +163,15 @@ async function claim(transaction) {
         gasPrice: gasPrice.result,
         gas: sufficientGas,
     };
-    return await provider.send('klay_sendTransaction', [tx]);
+    return await provider.send(&#x27;klay_sendTransaction&#x27;, [tx]);
 }
  
-#In case of broadcasting signed tx wih fee delegation server
+#수수료 위임 서버를 통해 서명된 트랜잭션 브로드캐스팅 시
 async function claimFeeDelegated(domain, transaction) {
-    // sign the transaction
+    // 트랜잭션 서명
     const provider = window.klaytn;
-    const gasPrice = await provider.send('klay_gasPrice', []);
-    const sufficientGas = '0x40000';
+    const gasPrice = await provider.send(&#x27;klay_gasPrice&#x27;, []);
+    const sufficientGas = &#x27;0x40000&#x27;;
     const tx = {
         type: 49,
         from: provider.selectedAddress,
@@ -185,13 +181,13 @@ async function claimFeeDelegated(domain, transaction) {
         gasPrice: gasPrice.result,
         gas: sufficientGas,
     };
-    const signedTx = await provider.send('klay_signTransaction', [tx]);
+    const signedTx = await provider.send(&#x27;klay_signTransaction&#x27;, [tx]);
  
-    // send the signed transaction to the fee delegation server
+    // 서명된 트랜잭션을 수수료 위임 서버로 전송
     const response = await fetch(`${domain}/api/signAsFeePayer`, {
-        method: 'POST',
+        method: &#x27;POST&#x27;,
         headers: {
-            'Content-Type': 'application/json',
+            &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
         },
         body: JSON.stringify({
             userSignedTx: {raw: signedTx.result.rawTransaction},
@@ -201,16 +197,16 @@ async function claimFeeDelegated(domain, transaction) {
 }
 ```
 
-## Complete Example: From Claim to Broadcast
+## 전체 예시: 클레임에서 브로드캐스트까지
 
-**⚠️** The example code provided is for illustrative purposes only. You should review and modify it appropriately to ensure it fits securely within your production environment.\
+**⚠️** 제공된 예제 코드는 설명 목적으로만 사용됩니다. 실제 운영 환경에서 안전하게 적용될 수 있도록 검토 및 수정해야 합니다.\
 \
-We do not take any responsibility for issues or damages caused by using this code as-is.
+본 코드를 그대로 사용함으로써 발생하는 문제나 손해에 대해 당사는 어떠한 책임도 지지 않습니다.
 
 ```bash
 function toBase64(buffer) {
     const bytes = new Uint8Array(buffer);
-    let binary = '';
+    let binary = &#x27;&#x27;;
     for (let b of bytes) {
         binary += String.fromCharCode(b);
     }
@@ -221,33 +217,33 @@ async function calcHmac(clientSecret, clientId, method, path, timestamp, salt) {
     const msg = `${clientId}|${method.toUpperCase()}|${path}|${timestamp}|${salt}`;
     const enc = new TextEncoder();
     const key = await crypto.subtle.importKey(
-        'raw',
+        &#x27;raw&#x27;,
         enc.encode(clientSecret),
-        {name: 'HMAC', hash: {name: 'SHA-256'}},
+        {name: &#x27;HMAC&#x27;, hash: {name: &#x27;SHA-256&#x27;}},
         false,
-        ['sign'],
+        [&#x27;sign&#x27;],
     );
-    const sig = await crypto.subtle.sign('HMAC', key, enc.encode(msg));
+    const sig = await crypto.subtle.sign(&#x27;HMAC&#x27;, key, enc.encode(msg));
     return toBase64(sig);
 }
  
 async function connect() {
     const provider = window.klaytn;
     await provider.request({
-        method: 'klay_requestAccounts',
+        method: &#x27;klay_requestAccounts&#x27;,
         params: [],
     });
 }
  
 async function load(domain, clientId, clientSecret) {
     const request = {
-        method: 'GET',
+        method: &#x27;GET&#x27;,
         path: `/api/b2b-v1/dapp-settlements/${clientId}/signed-receivable`,
         timestamp: Math.floor(Date.now() / 1000).toString(),
         salt: crypto.randomUUID()
     };
  
-    // prepare the hmac
+    // hmac 준비
     const signature = await calcHmac(
         clientSecret,
         clientId,
@@ -257,25 +253,25 @@ async function load(domain, clientId, clientSecret) {
         request.salt,
     );
  
-    // load the transaction
+    // 트랜잭션 로드
     const response = await fetch(
         `${domain}${request.path}`, {
             method: request.method,
             headers: {
-                'X-Auth-Client-Id': clientId,
-                'X-Auth-Timestamp': request.timestamp,
-                'X-Auth-Salt': request.salt,
-                'X-Auth-Signature': signature,
+                &#x27;X-Auth-Client-Id&#x27;: clientId,
+                &#x27;X-Auth-Timestamp&#x27;: request.timestamp,
+                &#x27;X-Auth-Salt&#x27;: request.salt,
+                &#x27;X-Auth-Signature&#x27;: signature,
             },
         });
     return await response.json();
 }
  
 async function claim(transaction) {
-    // sign the transaction
+    // 트랜잭션 서명
     const provider = window.klaytn;
-    const gasPrice = await provider.send('klay_gasPrice', []);
-    const sufficientGas = '0x40000';
+    const gasPrice = await provider.send(&#x27;klay_gasPrice&#x27;, []);
+    const sufficientGas = &#x27;0x40000&#x27;;
     const tx = {
         from: provider.selectedAddress,
         to: transaction.to,
@@ -284,14 +280,14 @@ async function claim(transaction) {
         gasPrice: gasPrice.result,
         gas: sufficientGas,
     };
-    return await provider.send('klay_sendTransaction', [tx]);
+    return await provider.send(&#x27;klay_sendTransaction&#x27;, [tx]);
 }
  
 async function claimFeeDelegated(domain, transaction) {
-    // sign the transaction
+    // 트랜잭션 서명
     const provider = window.klaytn;
-    const gasPrice = await provider.send('klay_gasPrice', []);
-    const sufficientGas = '0x40000';
+    const gasPrice = await provider.send(&#x27;klay_gasPrice&#x27;, []);
+    const sufficientGas = &#x27;0x40000&#x27;;
     const tx = {
         type: 49,
         from: provider.selectedAddress,
@@ -301,13 +297,13 @@ async function claimFeeDelegated(domain, transaction) {
         gasPrice: gasPrice.result,
         gas: sufficientGas,
     };
-    const signedTx = await provider.send('klay_signTransaction', [tx]);
+    const signedTx = await provider.send(&#x27;klay_signTransaction&#x27;, [tx]);
  
-    // send the signed transaction to the fee delegation server
+    // 서명된 트랜잭션을 수수료 위임 서버로 전송
     const response = await fetch(`${domain}/api/signAsFeePayer`, {
-        method: 'POST',
+        method: &#x27;POST&#x27;,
         headers: {
-            'Content-Type': 'application/json',
+            &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
         },
         body: JSON.stringify({
             userSignedTx: {raw: signedTx.result.rawTransaction},
