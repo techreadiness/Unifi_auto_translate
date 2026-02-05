@@ -5,14 +5,14 @@ metaLinks:
       https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi/fungible-token-information
 ---
 
-# Fungible Token Information
+# 대체 가능 토큰 정보
 
-If you want to expose it in the Apps Wallet or Kaia Wallet's search list, please submit it.
+앱스 지갑 또는 카이아 지갑의 검색 목록에 노출되기를 원하시면 제출해 주십시오.
 
-| Label        | Guide                                                                | Example                                                                   |
+| 레이블        | 가이드                                                                | 예시                                                                   |
 | ------------ | -------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| Token Name   | English is only allowed                                              | Tether USD                                                                |
-| Token Ticker | symbol for the fungible token                                        | USDt                                                                      |
-| On Kaiascan  | The contract address where the FT (Fungible Token) has been deployed | 0xd077a400968890eacc75cdc901f0356c943e4fdb                                |
-| Token Image  | Please upload the token image into the box                           | <img src="../.gitbook/assets/image (11).png" alt="" data-size="original"> |
-| Web Site     | Please submit the FT's Official Web site                             | [https://tether.io](https://tether.io)                                    |
+| 토큰 이름   | 영어만 허용됩니다                                              | Tether USD                                                                |
+| 토큰 티커 | 대체 가능 토큰의 심볼                                        | USDt                                                                      |
+| Kaiascan 상  | FT(대체 가능 토큰)가 배포된 계약 주소                            | 0xd077a400968890eacc75cdc901f0356c943e4fdb                                |
+| 토큰 이미지 | 토큰 이미지를 상자에 업로드해 주세요                           | <img src="../.gitbook/assets/image (11).png" alt="" data-size="original"> |
+| 웹사이트     | FT의 공식 웹사이트를 제출해 주세요                             | [https://tether.io](https://tether.io)                                    |
