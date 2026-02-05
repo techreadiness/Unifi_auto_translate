@@ -1,22 +1,28 @@
 ---
 hidden: true
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/join-us-1
 ---
 
 # Join Us
 
-## ✅ Unifi Apps Onboarding Guide
+## ✅ Unifi Apps 온보딩 가이드
 
-Unifi Apps can be onboarded through multiple version combinations.\
-Developers may select the option that best fits their service architecture and target users.
+Unifi Apps는 다양한 버전 조합을 통해 온보딩할 수 있습니다. 개발자는 자신의 서비스 아키텍처와 타겟 사용자에게 가장 적합한 옵션을 선택할 수 있습니다.
 
-**Available Version Combinations**
+**지원 가능한 버전 조합**
 
 * LINE MINI App & LINE Login LIFF & Web
 * LINE MINI App & Web
 * LINE Login LIFF & Web
 * LINE MINI App or Web (Single Type)
-  * 📌 LINE Login LIFF cannot be selected as a Single Type, as it is technically implemented on top of a Web service.\
-    Therefore, services using LINE Login LIFF must be launched in combination with a Web version.
+
+📌 주의
+
+* LINE Login LIFF는 기술적으로 Web 서비스 위에서 구현되므로, Single Type(단독 형태)으로 선택할 수 없습니다. 따라서 LINE Login LIFF를 사용하는 서비스는 반드시 Web 버전과 함께 런칭해야 합니다.
+
+
 
 **Supported Onboarding Types**
 

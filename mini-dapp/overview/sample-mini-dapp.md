@@ -1,6 +1,13 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/mini-dapp/overview/sample-mini-dapp
+---
+
 # Sample Mini Dapp
 
-## Explore Various Mini Dapps from Dapp Portal
+## Explorer Various Mini Dapps from Dapp Portal
 
 * LINE Version : [https://liff.line.me/2006533014-8gD06D64](https://liff.line.me/2006533014-8gD06D64)
 * Web Version : [https://dappportal.io](https://www.dappportal.io/)&#x20;

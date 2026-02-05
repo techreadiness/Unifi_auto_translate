@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi/reward/how-to-monitor-mission-completion
+---
+
 # How to monitor mission completion
 
 Apps can list the mission-reward(KAIA/USDt, NFT, point) implemented within their Apps on the Unifi Apps. Each reward is listed and tracked on the Unfi Apps in the following ways.

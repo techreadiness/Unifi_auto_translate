@@ -1,3 +1,9 @@
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/review-guidelines
+---
+
 # Review Guidelines
 
 The Kaia Wave team reviews the Mini Dapp demo version based on the criteria below.

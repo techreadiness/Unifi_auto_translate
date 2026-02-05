@@ -1,81 +1,51 @@
 ---
 hidden: true
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps-review-guidelines
 ---
 
-# Unifi Apps
+# Unifi Apps 심사 가이드라인
 
-## How to build Unifi Apps?
+## 1️⃣ 지원 서비스 버전
 
-<div data-full-width="true"><figure><img src="../.gitbook/assets/development_flow.png" alt=""><figcaption></figcaption></figure></div>
+Unifi Apps는 다음 세 가지 버전을 지원하며, 개발자는 자신의 서비스 전략에 가장 적합한 버전을 선택할 수 있습니다.
 
-This guide explains the required integration architecture and the sequential steps for deploying Unifi Apps across LINE and Web environments.
+**지원 가능한 버전 조합 (Available Version Combinations)**
 
-\
-Please follow each step based on the specific platform or integration type you plan to support.
+* LINE MINI App & LINE Login LIFF & Web
+* LINE MINI App & Web
+* LINE Login LIFF & Web
 
-### ① LINE Version Development — LIFF SDK Integration
+📌 주의: 선택한 버전에 따라 요구되는 심사 가이드라인이 달라집니다.
 
-Unifi Apps can provide a LINE-based experience in two ways:&#x20;
+📌 LINE 연동에 대한 자세한 정보는 아래에서 확인하실 수 있습니다.
 
-* LINE MINI App
-* LINE Login LIFF
+* [LINE MINI App >](https://developers.line.biz/en/docs/line-mini-app/)&#x20;
+* [LINE Login LIFF >](https://developers.line.biz/en/docs/liff/)
 
-Both run inside the LINE mobile app and are implemented using the **LIFF SDK**, but they use different channel types and are onboarded through different tracks.
+## 2️⃣ 심사 가이드라인 선택 가이드&#x20;
 
-#### Key Differences
+심사 가이드라인은 크게 두 가지로 구성됩니다.
 
-| Item                 | LINE MINI App                                                              | LINE Login LIFF                                                                              |
-| -------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| Channel              | LINE MINI App Channel                                                      | LINE Login Channel                                                                           |
-| App Store policy     | Compliance with App Store policies                                         | -                                                                                            |
-| LIFF SDK Usage       | Yes                                                                        | Yes                                                                                          |
-| Unifi Apps SDK Usage | <ul><li>Yes</li><li>WalletProvider</li><li>PaymentProvider (IAP)</li></ul> | <ul><li>Yes</li><li>WalletProvider</li><li>PaymentProvider<br>(Crypto/Stripe Fiat)</li></ul> |
+1. 버전별 심사 가이드라인 (Version-specific Review Guidelines)
+2. 공통 가이드라인: "성공적인 Unifi Apps 구축 방법" (모든 버전 필수)
 
-📌 Refer to [**LINE Integration**](../mini-dapp/line-integration/) documentation for detailed instructions.\
-📌 LINE MINI App and LINE Login LIFF are technically implemented by first integrating the Unifi Apps SDK into a base Web service, and then adding the LIFF SDK on top of it.\
-Therefore, the Web and Unifi Apps SDK environment is inherently included from a technical perspective.
+귀사의 Unifi Apps가 지원하는 버전에 맞춰 올바른 가이드라인을 선택해 주세요.
 
-### ② Web Version Development
+| 버전              | 필수 심사 가이드라인                       | 공통 가이드라인              |
+| --------------- | --------------------------------- | --------------------- |
+| LINE MINI App   | LINE MINI App 버전 심사 가이드라인         | 성공적인 Unifi Apps 구축 방법 |
+| LINE Login LIFF | LINE Login LIFF & Web 버전 심사 가이드라인 | 성공적인 Unifi Apps 구축 방법 |
+| Web             | LINE Login LIFF & Web 버전 심사 가이드라인 | 성공적인 Unifi Apps 구축 방법 |
 
-Development of a **web browser version** for Non-LINE users is **recommended**.
+### 📌 심사 가이드라인 선택 예시
 
-To support the following features, the **Unifi Apps SDK must be integrated** into the web version:
+<table><thead><tr><th width="321.96875">선택한 버전 조합</th><th>필수 가이드라인</th></tr></thead><tbody><tr><td>LINE MINI App &#x26; LINE Login LIFF &#x26; Web</td><td><ul><li>LINE MINI App 버전 심사 가이드라인</li><li>LINE Login LIFF &#x26; Web 버전 심사 가이드라인</li></ul></td></tr><tr><td>LINE MINI App &#x26; Web</td><td><ul><li>LINE MINI App 버전 심사 가이드라인</li><li>LINE Login LIFF &#x26; Web 버전 심사 가이드라인</li></ul></td></tr><tr><td>LINE Login LIFF &#x26; Web</td><td>LINE Login LIFF &#x26; Web 버전 심사 가이드라인</td></tr></tbody></table>
 
-* **WalletProvider**
-* **PaymentProvider (Crypto / Stripe Fiat)**
+## 📝 **개발자를 위한 참고 사항 (Notes for Developers)**
 
-### ③ Web3 Integration (WalletProvider)
-
-Unifi Apps SDK enables wallet features such as account creation and ownership verification.
-
-| Version         | Supported Wallet Types                                                                     |
-| --------------- | ------------------------------------------------------------------------------------------ |
-| LINE MINI App   | <ul><li>LINE (Liff)</li><li>OKX, Bitget Wallet</li></ul>                                   |
-| LINE Login LIFF | <ul><li>LINE (Liff)</li><li>OKX, Bitget Wallet</li></ul>                                   |
-| Web             | <ul><li>Social Login (Web)</li><li>Kaia Wallet App/Extension, OKX, Bitget Wallet</li></ul> |
-
-📌 Refer to [**Wallet Provider**](../mini-dapp/mini-dapp-sdk/wallet/) documentation for detailed instructions.
-
-### ④ Payment Integration (PaymentProvider)
-
-To support monetization, all Unifi Apps **must provide in-app item purchases**.
-
-| Version         | Supported Payment Methods       |
-| --------------- | ------------------------------- |
-| LINE MINI App   | IAP payments                    |
-| LINE Login LIFF | Crypto & Stripe (Fiat) payments |
-| Web             | Crypto & Stripe (Fiat) payments |
-
-📌 Refer to [Payment Provider](../mini-dapp/mini-dapp-sdk/payment/) documentation for detailed instructions.
-
-### ⑤ App Review — Quality & Compliance Check
-
-Submission and review providers vary by version:
-
-<table><thead><tr><th width="166.32421875">Version</th><th>Demo Submission/Review Authority</th></tr></thead><tbody><tr><td>LINE MINI App</td><td><ul><li>LINE NEXT (Pre-review)</li><li>LY (Final approval)</li><li>Submission to LY is required <strong>after LINE NEXT review is completed</strong></li></ul></td></tr><tr><td>LINE Login LIFF</td><td><ul><li>LINE NEXT</li><li>Submission via email</li></ul></td></tr><tr><td>Web</td><td><ul><li>LINE NEXT</li><li>Submission via email</li></ul></td></tr></tbody></table>
-
-### ⑥ Onboarding & Launch
-
-<table><thead><tr><th width="160.8515625">Version</th><th>Featured Placement</th><th>Exposure Area</th><th>Served Users</th></tr></thead><tbody><tr><td>LINE MINI App</td><td>LINE App &#x26; Unifi</td><td><ul><li>MINI Tab in LINE App</li><li>Apps in Unifi</li></ul></td><td>Japan LINE Users</td></tr><tr><td>LINE Login LIFF</td><td>Unifi</td><td>Apps in Unifi</td><td>Global LINE Users</td></tr><tr><td>Web</td><td>Unifi</td><td>Apps in Unifi</td><td>Global Users</td></tr></tbody></table>
-
-Additionally, if you register your information through a separate track, you may be featured on the Unifi and also sell NFTs.
+* LINE MINI App 버전이 포함된 경우, 두 가지 가이드라인 세트가 모두 필요합니다.
+* 모든 버전은 "공통 가이드라인(Common Guideline)"을 준수할 것을 강력히 권장합니다.
+* 이 가이드라인들은 심사 제출 전 자가 점검(Self-check) 체크리스트 역할을 합니다.

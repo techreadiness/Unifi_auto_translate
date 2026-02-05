@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/mini-dapp/mini-dapp-sdk/wallet
+---
+
 # Wallet
 
 The WalletProvider follows the [EIP-1193](https://eips.ethereum.org/EIPS/eip-1193) standard and supports the EventEmitter interface defined in it.

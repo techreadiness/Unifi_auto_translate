@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/dapp-portal/collection-and-drops
+---
+
 # Collection & Drops
 
 ## 1. Submit Information for NFT Collections and Drops <a href="#id-1.-submit-information-for-nft-collections-and-drops" id="id-1.-submit-information-for-nft-collections-and-drops"></a>

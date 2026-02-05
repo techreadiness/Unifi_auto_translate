@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/dapp-portal/collection-and-drops/upload-nft-information
+---
+
 # Upload NFT Information
 
 ## A. Pre-reveal(Optional) <a href="#a.-pre-reveal" id="a.-pre-reveal"></a>

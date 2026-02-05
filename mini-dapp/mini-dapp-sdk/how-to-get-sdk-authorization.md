@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/mini-dapp/mini-dapp-sdk/how-to-get-sdk-authorization
+---
+
 # How to Get SDK Authorization
 
 To integrate Mini Dapp SDK, you need to get `clientId` and `clientSecret` from Dapp Portal team.

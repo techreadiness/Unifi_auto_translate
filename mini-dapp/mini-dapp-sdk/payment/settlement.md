@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/mini-dapp/mini-dapp-sdk/payment/settlement
+---
+
 # Settlement
 
 **The contents of this document are subject to change based on future circumstances or policy revisions.**

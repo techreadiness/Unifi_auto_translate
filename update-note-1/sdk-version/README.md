@@ -1,3 +1,9 @@
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/update-note-1/sdk-version
+---
+
 # SDK Version
 
 ## Latest Version (v1.5.2)

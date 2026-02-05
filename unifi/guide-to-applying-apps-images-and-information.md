@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi/guide-to-applying-apps-images-and-information
+---
+
 # Guide to Applying Apps Images and Information
 
 The Unifi Apps interface is structured as detailed below. Your applications can be featured (or displayed) on the Home screen by leveraging initiatives such as reward programs, the Token Generation Event (TGE), and other promotional opportunities.

@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/dapp-portal/collection-and-drops/drops-information
+---
+
 # Drops Information
 
 Order of writing: First, Mint Type; second, Airdrop; third, Presale; fourth, Public. If there are no plans for drops, writing is not required. If the Airdrop stage is mandatory in the collection, it must be conducted before the presale and public stages. If the Airdrop stage needs to occur during the presale or public stage, it should be done with a new collection.

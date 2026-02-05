@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi/how-to-mint-nfts-and-set-up-drops./collection-information
+---
+
 # Collection Information
 
 ### Before Issuing the Collection

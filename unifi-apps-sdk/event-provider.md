@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps-sdk/event-provider
+---
+
 # Event Provider
 
 <figure><img src="../.gitbook/assets/EventProvider_Unifi Apps Server.png" alt=""><figcaption></figcaption></figure>

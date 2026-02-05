@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi/how-to-mint-nfts-and-set-up-drops./upload-nft-information
+---
+
 # Upload NFT Information
 
 ## A. Original Contents(Mandatory) <a href="#b.-original-contents" id="b.-original-contents"></a>

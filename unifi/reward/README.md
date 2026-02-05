@@ -1,3 +1,9 @@
+---
+metaLinks:
+  alternates:
+    - https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi/reward
+---
+
 # Reward
 
 **※ The distribution of Tokens (KAIA or USDT), NFTs, and Points based on specific condition fulfillment must be implemented directly within the Apps(**[**https://docs.kaia.io/references/json-rpc/references/**](https://docs.kaia.io/references/json-rpc/references/)**), and only missions with these features fully implemented can be listed on the Unfi Apps. (NFT minting must be carried out exclusively through the Unifi Apps)**

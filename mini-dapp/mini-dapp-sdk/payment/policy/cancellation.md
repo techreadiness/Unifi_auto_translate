@@ -1,8 +1,15 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/mini-dapp/mini-dapp-sdk/payment/policy/cancellation
+---
+
 # Cancellation
 
 #### STRIPE
 
-* Case.1 : In the case where create API is hosted but SDK's startPayment has not been excuted
+* Case.1 :  In the case where create API is hosted but SDK's startPayment has not been excuted
   * Max time for cancellation : 2100sec + 180sec
   * Response if payment is excuted after cancellation : Error when hosting SDK's startPayment
 * Case.2 : SDK's startPayment is excuted but users don't approve on STRIPE page

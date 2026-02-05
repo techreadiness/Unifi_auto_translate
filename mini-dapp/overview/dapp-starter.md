@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/mini-dapp/overview/dapp-starter
+---
+
 # Dapp Starter
 
 When you're new to Dapp development, it can be difficult to know where to begin. In such cases, the **Dapp Starter** can serve as a helpful starting point.

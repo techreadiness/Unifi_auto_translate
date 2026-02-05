@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/mini-dapp/mini-dapp-sdk/wallet/domain-verification-via-reown
+---
+
 # Domain Verification via Reown
 
 ## How to work Bitget Wallet from Mini Dapp SDK
@@ -29,6 +36,6 @@ Please follow the guide below to complete the domain verification and share the 
 
 ### 2. Submit ProjectId to Dapp Portal team
 
-* Submit `ProjectId` after verification to add it to Mini Dapp SDK.
+* Sumit `ProjectId` after verification to add it to Mini Dapp SDK.
 * Telegram: <mark style="color:blue;">**@dappportal\_official**</mark>
   * If you are using a technical support channel through a different route, you can share `ProjectId` through that channel.

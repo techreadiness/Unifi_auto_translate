@@ -1,3 +1,10 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi/how-to-mint-nfts-and-set-up-drops./drops-information
+---
+
 # Drops Information
 
 Order of writing: First, Collection & Total Supply; second, Airdrop; third, Presale; fourth, Public.
