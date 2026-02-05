@@ -5,45 +5,43 @@ metaLinks:
     - https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi
 ---
 
-# Unifi
+# 유니피
 
-## Home
+## 홈
 
-The section introduces the interest rate obtainable when depositing USDt on Unifi, allowing users to preview the interest they can earn for a specific deposit amount.Furthermore, users are informed that they can receive additional interest rate benefits by depositing above a certain amount or by making payments within the Apps. This information is displayed below the deposit simulation, enabling users to check the actual additional benefits they can receive based on various actions, such as depositing and playing the Apps.Additionally, the Apps and rewards featured on Unifi Home are selected from those that are currently running USDt missions.
+이 섹션은 유니피에 USDt를 예치할 때 적용되는 이자율을 소개하며, 사용자가 특정 예치 금액에 대해 얻을 수 있는 이자를 미리 확인할 수 있도록 합니다. 또한, 일정 금액 이상 예치하거나 앱 내에서 결제할 경우 추가 이자율 혜택을 받을 수 있음을 안내합니다. 이 정보는 예금 시뮬레이션 아래에 표시되어, 예금 및 앱 이용과 같은 다양한 행동에 따라 실제로 받을 수 있는 추가 혜택을 확인하도록 합니다. 또한 유니피 홈에 소개된 앱과 보상은 현재 USDt 미션을 진행 중인 것들 중에서 선별됩니다.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>***
 
-***
-
-## Apps&#x20;
+## 앱
 
 {% tabs %}
-{% tab title="Reward" %}
-This page introduces the Apps currently played by millions of users and announces news regarding ongoing events and missions within those Apps. The very top section can be used to announce ongoing events or scheduled TGE (Token Generation Event) news, following discussions with the Unifi Team.&#x20;
+{% tab title=&quot;보상&quot; %}
+이 페이지는 현재 수백만 사용자가 이용 중인 앱을 소개하고, 해당 앱 내 진행 중인 이벤트 및 미션 관련 소식을 알립니다. 최상단 섹션은 유니피 팀과의 협의 후 진행 중인 이벤트나 예정된 TGE(토큰 생성 이벤트) 소식을 공지하는 데 활용될 수 있습니다.
 
-Furthermore, it can feature ongoing missions with USDt, Kaia, or NFT rewards. Up to 3 missions can be displayed, and their exposure priority is determined by internal review, which considers factors such as the seamlessness of reward distribution, mission difficulty, and the popularity of the Apps.&#x20;
+또한 USDt, 카이아(Kaia), NFT 보상이 제공되는 진행 중인 미션을 소개할 수 있습니다. 최대 3개의 미션을 표시할 수 있으며, 노출 우선순위는 보상 지급의 원활성, 미션 난이도, 앱 인기도 등의 요소를 고려한 내부 검토를 통해 결정됩니다.
 
-The lower section of the screen is where all Apps are exposed, and Apps selected for promotion can be featured in the Editor's Pick section. Additionally, the screen allows users to easily find desired Apps by offering sorting options based on specific categories, popularity, and latest updates.
+화면 하단에는 모든 앱이 노출되며, 홍보 대상으로 선정된 앱은 &#x27;편집자 추천&#x27; 섹션에 소개될 수 있습니다. 또한 특정 카테고리, 인기도, 최신 업데이트 기준의 정렬 옵션을 제공하여 사용자가 원하는 앱을 쉽게 찾을 수 있도록 합니다.
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 <br>
+
 {% endtab %}
 
-{% tab title="Market" %}
-This page allows users to buy or sell NFTs issued by the Unifi Team. The topmost area provides buttons for user-to-user buying and selling (P2P trading), and the Ranking area below displays rankings based on trading volume. Rankings are aggregated daily, weekly, and monthly. The Drops area is where B2C sales are posted. The Apps team can sell NFTs issued in discussion with the Unifi Team. Users can click on a desired thumbnail to obtain information about the NFT and proceed with the purchase.
+{% tab title=&quot;마켓&quot; %}
+이 페이지에서는 유니피 팀이 발행한 NFT를 구매하거나 판매할 수 있습니다. 최상단 영역에는 사용자 간 거래(P2P 거래)를 위한 버튼이 제공되며, 하단의 랭킹 영역에는 거래량 기준 순위가 표시됩니다. 순위는 일간, 주간, 월간으로 집계됩니다. 드롭스 영역에는 B2C 판매가 게시됩니다. 앱 팀은 유니피 팀과 협의하여 발행된 NFT를 판매할 수 있습니다. 사용자는 원하는 썸네일을 클릭하여 NFT 정보를 확인하고 구매를 진행할 수 있습니다.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
-{% endtab %}
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>{% endtab %}
 {% endtabs %}
 
 ***
 
-## Trade
+## 거래
 
-This page allows users to swap their held tokens for USDt, KAIA, or other KAIA-based tokens. On this page, users can check the tokens they have acquired through playing Apps and can also navigate to Apps where they can collect more coins.
+이 페이지에서는 보유한 토큰을 USDt, KAIA 또는 기타 KAIA 기반 토큰으로 교환할 수 있습니다. 사용자는 앱 플레이를 통해 획득한 토큰을 확인하고, 추가 코인을 획득할 수 있는 앱으로 이동할 수도 있습니다.
 
-In addition, the top and middle sections of the screen provide information about tokens that are either scheduled for listing or have been successfully listed. This information can be used to attract user attention.
+또한 화면 상단과 중간 섹션에는 상장 예정이거나 성공적으로 상장된 토큰에 대한 정보를 제공합니다. 이 정보는 사용자 관심을 유도하는 데 활용될 수 있습니다.
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
@@ -51,8 +49,8 @@ In addition, the top and middle sections of the screen provide information about
 
 ***
 
-## My
+## 내 자산
 
-This screen displays the user's held assets. On this screen, users can view their owned KAIA-based FTs (Fungible Tokens) and NFTs (Non-Fungible Tokens), as well as the interest earned from USDt deposits and the percentage change (increase or decrease) in the current value of their FTs compared to the time of purchase. Additionally, users can add other wallets to check the asset details held within those wallets.&#x20;
+이 화면은 사용자가 보유한 자산을 표시합니다. 사용자는 이 화면에서 소유한 KAIA 기반 대체 가능 토큰(FT) 및 대체 불가능 토큰(NFT)을 확인할 수 있으며, USDt 예금으로 발생한 이자와 구매 시점 대비 현재 FT 가치의 변동률(증가 또는 감소)도 확인할 수 있습니다. 또한 사용자는 다른 지갑을 추가하여 해당 지갑 내 보유 자산 상세 정보를 확인할 수 있습니다. 
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
