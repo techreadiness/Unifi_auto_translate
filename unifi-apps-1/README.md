@@ -5,9 +5,9 @@ metaLinks:
     - https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps
 ---
 
-# 유니피 앱
+# Unifi Apps
 
-## 유니피 앱 구축 방법
+## Unifi Apps 구축 방법
 
 <div data-full-width="true"><figure><img src="../.gitbook/assets/development_flow.png" alt=""><figcaption></figcaption></figure></div>
 
@@ -18,7 +18,7 @@ metaLinks:
 
 ### ① LINE 버전 개발 — LIFF SDK 통합
 
-유니파이 앱은 두 가지 방식으로 LINE 기반 경험을 제공할 수 있습니다:
+Unifi App은 두 가지 방식으로 LINE 기반 경험을 제공할 수 있습니다:
 
 * LINE 미니 앱
 * LINE 로그인 LIFF
@@ -27,11 +27,11 @@ metaLinks:
 
 #### 주요 차이점
 
-| 항목                 | LINE 미니 앱                                                              | LINE 로그인 LIFF                                                                              |
-| -------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| 채널              | LINE 미니 앱 채널                                                      | LINE 로그인 채널                                                                           |
-| 앱 스토어 정책     | 앱 스토어 정책 준수                                                                 | -                                                                                            |
-| LIFF SDK 사용       | 예                                                                        | 예                                                                                          |
+| 항목                | LINE 미니 앱                                                      | LINE 로그인 LIFF                                                                   |
+| ----------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| 채널                | LINE 미니 앱 채널                                                   | LINE 로그인 채널                                                                     |
+| 앱 스토어 정책          | 앱 스토어 정책 준수                                                    | -                                                                               |
+| LIFF SDK 사용       | 예                                                              | 예                                                                               |
 | Unifi Apps SDK 사용 | <ul><li>예</li><li>WalletProvider</li><li>결제 제공자(IAP)</li></ul> | <ul><li>예</li><li>WalletProvider</li><li>결제 제공자<br>(암호화폐/Stripe 법정화폐)</li></ul> |
 
 📌 자세한 지침은 [**LINE 통합**](../mini-dapp/line-integration/) 문서를 참조하세요.\
@@ -51,10 +51,10 @@ metaLinks:
 
 Unifi Apps SDK는 계정 생성 및 소유권 확인과 같은 지갑 기능을 지원합니다.
 
-| 버전         | 지원되는 지갑 유형                                                                     |
-| --------------- | ------------------------------------------------------------------------------------------ |
-| LINE MINI 앱   | <ul><li>LINE (Liff)</li><li>OKX, Bitget Wallet</li></ul>                                   |
-| LINE 로그인 LIFF | <ul><li>LINE (Liff)</li><li>OKX, Bitget 지갑</li></ul>                                   |
+| 버전            | 지원되는 지갑 유형                                                             |
+| ------------- | ---------------------------------------------------------------------- |
+| LINE MINI 앱   | <ul><li>LINE (Liff)</li><li>OKX, Bitget Wallet</li></ul>               |
+| LINE 로그인 LIFF | <ul><li>LINE (Liff)</li><li>OKX, Bitget 지갑</li></ul>                   |
 | 웹             | <ul><li>소셜 로그인 (웹)</li><li>Kaia 지갑 앱/확장 프로그램, OKX, Bitget 지갑</li></ul> |
 
 📌 자세한 지침은 [**지갑 제공업체**](../mini-dapp/mini-dapp-sdk/wallet/) 문서를 참조하세요.
@@ -63,9 +63,9 @@ Unifi Apps SDK는 계정 생성 및 소유권 확인과 같은 지갑 기능을 
 
 수익화를 지원하기 위해 모든 Unifi 앱은 **앱 내 아이템 구매 기능을 반드시 제공해야** 합니다.
 
-| 버전         | 지원 결제 수단       |
-| --------------- | ------------------------------- |
-| LINE MINI 앱   | IAP 결제                    |
+| 버전            | 지원 결제 수단               |
+| ------------- | ---------------------- |
+| LINE MINI 앱   | IAP 결제                 |
 | LINE 로그인 LIFF | 암호화폐 및 Stripe(법정화폐) 결제 |
 | 웹             | 암호화폐 및 Stripe(법정화폐) 결제 |
 
@@ -75,6 +75,10 @@ Unifi Apps SDK는 계정 생성 및 소유권 확인과 같은 지갑 기능을 
 
 제출 및 심사 제공자는 버전에 따라 다릅니다:
 
-<table><thead><tr><th width="166.32421875">버전</th><th>데모 제출/검토 권한</th></tr></thead><tbody><tr><td>LINE MINI 앱</td><td><ul><li>LINE NEXT (사전 검토)</li><li>LY (최종 승인)</li><li><strong>LINE NEXT 검토 완료 후</strong> LY 제출 필수</li></ul></td></tr><tr><td>LINE 로그인 LIFF</td><td><ul><li>LINE NEXT</li><li>이메일 제출</li></ul></td></tr><tr><td>웹</td><td><ul><li>LINE NEXT</li><li>이메일 제출</li></ul></td></tr></tbody></table>⑥ 온보딩 및 출시
+<table><thead><tr><th width="166.32421875">버전</th><th>데모 제출/검토 권한</th></tr></thead><tbody><tr><td>LINE MINI 앱</td><td><ul><li>LINE NEXT (사전 검토)</li><li>LY (최종 승인)</li><li><strong>LINE NEXT 검토 완료 후</strong> LY 제출 필수</li></ul></td></tr><tr><td>LINE 로그인 LIFF</td><td><ul><li>LINE NEXT</li><li>이메일 제출</li></ul></td></tr><tr><td>웹</td><td><ul><li>LINE NEXT</li><li>이메일 제출</li></ul></td></tr></tbody></table>
 
-<table><thead><tr><th width="160.8515625">버전</th><th>추천 배치</th><th>노출 영역</th><th>서비스 제공 사용자</th></tr></thead><tbody><tr><td>LINE MINI 앱</td><td>LINE 앱 &amp; Unifi</td><td><ul><li>LINE 앱 내 MINI 탭</li><li>Unifi 내 앱</li></ul></td><td>일본 LINE 사용자</td></tr><tr><td>LINE 로그인 LIFF</td><td>Unifi</td><td>Unifi의 앱</td><td>글로벌 LINE 사용자</td></tr><tr><td>웹</td><td>Unifi</td><td>Unifi의 앱</td><td>글로벌 사용자</td></tr></tbody></table>또한 별도의 트랙을 통해 정보를 등록하면 유니피에 소개될 수 있으며 NFT를 판매할 수도 있습니다.
+⑥ 온보딩 및 출시
+
+<table><thead><tr><th width="160.8515625">버전</th><th>추천 배치</th><th>노출 영역</th><th>서비스 제공 사용자</th></tr></thead><tbody><tr><td>LINE MINI 앱</td><td>LINE 앱 &#x26; Unifi</td><td><ul><li>LINE 앱 내 MINI 탭</li><li>Unifi 내 앱</li></ul></td><td>일본 LINE 사용자</td></tr><tr><td>LINE 로그인 LIFF</td><td>Unifi</td><td>Unifi의 앱</td><td>글로벌 LINE 사용자</td></tr><tr><td>웹</td><td>Unifi</td><td>Unifi의 앱</td><td>글로벌 사용자</td></tr></tbody></table>
+
+또한 별도의 트랙을 통해 정보를 등록하면 유니피에 소개될 수 있으며 NFT를 판매할 수도 있습니다.
