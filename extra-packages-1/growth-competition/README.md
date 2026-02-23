@@ -5,101 +5,105 @@ metaLinks:
       https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/extra-packages-1/growth-competition
 ---
 
-# Growth Competition
+# 성장 챌린지
 
-## Overview
+## 개요
 
-The Unifi Apps Growth Competition aims to foster rapid user growth, reward top-performing projects, and drive meaningful market traction. Our goal is to identify and support standout Unifi Apps that achieve significant monthly active user (MAU) milestones and notable on-chain token holder counts.
+Unifi Apps Growth Competition은 신속한 유저 성장을 촉진하고, 우수한 성과를 거둔 프로젝트에 보상을 제공하며, 의미 있는 시장 견인력을 확보하는 것을 목표로 합니다. 본 대회는 유의미한 월간 활성 사용자 수(MAU) 및 온체인 토큰 홀더 수를 달성한 우수 Unifi 앱을 발굴하고 지원하고자 합니다.
 
-## Competition Summary
+## 대회 요약
 
-The objective is to help Unifi Apps rapidly achieve millions of MAU and on-chain token holders.
+본 대회의 목적은 Unifi 앱들이 수백만 명의 MAU와 온체인 토큰 홀더를 빠르게 확보할 수 있도록 돕는 것입니다.
 
-* In February and March–April (final timeline to be decided in February 2025), competitions based on key metrics will select the top Unifi Apps for marketing and liquidity support.
-* A ranking dashboard will go live in February 7.
-* The top 10 Unifi Apps will be selected in Mid February and March-April (final timeline to be decided in February 2025) based on key metrics.
-* Among the Top 10, 2 teams will be selected for growth packages based on growth potential evaluations by the foundation and LINE NEXT. They will receive:
-  * **up to $0.5M** in marketing support and top exposure on the Unifi
-  * **up to $0.1M** in liquidity support
-  * Minimum criteria for receiving the growth package may be added later.
-* All Unifi Apps developed on the Kaia platform will be subject to mandatory participation. Token airdrops to users at the Token Generation Event (TGE) stage, inclusive of any pre-distributed points, are required.
+* 진행 일정: 2월과 3\~4월(최종 일정은 2025년 2월 결정 예정)에 주요 지표를 바탕으로 대회를 진행하여, 마케팅 및 유동성 지원을 받을 최상위 Unifi 앱들을 선정합니다.
+* 랭킹 대시보드: 2월 7일 오픈 예정입니다.
+* 최상위 앱 선정: 주요 지표를 기반으로 2월 중순과 3\~4월(최종 일정은 2025년 2월 결정 예정)에 상위 10개 Unifi 앱을 선정합니다.
+* 성장 패키지(Growth Package) 지원: 상위 10개 팀 중, 재단과 LINE NEXT의 성장 잠재력 평가를 통해 최종 2개 팀을 선정하여 다음을 지원합니다.
+  * 최대 50만 달러($0.5M) 상당의 마케팅 지원 및 Unifi 내 최상단 노출
+  * 최대 10만 달러($0.1M) 상당의 유동성 지원
+  * _성장 패키지 수령을 위한 최소 기준은 추후 추가될 수 있습니다._
 
-_\*The exact timeline may change depending on the launch status of the Kaia Wave Unifi Apps._
+### 참가 조건 및 의무 사항
 
-## Participation Eligibility
+* Kaia 플랫폼에서 개발된 모든 Unifi 앱은 의무적으로 참여해야 합니다.
+* 토큰 발행(TGE) 단계에서 유저 대상 토큰 에어드랍이 필수이며, 여기에는 사전 배포된 포인트가 포함됩니다.
 
-* All Unifi Apps built on Kaia’s ecosystem are automatically enrolled.
-* However, for metric tracking, Unifi Apps-related information and the smart contract address must be submitted through [this link](https://portal.kaia.io/dapps/submit).
-  * _Please also submit the NFT, token, and payment smart contracts together._
-  * _If you’ve already submitted contracts, you can send the labels and addresses of new smart contracts to_ [_portal@kaia.io_](mailto:portal@kaia.io)_, and they will be updated within a week._
-  * _To check if your submitted contracts are properly tracked on the Growth Competition dashboard, please refer to the following link:_ [_https://dune.com/queries/4773070_](https://dune.com/queries/4773070)
-* Teams that haven’t issued tokens yet must airdrop tokens at TGE. Teams that have already issued tokens are also eligible to participate.
+정확한 일정은 Kaia Wave Unifi 앱들의 출시 상황에 따라 변경될 수 있습니다.
 
-## Ranking & Metrics
+## 참가 자격 (Participation Eligibility)
 
-### Leaderboard Metrics
+* 자동 등록: Kaia 생태계 기반으로 구축된 모든 Unifi 앱은 자동으로 대회에 등록됩니다.
+* 데이터 추적을 위한 정보 제출: 다만, 정확한 지표 추적을 위해 Unifi 앱 관련 정보와 스마트 컨트랙트 [이 링크](https://portal.kaia.io/dapps/submit)를 통해 반드시 제출해야 합니다.
+  * 컨트랙트 범위: NFT, 토큰 및 결제 관련 스마트 컨트랙트도 함께 제출해 주시기 바랍니다.
+  * 정보 업데이트: 이미 컨트랙트를 제출한 경우, 새로운 스마트 컨트랙트의 라벨과 주소를 `portal@kaia.io`로 보내주시면 일주일 내에 업데이트됩니다.
+  * 상태 확인: 제출한 컨트랙트가 성장 대회 대시보드에서 정상적으로 추적되고 있는지 확인하려면 다음 링크를 참조하십시오: [https://dune.com/queries/4773070](https://dune.com/queries/4773070)
+* 토큰 발행 조건: 아직 토큰을 발행하지 않은 팀은 TGE(토큰 발행 단계) 시점에 반드시 에어드랍을 진행해야 합니다. 이미 토큰을 발행한 팀도 참가 가능합니다.
 
-* Weekly On-chain Active Accounts(High weight): Tracked on-chain. Accounts that hold a minimum amount of KAIA(e.g. at least 1 KAIA) and have submitted at least one transaction to the Unifi Apps contract will receive a higher weight to encourage on-chain asset ownership.
-* Weekly On-chain Transactions(Low weight): The number of transactions submitted to the Unifi Apps contract. Transactions from accounts that hold a minimum amount of KAIA(e.g. at least 1 KAIA) and have submitted at least one transaction to the Unifi Apps contract will receive a higher weight to encourage on-chain asset ownership.
-* Unifi Apps Revenue(High weight): Revenue activities conducted within the LINE platform (crypto and cash payments), based on LINE’s data.
+### 순위 및 평가 지표 (Ranking & Metrics)
 
-### Ranking Details
+리더보드 순위는 다음의 지표를 바탕으로 산정됩니다.
 
-* User and on-chain metrics are displayed as absolute numbers.
-* Revenue metrics are shown as top rankings or percentages.
-* Rankings are standardized across user, wallet, and revenue data. The final ranking is determined by calculating a weighted score of these metrics.
-* The Top 10 will be highlighted separately on the ranking board.
-* They are updated weekly and made publicly visible on Kaia Square: https://square.kaia.io/Competition
+* 주간 온체인 활성 계정 수 (높은 가중치):
+  * 온체인 데이터를 통해 추적됩니다.
+  * 가중치 부여: 최소 수량의 KAIA(예: 최소 1 KAIA 이상)를 보유하고, Unifi 앱 컨트랙트에 최소 1회 이상의 트랜잭션을 발생시킨 계정에는 더 높은 가중치가 부여됩니다. 이는 실질적인 온체인 자산 보유를 장려하기 위함입니다.
+* 주간 온체인 트랜잭션 수 (낮은 가중치):
+  * Unifi 앱 컨트랙트에 발생한 트랜잭션 횟수입니다.
+  * 활성 계정 수와 마찬가지로, 일정량의 KAIA를 보유한 계정에서 발생한 트랜잭션에 더 높은 가중치를 부여합니다.
+* Unifi 앱 매출 (높은 가중치):
+  * LINE 플랫폼 내에서 발생한 매출 활동(암호화폐 및 현금 결제 포함)을 의미하며, LINE의 내부 데이터를 기준으로 산정됩니다.
 
-_**Any project found engaging in fraudulent activities will be disqualified.**_
+### 순위 산정 세부 사항 (Ranking Details)
 
-## Evaluation & Selection
+* 데이터 표시 방식: 유저 및 온체인 지표는 절대 수치로 표시되며, 매출 지표는 상위 순위 또는 백분율로 표시됩니다.
+* 최종 순위 결정: 유저, 지갑, 매출 데이터를 표준화한 후, 각 지표의 가중치를 적용한 합산 점수로 최종 순위를 결정합니다.
+* 상위권 노출: 상위 10개 앱은 랭킹 보드에 별도로 강조되어 표시됩니다.
+* 업데이트 주기: 순위는 매주 업데이트되며, Kaia Square([https://square.kaia.io/Competition](https://square.kaia.io/Competition))를 통해 공개됩니다.
 
-* The Top 10 Unifi Apps will be granted eligibility to qualify for the growth package.
-* In February, the Top 10 Unifi Apps will be selected based on the average score from three weeks of metrics. This includes the average scores for the periods of January 22–29, January 29–February 5, and February 5–12. The results will be announced in a separate article by LINE NEXT and the Kaia Foundation.
-* In April, the Top 10 Unifi Apps will be selected based on the average score from three weeks of metrics, covering the period from March 5 to April 16. The results will be announced in a separate article by LINE NEXT and the Kaia Foundation.
-* To participate in the April Growth Competition, Unifi Apps must be active for at least three weeks during this period, meaning they must launch no later than March 25.
-* Unifi Apps need to present a detailed Marketing plan. After, LINE NEXT and the Kaia Foundation will review the plans and select 2 Unifi Apps from the Top 10 based on leaderboard data and growth potential.
+**부정행위 규정: 부정행위(어뷰징 등)가 적발된 프로젝트는 자격이 박탈됩니다.**
 
-Notes
+## 평가 및 선정 (Evaluation & Selection)
 
-* Minimum thresholds or additional requirements for receiving growth package may be introduced over time.
-* For teams that are not selected, alternative marketing support may be provided, such as prioritized exposure on the Unifi.
+* 지원 자격: 상위 10위 안에 든 Unifi 앱들에게 성장 패키지(Growth Package) 수혜 후보 자격이 부여됩니다.
+* 2월 선정 기준: 3주간의 지표 평균 점수를 바탕으로 상위 10개 앱을 선정합니다. (대상 기간: 1/22\~1/29, 1/29\~2/5, 2/5\~2/12) 결과는 LINE NEXT와 Kaia 재단의 별도 공지를 통해 발표됩니다.
+* 4월 선정 기준: 3/5\~4/16 기간 중 3주간의 평균 점수를 바탕으로 상위 10개 앱을 선정합니다. 결과는 LINE NEXT와 Kaia 재단의 별도 공지를 통해 발표됩니다.
+* 4월 대회 참여 조건: 4월 성장 대회에 참여하려는 Unifi 앱은 해당 기간 중 최소 3주 이상 활성화되어야 하며, 늦어도 3월 25일 이전에는 런칭되어야 합니다.
+* 최종 선정: 상위 10개 팀은 상세 마케팅 계획을 제출해야 합니다. 이후 LINE NEXT와 Kaia 재단이 리더보드 데이터와 성장 잠재력을 검토하여 최종 2개의 Unifi 앱을 선정합니다.
 
-## Growth Support Package
+**유의 사항 (Notes)**
+
+* 성장 패키지 수령을 위한 최소 기준치나 추가 요구 사항이 추후 도입될 수 있습니다.
+* 최종 선정되지 않은 팀들에게도 Unifi 내 우선 노출과 같은 대안적인 마케팅 지원이 제공될 수 있습니다.
+
+### 성장 지원 패키지 (Growth Support Package)
 
 The two teams selected as growth package recipients will receive the following benefits.
 
-* **Up to $0.5M Marketing/User Rewards:**
-  * Unifi Apps must submit marketing plans.
-  * Allocation between marketing and user rewards decided jointly with the foundation and LINE NEXT team.
-  * _Note: Post-TGE, additional token airdrops to ecosystem_ _users are mandatory._
-* **Up to $0.1M Liquidity Support:**
-  * Provided post-TGE.
-  * Deployed as $KAIA liquidity in DEX pools.
-  * _Note: Unifi Apps benefiting from liquidity support must contribute a portion of their own tokens to the DEX pool._
+#### 1. 최대 50만 달러($0.5M) 규모의 마케팅 및 유저 보상
 
-## Timeline
+* 마케팅 계획 제출: 선정된 Unifi 앱은 상세 마케팅 계획을 반드시 제출해야 합니다.
+* 예산 배분: 마케팅 집행 비용과 유저 보상금 사이의 배분 비율은 재단 및 LINE NEXT 팀과의 협의를 통해 결정됩니다.
+* 유의 사항: 토큰 발행(TGE) 이후, 생태계 유저를 대상으로 하는 추가 토큰 에어드랍이 필수입니다.
 
-### Phase 1: February
+#### 2. 최대 10만 달러($0.1M) 규모의 유동성 지원
 
-* **February 7**
-  * Official Ranking Dashboard goes live.
-* **February 14**
-  * The Top 10 Unifi Apps announced based on performance metrics, calculated as the average scores for the periods of January 22–29, January 29–February 5, and February 5–12.
-* **Feb 17\~21\***
-  * Among these, 2 Unifi Apps win Growth Packages, including $0.5M in marketing support and $0.1M in liquidity support.
+* 지원 시점: 토큰 발행(TGE) 이후 제공됩니다.
+* 지원 방식: 탈중앙화 거래소(DEX) 풀 내 $KAIA 유동성으로 공급됩니다.
 
-### Phase 2: March-Apr
+## 대회 일정 (Timeline)
 
-* **March 5**
-  * Phase 2 Growth Competition scoring begins.
-* **April 18**
-  * The Top 10 Unifi Apps announced based on performance metrics, calculated as the average weekly scores for the periods of March 5 to April 16.
-  * To participate in the April Growth Competition, Unifi Apps must be active for at least three weeks during this period, meaning they must launch no later than March 25.
-* **April 21\~**
-  * Among these, 2 Unifi Apps win Growth Packages, including $0.5M in marketing support and $0.1M in liquidity support.
+#### Phase 1: 2월
 
-## Contact & Support
+* 2월 7일: 공식 랭킹 대시보드 오픈
+* 2월 14일: 상위 10개 Unifi 앱 발표 (1/22\~1/29, 1/29\~2/5, 2/5\~2/12 기간의 평균 점수 기준)
+* _2월 17일\~21일:_\* 최종 2개 팀 선정 (마케팅 및 유동성 지원 패키지 수혜)
 
-For any questions or guidance on the Growth Competition rules, eligibility, or resource utilization, please contact the Kaia Foundation or LINE NEXT teams for assistance.
+#### Phase 2: 3\~4월
+
+* 3월 5일: Phase 2 성장 대회 점수 집계 시작
+* 4월 18일: 상위 10개 Unifi 앱 발표 (3/5\~4/16 기간의 주간 평균 점수 기준)
+  * _참고: 4월 대회 참여를 위해 앱은 늦어도 3월 25일까지는 런칭되어야 하며, 해당 기간 중 최소 3주 이상 활발히 운영되어야 합니다._
+* 4월 21일\~: 최종 2개 팀 선정 (마케팅 및 유동성 지원 패키지 수혜)
+
+### **문의 및 지원 (Contact & Support)**
+
+대회 규칙, 참가 자격 또는 리소스 활용에 관한 문의 사항이나 안내가 필요하신 경우, Kaia 재단 또는 LINE NEXT 팀으로 연락해 주시기 바랍니다.

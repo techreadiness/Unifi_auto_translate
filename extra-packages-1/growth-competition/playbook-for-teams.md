@@ -5,55 +5,69 @@ metaLinks:
       https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/extra-packages-1/growth-competition/playbook-for-teams
 ---
 
-# Playbook for Teams
+# 전략 가이드
 
-#### Ranking & Metrics <a href="#ranking-and-metrics" id="ranking-and-metrics"></a>
+#### 순위 및 지표 (Ranking & Metrics) <a href="#ranking-and-metrics" id="ranking-and-metrics"></a>
 
-To maximize your score, you must excel at increasing weekly on-chain active accounts, weekly on-chain transactions, and Unifi Apps revenue.
+높은 점수를 획득하기 위해서는 주간 온체인 활성 계정 수, 주간 온체인 트랜잭션 수, 그리고 Unifi 앱 매출을 극대화해야 합니다. 이때 다음의 주요 사항들을 유의하시기 바랍니다.
 
-There are a few points to keep in mind:
+#### 1. 온체인 활성 계정 (On-Chain Active Accounts)
 
-* On-Chain Active Accounts:
-  * To achieve a higher score on user metrics, we assign greater weight to users who hold more than a certain amount of KAIA tokens (e.g., 1 KAIA). Additionally, they must continuously maintain a minimum KAIA balance (e.g., 1 KAIA) sufficient to cover multiple transaction fees.
-  * Users must send at least one transaction to the Unifi Apps smart contract during the week.
+* 가중치 부여: 특정 수량 이상의 KAIA 토큰(예: 1 KAIA)을 보유한 유저에게 더 높은 가중치를 부여합니다. 또한, 해당 유저는 여러 번의 트랜잭션 수수료를 감당할 수 있는 수준의 최소 잔액을 지속적으로 유지해야 합니다.
+* 활동 기준: 해당 주간에 Unifi 앱 스마트 컨트랙트로 최소 1회 이상의 트랜잭션을 발생시켜야 합니다.
+* 빌더를 위한 권장 전략:
+  * 가능한 한 많은 유저에게 KAIA를 배분하십시오.
+  * 결제, 토큰, NFT 등 Unifi 앱의 기본 컨트랙트가 온체인 활동에 최적화되도록 설계하십시오. 자산 전송(스왑 등)과 관련된 트랜잭션 등 다양한 온체인 활동을 장려하는 것이 유리합니다.
 
-Given these conditions, builders should focus on the following strategies:
+> 중요: 모든 스마트 컨트랙트는 Kaia Portal에 제출된 주소를 기반으로 추적됩니다. \[Kaia Portal 링크]를 통해 누락 없이 컨트랙트 목록을 제출해 주시기 바랍니다. 제출된 컨트랙트의 추적 여부는 [Dune 대시보드 링크](https://dune.com/queries/4773070)에서 확인 가능합니다. (수정 사항은 `portal@kaia.io`로 접수)
 
-* Distribute KAIA to as many users as possible.
-* Ensure that smart contracts, including Unifi Apps basic contracts for payments, tokens, and NFTs, are optimized for on-chain activity. It’s advantageous to encourage as many on-chain activities as possible, especially transactions related to asset transfers, such as swaps.
+#### 2. 온체인 트랜잭션 수 (On-Chain Transactions)
 
-These smart contracts will be tracked based on the smart contract addresses submitted to the Kaia Portal. Therefore, ensure you submit a comprehensive list of contracts via the following link:[ Kaia Portal - Elevating the Web3 Experience](https://portal.kaia.io/dapps/submit). To check if your submitted contracts are properly tracked on the Growth Competition dashboard, please refer to the following link: [https://dune.com/queries/4773070](https://dune.com/queries/4773070)
+* 가중치 주의: 트랜잭션 수 자체는 상대적으로 낮은 가중치를 가집니다. 따라서 트랜잭션 수 늘리기에만 과도하게 집중할 필요는 없습니다.
+* 필터링: Unifi 앱 운영 주체(개발사)가 직접 전송한 트랜잭션은 집계에서 제외됩니다.
 
-If you’ve already submitted contracts, you can send the labels and addresses of new smart contracts to portal@kaia.io, and they will be updated within a week.
+#### 3. 금지 행위 (Prohibited Activities)
 
-* Avoiding Over-Focus on On-Chain Transactions:
-  * Overemphasizing on-chain transactions is unnecessary, as they carry less weight.
-  * Transactions sent directly by Unifi Apps operators will be filtered out.
-* Prohibited Activities:
-  * Do not engage in fraudulent activities such as bot-generated actions.
-  * Data will be monitored in real time. If excessive bot activity is detected, the Unifi Apps will be disqualified from the Growth competition.
-* Revenue:
-  * Using crypto payments can be advantageous for generating on-chain data, although no extra weight is assigned to crypto payments.
-  * To encourage user participation, prioritize stability and make it easy for users to connect their wallets and complete payments.
+* 부정행위 금지: 봇을 이용한 활동 등 조작 행위는 엄격히 금지됩니다.
+* 실시간 모니터링: 모든 데이터는 실시간으로 모니터링되며, 과도한 봇 활동이 감지될 경우 해당 Unifi 앱은 대회에서 즉시 자격이 박탈됩니다.
 
-#### Timeline <a href="#timeline" id="timeline"></a>
+#### 4. 매출 (Revenue)
 
-To achieve a high score in Phase 2 (March - April) and secure a spot in the Top 10, it’s essential to:
+* 결제 방식: 암호화폐 결제는 온체인 데이터 생성에 유리할 수 있으나, 가상자산 결제 자체에 추가 가중치가 부여되지는 않습니다.
+* 사용자 경험: 유저 참여를 독려하기 위해 결제 안정성을 확보하고, 지갑 연결부터 결제 완료까지의 과정을 간소화하는 것을 최우선으로 하십시오.
 
-* Attract users with KAIA holdings starting from March 5 (or distribute KAIA via airdrops).
-* Drive on-chain activity and generate revenue early to maximize weekly scores.
-* The Top 10 Unifi Apps will be announced on April 18, based on average weekly scores from March 5 to April 16.
-* To participate in the April Growth Competition, Unifi Apps must be active for at least three weeks during this period, meaning they must launch no later than March 25.
+### 일정 (Timeline)
 
-Among these, two Unifi Apps will be selected on April 21 to receive Growth Packages, including $0.5M in marketing support and $0.1M in liquidity support.
+Phase 2(3월\~4월)에서 높은 점수를 기록하고 상위 10위에 진입하기 위한 핵심 일정입니다.
 
-#### FAQ <a href="#faq" id="faq"></a>
+* 3월 5일부터: KAIA를 보유한 유저를 확보하거나 에어드랍 등을 통해 KAIA를 배분하십시오.
+* 초기 성과 주력: 주간 평균 점수를 극대화하기 위해 초기부터 온체인 활동과 매출을 활성화해야 합니다.
+* 4월 18일: 3/5\~4/16 기간의 주간 평균 점수를 바탕으로 상위 10개 앱 발표.
+* 4월 25일 마감: 4월 대회 참여를 위해 늦어도 3월 25일까지는 앱을 런칭하고 최소 3주 이상 활성화 상태를 유지해야 합니다.
+* 4월 21일: 최종 2개 팀 선정 및 성장 패키지(마케팅 $0.5M, 유동성 $0.1M) 수여.
 
-* What are the weights of each metric?
-  * Currently, active accounts and revenue are given higher weights than other metrics.
-* Is the ranking overall, or are there separate sector rankings?
-  * At this stage, rankings are overall rankings. Sector-specific leaderboards may be introduced in future seasons, such as Kaia Wave Season 2.
-* What is the criteria for abuse?
-  * Any transaction or account deemed not to be from a real user will be excluded. This includes bot activity or suspicious patterns.
-* Are transactions sent by Unifi Apps themselves included?
-  * No, only transactions initiated by users are counted.
+***
+
+### 자주 묻는 질문 (FAQ)
+
+Q. 각 지표별 가중치는 어떻게 되나요?&#x20;
+
+A. 현재는 \*\*활성 계정 수(Active Accounts)\*\*와 \*\*매출(Revenue)\*\*에 다른 지표보다 더 높은 가중치를 부여하고 있습니다.
+
+
+
+Q. 순위는 통합으로 산정되나요, 아니면 부문별로 나뉘나요?&#x20;
+
+A. 현재 단계에서는 전체 통합 순위로 산정됩니다. 부문별(Sector-specific) 리더보드는 향후 Kaia Wave 시즌 2 등에서 도입될 예정입니다.
+
+
+
+Q. 어뷰징(Abuse)의 기준은 무엇인가요?&#x20;
+
+A. 실제 유저가 아닌 것으로 간주되는 모든 트랜잭션이나 계정은 제외됩니다. 여기에는 봇 활동이나 비정상적인 패턴이 포함됩니다.
+
+
+
+Q. Unifi 앱 자체에서 보낸 트랜잭션도 포함되나요?&#x20;
+
+A. 아니요, 유저에 의해 발생한 트랜잭션만 집계에 포함됩니다.
