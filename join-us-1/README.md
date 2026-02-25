@@ -22,8 +22,6 @@ Unifi Apps는 다양한 버전 조합을 통해 온보딩할 수 있습니다. �
 
 * LINE Login LIFF는 기술적으로 Web 서비스 위에서 구현되므로, Single Type(단독 형태)으로 선택할 수 없습니다. 따라서 LINE Login LIFF를 사용하는 서비스는 반드시 Web 버전과 함께 런칭해야 합니다.
 
-
-
 **Supported Onboarding Types**
 
 | Version         | Operating Env & Supported Features                                                 | Target Users   | Target Regions | Onboarding Requirements                                                                                                                 | SDK Feature Differences                           | Demo Submission Authority |
@@ -49,8 +47,8 @@ Our team will review the submitted application to determine eligibility for Unif
 ## 3. Onboarding Process Initiation
 
 * Once your service passes the internal review, we will provide the Unifi Apps SDK Terms & Conditions form along with other required onboarding materials, including the due diligence form and the Dapp Information Registration form.
-* Please review and submit the Unifi Apps SDK Terms & Conditions as instructed.&#x20;
-* Upon acceptance, the Unifi Apps SDK—along with all required authentication credentials—will be provisioned.&#x20;
+* Please review and submit the Unifi Apps SDK Terms & Conditions as instructed.
+* Upon acceptance, the Unifi Apps SDK—along with all required authentication credentials—will be provisioned.
 * The SDK will be delivered to your registered email address within approximately three (3) business days.
 
 ## 4. Develop Unifi Apps Demo
@@ -68,7 +66,7 @@ For common issues and troubleshooting tips, you may refer to the [FAQ](https://d
 If you have any technical questions during development, please feel free to contact us through the following channels:
 
 * [Telegram Tech Support Channel](../join-us/contact-us.md)
-* Email: **dapp-support@linecorp.com**
+* Email: `unifiapps_review@unifi.me`
 
 ## 5. Review & Feedback
 
@@ -79,11 +77,11 @@ The review process focuses on service eligibility, functional completeness, and 
 **For LINE MINI Apps, an internal review by LINE NEXT is required prior to LY submission.**
 {% endhint %}
 
-| Version         | Demo Submission/Review Authority                                                                                                                               | Review Timeline        |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| LINE MINI App   | <ul><li>LINE NEXT (Pre-review)</li><li>LY (Final approval)</li><li>Submission to LY is required <strong>after LINE NEXT review is completed</strong></li></ul> | 5–10 business days     |
-| LINE Login LIFF | <ul><li>LINE NEXT</li><li>Submission via email</li></ul>                                                                                                       | Up to  3 business days |
-| Web             | <ul><li>LINE NEXT</li><li>Submission via email</li></ul>                                                                                                       | Up to 3 business days  |
+| Version         | Demo Submission/Review Authority                                                                                                                               | Review Timeline       |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| LINE MINI App   | <ul><li>LINE NEXT (Pre-review)</li><li>LY (Final approval)</li><li>Submission to LY is required <strong>after LINE NEXT review is completed</strong></li></ul> | 5–10 business days    |
+| LINE Login LIFF | <ul><li>LINE NEXT</li><li>Submission via email</li></ul>                                                                                                       | Up to 3 business days |
+| Web             | <ul><li>LINE NEXT</li><li>Submission via email</li></ul>                                                                                                       | Up to 3 business days |
 
 📌 _For LINE MINI Apps, LY submission without prior LINE NEXT review is not supported._
 
@@ -106,9 +104,9 @@ The review process focuses on service eligibility, functional completeness, and 
 **LINE Login LIFF & Web**
 
 * **Review Target**: LINE Login LIFF / Web version
-* **Submission Method**: Email submission to **`dapp-support@linecorp.com`**
+* **Submission Method**: Email submission to `unifiapps_review@unifi.me`
 * The following information must be included in the request email:
-  * Name of Unifi Apps&#x20;
+  * Name of Unifi Apps
   * Demo URL
   * Desired launch date
 
@@ -127,4 +125,3 @@ After onboarding is completed, your Unifi Apps will be scheduled for official la
 * Final technical and operational validations will be completed prior to launch
 
 📌 _Please ensure your team is available to respond promptly to any critical issues during the launch period._
-
