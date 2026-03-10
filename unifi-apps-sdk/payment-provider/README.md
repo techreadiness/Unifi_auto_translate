@@ -1,8 +1,7 @@
 ---
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps-sdk/payment-provider
+    - /broken/spaces/juuhQ1BuKwYKE7NR6geM/pages/oDAOESDputMWe80adtft
 ---
 
 # 결제 제공자

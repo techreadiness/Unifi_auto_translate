@@ -2,7 +2,7 @@
 hidden: true
 metaLinks:
   alternates:
-    - https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-and-unifi-apps
+    - https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/
 ---
 
 # Unifi & Unifi Apps

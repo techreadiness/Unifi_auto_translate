@@ -29,7 +29,7 @@ metaLinks:
 
 ## 2025년 10월 15일
 
-[미니 Dapp SDK v1.4.6](https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/mini-dapp/mini-dapp-sdk/release-note/v1.4.6) 출시 (내부 로직의 사소한 개선)
+[미니 Dapp SDK v1.4.6](/broken/spaces/juuhQ1BuKwYKE7NR6geM/pages/pobnlbqw9fmWJR0yDvSl) 출시 (내부 로직의 사소한 개선)
 
 ## 2025년 9월 22일
 
@@ -93,7 +93,7 @@ STRIPE 결제를 위한 USDT 청구를 위한 [가이드](mini-dapp/mini-dapp-sd
 
 ## 2025년 5월 27일
 
-[미니 Dapp SDK v1.3.0](https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/mini-dapp/mini-dapp-sdk/release-note/v1.3.0) 출시 (Bitget Wallet 통합용)
+[미니 Dapp SDK v1.3.0](/broken/spaces/juuhQ1BuKwYKE7NR6geM/pages/ESaWhLmLRmFJdHuS4O7p) 출시 (Bitget Wallet 통합용)
 
 ## 2025년 5월 21일
 
