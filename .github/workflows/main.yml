@@ -1,94 +1,81 @@
-name: Unifi-Professional-Translation-Fix-Tags
+name: Unifi-Japan-Translate
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
+    paths:
+      - "en/**/*.md"  # 영어 원문 폴더 감지
+  workflow_dispatch: # 수동 실행 버튼
+
+permissions:
+  contents: write
 
 jobs:
   translate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Create Glossary and Translate (Tag Handling Fix)
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Run Unifi Translation (EN to JA)
         env:
-          DEEPL_KEY: ${{ secrets.DEEPL_API_KEY }}
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: |
-          # 1. 용어집(Glossary) 생성
-          GLOSSARY_RESPONSE=$(curl -s -X POST 'https://api-free.deepl.com/v2/glossaries' \
-            -H "Authorization: DeepL-Auth-Key $DEEPL_KEY" \
-            -d "name=Unifi_Glossary_v3" \
-            -d "source_lang=en" \
-            -d "target_lang=ko" \
-            -d "entries=Unifi Apps	Unifi Apps
-          Mini Dapp	Mini Dapp
-          Dapp Portal	Dapp Portal
-          Liff	Liff
-          Blockchain	Blockchain
-          Unifi	Unifi 
-          Gas Fee	가스비
-          Reward	리워드
-          Featured	피처드
-          Onboarding	온보딩")
-
-          GLOSSARY_ID=$(echo $GLOSSARY_RESPONSE | jq -r '.glossary_id')
+          set -e
           
-          if [ "$GLOSSARY_ID" == "null" ] || [ -z "$GLOSSARY_ID" ]; then
-             echo "Glossary Creation Failed: $GLOSSARY_RESPONSE"
-             # 용어집 생성 실패해도 계속 진행 (glossary_id 파라미터 제외)
-             GLOSSARY_PARAM=""
-          else
-             echo "Glossary Created: $GLOSSARY_ID"
-             GLOSSARY_PARAM="-d glossary_id=$GLOSSARY_ID"
-          fi
+          # 1. 대상 파일 찾기 (en 폴더 내 모든 마크다운)
+          FILES=$(find en -name "*.md")
 
-          # 2. 번역 실행
-          # 모든 텍스트 파일 찾기 (ko 폴더 등 제외)
-          find . -type f \( -name "*.md" -o -name "*.txt" -o -name "*.html" -o -name "*.json" -o -name "*.yaml" \) -not -path "./ko/*" -not -path "./.git/*" -not -path "./.github/*" | while read file; do
-            
-            echo "Processing $file..."
-            
-            original_text=$(cat "$file")
-            
-            if [ -z "$original_text" ]; then
-                echo "Skipping empty file: $file"
-                continue
-            fi
+          for file in $FILES; do
+            REL_PATH=${file#en/}
+            TARGET_FILE="ja/$REL_PATH"  # 일본어 결과물 저장 경로
+            mkdir -p "$(dirname "$TARGET_FILE")"
 
-            # 타겟 경로 생성
-            clean_path=$(echo "$file" | sed 's/^\.\///')
-            target_path="ko/$clean_path"
-            target_dir=$(dirname "$target_path")
-            mkdir -p "$target_dir"
+            # 2. Front Matter (YAML 헤더)와 본문 분리
+            # --- 사이의 설정값은 번역 제외
+            FRONT_MATTER=$(awk 'BEGIN{flag=0} /^---$/{if(flag==0){flag=1; next} else{exit}} flag==1{print}' "$file")
+            BODY=$(awk 'BEGIN{flag=0} /^---$/{if(flag==0){flag=1; next} else{flag=2; next}} flag==2{print}' "$file")
 
-            # API 호출 - tag_handling을 'html'로 변경
-            # ignore_tags 대신 outline_detection=0 추가 고려 (구조 유지를 위해)
-            curl -s -X POST 'https://api-free.deepl.com/v2/translate' \
-              -H "Authorization: DeepL-Auth-Key $DEEPL_KEY" \
-              -d "target_lang=KO" \
-              $GLOSSARY_PARAM \
-              -d "tag_handling=html" \
-              -d "preserve_formatting=1" \
-              --data-urlencode "text=$original_text" > response.json
-            
-            # 번역 결과 추출
-            TRANSLATED_TEXT=$(jq -r '.translations[0].text' response.json)
-            
-            if [ "$TRANSLATED_TEXT" != "null" ] && [ -n "$TRANSLATED_TEXT" ]; then
-              echo "$TRANSLATED_TEXT" > "$target_path"
-              echo "Saved translation to $target_path"
+            if [ -z "$FRONT_MATTER" ]; then BODY=$(cat "$file"); fi
+
+            # 3. 본문 내 링크 및 고유명사 보호 (중요!)
+            # 하이퍼링크 [text](url) 전체를 span으로 감싸서 DeepL이 수정 못하게 함
+            PROTECTED_BODY=$(echo "$BODY" | sed 's/Unifi/<span translate="no">Unifi<\/span>/g')
+            PROTECTED_BODY=$(echo "$PROTECTED_BODY" | sed -E 's/(!?\[[^]]*\]\([^)]*\))/<span translate="no">\1<\/span>/g')
+
+            # 4. DeepL API 호출 (일본어 JA 설정)
+            RESPONSE=$(curl -s -X POST "https://api-free.deepl.com/v2/translate" \
+              -H "Authorization: DeepL-Auth-Key $DEEPL_API_KEY" \
+              --data-urlencode "text=$PROTECTED_BODY" \
+              -d "source_lang=EN" \
+              -d "target_lang=JA" \
+              -d "tag_handling=html")
+
+            TRANSLATED_BODY=$(echo "$RESPONSE" | jq -r '.translations[0].text // empty')
+
+            # 5. 후처리: 보호 태그 제거 및 일본어 전각 기호 교정
+            # 일본어는 ( ) 가 （ ） 로 바뀌는 경우가 많아 강제로 반각 복구
+            FINAL_BODY=$(echo "$TRANSLATED_BODY" | sed -E 's/<\/?span[^>]*>//g')
+            FINAL_BODY=$(echo "$FINAL_BODY" | sed -E 's/（/(/g' | sed -E 's/）/)/g')
+            # ] (url) 처럼 공백 생기는 현상 방지
+            FINAL_BODY=$(echo "$FINAL_BODY" | sed -E 's/(!?\[[^]]*\]) *\(([^)]*)\)/\1(\2)/g')
+
+            # 6. 원본 Front Matter 합쳐서 저장
+            if [ -n "$FRONT_MATTER" ]; then
+              echo -e "---\n$FRONT_MATTER\n---\n\n$FINAL_BODY" > "$TARGET_FILE"
             else
-              echo "Error: Translation failed for $file"
-              cat response.json # 에러 메시지 확인용
+              echo "$FINAL_BODY" > "$TARGET_FILE"
             fi
           done
 
-      - name: Commit & Push Changes
+      - name: Commit & Push
         run: |
-          git config --global user.name "Unifi-Translation-Bot"
-          git config --global user.email "bot@unifi.network"
-          git add ko/
-          # 변경사항이 있을 때만 커밋
-          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: 태그 파싱 오류 수정 및 전체 번역 업데이트" && git push)
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add ja/
+          git commit -m "docs: Auto-translate Unifi EN to JA" || echo "No changes"
+          git push origin main
