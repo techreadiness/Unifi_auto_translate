@@ -5,102 +5,101 @@ metaLinks:
       https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps-sdk/payment-provider/policy/payment
 ---
 
-# Payment
+# 결제
 
-## 1️⃣ Supported Payment Methods
+## 1️⃣ 지원되는 결제 수단
 
 <figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
-* <mark style="color:red;">**Unifi Apps must provide both fiat and crypto payment options on the product purchase screen, with each payment button offered separately.**</mark>
+* <mark style="color:red;">**유니피 앱은 제품 구매 화면에서 법정화폐 및 암호화폐 결제 옵션을 모두 제공해야 하며, 각 결제 버튼은 별도로 표시되어야 합니다.**</mark>
 
-### **A. Payment Support Overview**
+### **A. 결제 지원 개요**
 
-| Version         | Payment                         | Region     |
+| 버전         | 결제 수단                         | 지역     |
 | --------------- | ------------------------------- | ---------- |
-| LINE MINI App   | IAP Payments                    | Japan Only |
-| LINE Login LIFF | Crypto & Stripe (Fiat) payments | Global     |
-| Web             | Crypto & Stripe (Fiat) payments | Global     |
+| LINE MINI 앱   | IAP 결제                    | 일본 전용 |
+| LINE 로그인 LIFF | 암호화폐 및 Stripe(법정화폐) 결제 | 글로벌     |
+| 웹             | 암호화폐 및 Stripe(법정화폐) 결제 | 글로벌     |
 
-### **B. Fiat Payments via IAP (**_**Coming Soon**_**)**
+### **B. IAP를 통한 법정화폐 결제 (**_**출시 예정**_**)**
 
-> _In-app billing through LINE App Platform_
+&gt; _LINE 앱 플랫폼을 통한 인앱 결제_
 
-### **C. Fiat Payments via Stripe**
+### **C. Stripe를 통한 법정화폐 결제**
 
-> _Global payment processing handled by Stripe_
+&gt; _Stripe가 처리하는 글로벌 결제 서비스_
 
-#### Supported Payment Methods
+#### 지원 결제 수단
 
-* Credit / Debit Cards (VISA, Mastercard, AMEX, JCB, etc.)
+* 신용/체크카드 (VISA, Mastercard, AMEX, JCB 등)
 * Apple Pay
 * Google Pay
-* Naver Pay (KRW only)
-* Kakao Pay (KRW only)
+* 네이버페이 (원화 전용)
+* 카카오페이 (원화 전용)
 
-#### Payment Method Rules
+#### 결제 수단 규칙
 
-* Payment methods automatically adjust depending on:
-  * The device OS (iOS / Android)
-  * The selected payment currency (USD / Local currencies)
-* Available methods may change based on Stripe policies
+* 결제 수단은 다음에 따라 자동 조정됩니다:
+  * 기기 OS (iOS / Android)
+  * 선택한 결제 통화 (USD / 현지 통화)
+* 사용 가능한 방법은 Stripe 정책에 따라 변경될 수 있음
 
-### D. Crypto Payments
+### D. 암호화폐 결제
 
-#### Supported cryptocurrencies
+#### 지원되는 암호화폐
 
 * **KAIA**
 * **USDT**
 
-## 2️⃣ Supported Currencies & Minimum Charge Limits
+## 2️⃣ 지원 통화 및 최소 결제 한도
 
-<table><thead><tr><th>Type</th><th width="146">Currency</th><th width="139">Decimal(Max)</th><th>Charge(Max)</th><th>Charge(Min)</th></tr></thead><tbody><tr><td>Fiat</td><td>USD</td><td>2</td><td>999,999</td><td>0.50</td></tr><tr><td></td><td>KRW</td><td>0</td><td>999,999</td><td>750</td></tr><tr><td></td><td>JPY</td><td>0</td><td>999,999</td><td>80</td></tr><tr><td></td><td>TWD(NTD)</td><td>2</td><td>999,999</td><td>17</td></tr><tr><td></td><td>THB</td><td>2</td><td>999,999</td><td>18</td></tr><tr><td>Crypto</td><td>KAIA</td><td>4</td><td>999,999</td><td>0.01</td></tr><tr><td></td><td>USDT</td><td>2</td><td>999,999</td><td>0.01</td></tr></tbody></table>
-
-📌 Optional Local Currencies\
-Unifi Apps may optionally support additional local currencies depending on the user's region:
+<table><thead><tr><th>유형</th><th width="146">통화</th><th width="139">소수점(최대)</th><th>최대 청구액</th><th>최소 청구액</th></tr></thead><tbody><tr><td>피아트</td><td>USD</td><td>2</td><td>999,999</td><td>0.50</td></tr><tr><td></td><td>KRW</td><td>0</td><td>999,999</td><td>750</td></tr><tr><td></td><td>JPY</td><td>0</td><td>999,999</td><td>80</td></tr><tr><td></td><td>TWD(NTD)</td><td>2</td><td>999,999</td><td>17</td></tr><tr><td></td><td>THB</td><td>2</td><td>999,999</td><td>18</td></tr><tr><td>암호화폐</td><td>KAIA</td><td>4</td><td>999,999</td><td>0.01</td></tr><tr><td></td><td>USDT</td><td>2</td><td>999,999</td><td>0.01</td></tr></tbody></table>📌 선택적 현지 통화\
+Unifi Apps는 사용자의 지역에 따라 추가 현지 통화를 선택적으로 지원할 수 있습니다:
 
 * **JPY, TWD, THB, KRW**
 
-📌 Default Pricing Currency
+📌 기본 가격 표시 통화
 
-* **USD must be used as the primary pricing reference**
+* **USD는 반드시 주요 가격 기준으로 사용되어야 합니다**
 
-## 3️⃣ Price Display Requirements
+## 3️⃣ 가격 표시 요구사항
 
-All product prices in Unifi Apps **must** be displayed to users in:
+Unifi Apps의 모든 제품 가격은 사용자에게 반드시 다음으로 표시되어야 합니다:
 
-* A fiat currency
-* A cryptocurrency (KAIA or USDT)
+* 법정 통화
+* 암호화폐(KAIA 또는 USDT)
 
-📌 Purpose of dual price presentation
+📌 이중 가격 표시 목적
 
-* Provide a **stable purchasing experience**
-* Prevent confusion from crypto **price volatility**
+* **안정적인 구매 경험** 제공
+* 암호화폐 **가격 변동성**으로 인한 혼란 방지
 
-## 4️⃣ Payment Request Rules (Developer Input Requirements)
+## 4️⃣ 결제 요청 규칙 (개발자 입력 요구사항)
 
-| When user selects       | Merchant must input price as             |
+| 사용자 선택 시       | 판매자는 가격을 다음과 같이 입력해야 함 |
 | ----------------------- | ---------------------------------------- |
-| Fiat Payment via Stripe | A **fixed** USD-based amount             |
-| Crypto Payment          | A **fixed** amount based on KAIA or USDT |
+| Stripe를 통한 법정화폐 결제 | **고정된** USD 기준 금액             |
+| 암호화폐 결제          | KAIA 또는 USDT 기준 **고정된** 금액 |
 
-📌 The currency conversion between USD and KAIA/USDT must be implemented and provided by the Unifi Apps.
+📌 USD와 KAIA/USDT 간의 통화 변환은 Unifi 앱에서 구현 및 제공해야 합니다.
 
-## 5️⃣ User Notification Requirements
+## 5️⃣ 사용자 알림 요구사항
 
-Unifi Apps must provide **clear and real-time** feedback to users about payment status.
+유니피 앱은 결제 상태에 대해 사용자에게 **명확하고 실시간** 피드백을 제공해야 합니다.
 
-Notifications must be:
+알림은 다음을 충족해야 합니다:
 
-* **Immediate**
-* **Clear**
-* **Intuitive**
-* Prevent confusion such as double payments or uncertainty about success
+* **즉시**
+* **명확**
+* **직관적**
+* 이중 결제나 성공 여부에 대한 불확실성 등 혼란 방지
 
-<table><thead><tr><th width="167">Event</th><th>Description</th><th>Information to notify users (Example)</th></tr></thead><tbody><tr><td>Successful purchase</td><td>Fiat/Crypto payment successful and item delivered</td><td>Successful purchase</td></tr><tr><td>Purchase failed/canceled</td><td>User requested to process Fiat/Crypto payment but payment failed</td><td>Purchase failed</td></tr><tr><td></td><td>User clicked the "Back" button on the Fiat/Crypto payment screen or exited the screen</td><td>Purchase canceled</td></tr><tr><td></td><td>User clicks the Decline Signature button on the Crypto payment screen</td><td>Purchase canceled</td></tr><tr><td></td><td>User's Crypto balance is insufficient</td><td>Insufficient balance</td></tr><tr><td></td><td>Other errors</td><td>Please try again later</td></tr></tbody></table>
+<table><thead><tr><th width="167">이벤트</th><th>설명</th><th>사용자에게 알릴 정보 (예시)</th></tr></thead><tbody><tr><td>구매 성공</td><td>법정화폐/암호화폐 결제 성공 및 상품 배송 완료</td><td>구매 성공</td></tr><tr><td>구매 실패/취소됨</td><td>사용자가 법정화폐/암호화폐 결제를 요청했으나 결제 실패</td><td>구매 실패</td></tr><tr><td></td><td>사용자가 피아트/암호화폐 결제 화면에서 &quot;뒤로&quot; 버튼을 클릭하거나 화면을 종료함</td><td>구매 취소됨</td></tr><tr><td></td><td>사용자가 암호화폐 결제 화면에서 서명 거절 버튼을 클릭함</td><td>구매 취소됨</td></tr><tr><td></td><td>사용자의 암호화폐 잔액이 부족합니다</td><td>잔액 부족</td></tr><tr><td></td><td>기타 오류</td><td>나중에 다시 시도해 주세요</td></tr></tbody></table>## 6️⃣ 결제 내역
 
-## 6️⃣ Payment History
+Unifi Apps는 사용자가 **결제 내역**을 확인할 수 있는 UI를 제공해야 합니다.\
+통합 방법은 [**Unifi Apps SDK 문서**](https://docs.dappportal.io/unifi-apps-sdk/payment-provider#id-6.-you-can-open-payment-history-page-via-paymentprovider.-promise-will-be-completed-if-payment-histo)를 참조하십시오.
 
-Unifi Apps must provide a UI that allows users to check their **payment history**.\
-Refer to [**Unifi Apps SDK documentation**](https://docs.dappportal.io/unifi-apps-sdk/payment-provider#id-6.-you-can-open-payment-history-page-via-paymentprovider.-promise-will-be-completed-if-payment-histo) for integration methods.
+<figure><img src="../../../.gitbook/assets/minimum (3).png" alt=""><figcaption></figcaption></figure>
+
 
 <figure><img src="../../../.gitbook/assets/minimum (3).png" alt=""><figcaption></figcaption></figure>

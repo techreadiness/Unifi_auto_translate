@@ -5,20 +5,19 @@ metaLinks:
       https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi/how-to-mint-nfts-and-set-up-drops./how-to-mint-nft
 ---
 
-# How to mint NFT
+# NFT 발행 방법
 
-All NFTs must be minted by the Unifi Apps team. Please refer to the information below for the minting method and structure.
+모든 NFT는 유니파이 앱스 팀에서 발행해야 합니다. 발행 방법 및 구조에 대한 정보는 아래를 참조하십시오.
 
-<figure><img src="../../.gitbook/assets/How to mint NFT.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/How to mint NFT.png" alt=""><figcaption></figcaption></figure>**1. 에어드롭용 NFT 발행 (운영 지원)**
 
-**1. NFT Minting for Airdrops (Ops support)**
+&gt; 에어드롭용으로 지정된 NFT 발행은 운영 지원팀에서 수행합니다.
+&gt;
+&gt; 필요한 컬렉션 정보, NFT 수령자 지갑 주소, 에어드롭 세부사항(수량, 기간 등)을 제공해야 합니다. 운영 지원팀이 NFT를 발행하여 제공된 지갑으로 에어드롭합니다.
 
-> The minting of NFTs designated for Airdrops is executed by the Ops Support team.
->
-> You should provide the necessary collection information, the wallet addresses for NFT recipients, and the airdrop details (quantity, duration, etc.). The Ops Support team will then mint the NFTs and airdrop them to the provided wallets.
+**2. 마켓플레이스 판매용 NFT 민팅 (Unifi Apps)**
 
-**2. NFT Minting for Marketplace Sales (Unifi Apps)**
+&gt; 마켓플레이스에서 판매되는 NFT는 Unifi Apps 사용자의 구매 즉시 민팅됩니다.
+&gt;
+&gt; NFT는 판매 등록 전에 설정된 컬렉션 정보를 준수하여 민팅됩니다. 민팅은 Apps 팀이 제공하는 `meta.csv` 파일의 순서에 따라 순차적으로 처리됩니다.
 
-> NFTs sold on the Marketplace are minted immediately upon purchase by the Unifi Apps user.
->
-> The NFTs are minted to comply with the collection information set before the sales registration. The minting will be processed sequentially according to the order in the `meta.csv` file provided by the Apps team.

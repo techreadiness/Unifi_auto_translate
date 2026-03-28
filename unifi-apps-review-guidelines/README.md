@@ -2,46 +2,44 @@
 hidden: true
 ---
 
-# Unifi Apps Review Guidelines
+# 유니파이 앱 리뷰 가이드라인
 
-## 1️⃣ Supported Service Versions
+## 1️⃣ 지원 서비스 버전
 
-Unifi Apps supports the following **three versions**, and developers may choose the version(s) that best match their service strategy:
+유니파이 앱은 다음 **세 가지 버전**을 지원하며, 개발자는 서비스 전략에 가장 적합한 버전을 선택할 수 있습니다:
 
-**Available Version Combinations**
+**사용 가능한 버전 조합**
 
-* LINE MINI App & LINE Login LIFF & Web
-* LINE MINI App & Web
-* LINE Login LIFF & Web
+* LINE MINI 앱 &amp; LINE 로그인 LIFF &amp; 웹
+* LINE MINI 앱 &amp; 웹
+* LINE 로그인 LIFF &amp; 웹
 
-📌 The review guidelines required will vary depending on the selected version(s).
+📌 선택한 버전에 따라 필요한 검토 가이드라인이 달라집니다.
 
-📌 You can find more information about LINE Integration below:
+📌 LINE 통합에 대한 자세한 정보는 아래에서 확인하실 수 있습니다:
 
-* [LINE MINI App >](https://developers.line.biz/en/docs/line-mini-app/)&#x20;
-* [LINE Login LIFF >](https://developers.line.biz/en/docs/liff/)
+* [LINE MINI 앱 &gt;](https://developers.line.biz/en/docs/line-mini-app/)
+* [LINE 로그인 LIFF &gt;](https://developers.line.biz/en/docs/liff/)
 
-## 2️⃣ Review Guideline Selection Guide
+## 2️⃣ 검토 가이드라인 선택 안내
 
-Review Guidelines consist of:
+검토 가이드라인은 다음으로 구성됩니다:
 
-* **Version-specific Review Guidelines**
-* **Common Guideline: “How to Build Successful Unifi Apps”** (required for all)
+* **버전별 검토 가이드라인**
+* **공통 가이드라인: &quot;성공적인 유니파이 앱 구축 방법&quot;** (모든 앱 필수)
 
-Please select the correct guideline(s) based on the version(s) your Unifi Apps supports:
+유니파이 앱이 지원하는 버전에 따라 올바른 가이드라인을 선택하세요:
 
-| Version         | Required Review Guidelines                      | Common Guideline                   |
+| 버전         | 필수 검토 가이드라인                      | 공통 가이드라인                   |
 | --------------- | ----------------------------------------------- | ---------------------------------- |
-| LINE MINI App   | LINE MINI App Version Review Guidelines         | How to Build Successful Unifi Apps |
-| LINE Login LIFF | LINE Login LIFF & Web Version Review Guidelines | How to Build Successful Unifi Apps |
-| Web             | LINE Login LIFF & Web Version Review Guidelines | How to Build Successful Unifi Apps |
+| LINE MINI 앱   | LINE MINI 앱 버전 리뷰 가이드라인         | 성공적인 유니파이 앱 구축 방법 |
+| LINE 로그인 LIFF | LINE 로그인 LIFF &amp; 웹 버전 리뷰 가이드라인 | 성공적인 유니파이 앱 구축 방법 |
+| 웹             | LINE 로그인 LIFF &amp; 웹 버전 리뷰 가이드라인 | 성공적인 유니파이 앱 구축 방법 |
 
-### 📌 Review Guideline Selection Examples
+### 📌 리뷰 가이드라인 선택 예시
 
-<table><thead><tr><th width="321.96875">Selected Version Combination</th><th>Required Guidelines</th></tr></thead><tbody><tr><td>LINE MINI App &#x26; LINE Login LIFF &#x26; Web</td><td><ul><li>LINE MINI App Version Review Guidelines</li><li>LINE Login LIFF &#x26; Web Version Review Guidelines</li></ul></td></tr><tr><td>LINE MINI App &#x26; Web</td><td><ul><li>LINE MINI App Version Review Guidelines</li><li>LINE Login LIFF &#x26; Web Version Review Guidelines</li></ul></td></tr><tr><td>LINE Login LIFF &#x26; Web</td><td>LIFF &#x26; Web Version Review Guidelines</td></tr></tbody></table>
+<table><thead><tr><th width="321.96875">선택된 버전 조합</th><th>필수 가이드라인</th></tr></thead><tbody><tr><td>LINE MINI 앱 &amp; LINE 로그인 LIFF &amp; 웹</td><td><ul><li>LINE MINI 앱 버전 검토 가이드라인</li><li>LINE 로그인 LIFF &amp; 웹 버전 검토 가이드라인</li></ul></td></tr><tr><td>LINE MINI 앱 &amp; 웹</td><td><ul><li>LINE MINI 앱 버전 검토 가이드라인</li><li>LINE 로그인 LIFF 및 웹 버전 검토 가이드라인</li></ul></td></tr><tr><td>LINE 로그인 LIFF 및 웹</td><td>LIFF 및 웹 버전 검토 가이드라인</td></tr></tbody></table>## 📝 개발자 참고 사항
 
-## 📝 Notes for Developers
-
-* If the LINE MINI App version is included, **both** guideline sets are required.
-* All versions are strongly recommended to follow the Common Guideline.
-* The guidelines serve as a **self-check checklist** before review submission.
+* LINE MINI 앱 버전이 포함된 경우, **두 가지** 가이드라인 세트를 모두 준수해야 합니다.
+* 모든 버전은 공통 가이드라인을 따를 것을 강력히 권장합니다.
+* 가이드라인은 검토 제출 전 **자체 점검 체크리스트** 역할을 합니다.

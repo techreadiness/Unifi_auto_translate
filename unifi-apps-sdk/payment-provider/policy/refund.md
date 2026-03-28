@@ -5,62 +5,65 @@ metaLinks:
       https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps-sdk/payment-provider/policy/refund
 ---
 
-# Refund
+#
 
-<mark style="color:red;">**Unifi Apps should establish and communicate a clear and fair non-refund policy to users, considering the following principles.**</mark>
+<mark style="color:red;">환불**유니파이 앱스는 다음 원칙을 고려하여 명확하고 공정한 환불 불가 정책을 수립하고 사용자에게 공지해야 합니다.**</mark>
 
-## 1️⃣ Global Non-Refund Policy
+## 1️⃣ 글로벌 환불 불가 정책
 
-* **Refunds, exchanges, returns, and cancellations are not allowed** for digital products such as game items.
-* All user inquiries and disputes regarding transactions between Unifi Apps and users must be handled **directly by the Unifi Apps operator**.
-* **LINE NEXT does not intervene**, mediate, or provide support for refund disputes.
+* **게임 아이템과 같은 디지털 상품의 경우 환불, 교환, 반품 및 취소가 허용되지 않습니다.**
+* 유니파이 앱스와 사용자 간 거래에 관한 모든 사용자 문의 및 분쟁은 **유니파이 앱스 운영자가 직접 처리**해야 합니다.
+* **LINE NEXT는 환불 분쟁에 개입**하거나 중재, 지원을 제공하지 않습니다.
 
-## 2️⃣ Fiat Payments
+## 2️⃣ 법정화폐 결제
 
-| Item           | Policy                                                 |
+| 항목           | 정책                                                 |
 | -------------- | ------------------------------------------------------ |
-| Refunds        | Not permitted                                          |
-| Reason         | Digital product are considered consumed once delivered |
-| Responsibility | Unifi Apps must manage all user disputes independently |
+| 환불         | 불가                                          |
+| 사유         | 디지털 상품은 배송 완료 시 소비된 것으로 간주됨 |
+| 책임         | Unifi Apps는 모든 사용자 분쟁을 독립적으로 관리해야 함 |
 
-## 3️⃣ Crypto Payments
+## 3️⃣ 암호화폐 결제
 
-| Item             | Policy                                                 |
+| 항목             | 정책                                                 |
 | ---------------- | ------------------------------------------------------ |
-| Refunds          | Not permitted                                          |
-| Price Volatility | Not a valid reason for refund                          |
-| Responsibility   | Unifi Apps must manage all user disputes independently |
+| 환불          | 허용되지 않음                                          |
+| 가격 변동성 | 환불의 유효한 사유가 아님                          |
+| 책임          | Unifi Apps는 모든 사용자 분쟁을 독립적으로 관리해야 함 |
 
-## **4️⃣ Mandatory UX Requirements**
+## **4️⃣ 필수 UX 요구사항**
 
-Unifi Apps must **clearly** inform users of the non-refund policy **before** payment.
+Unifi Apps는 결제 **전**에 사용자에게 환불 불가 정책을 **명확히** 알려야 합니다.
 
-### Minimum Required
+### 최소 요구 사항
 
-| Display Location                           | Required Text                                                                                                                                                    |
+| 표시 위치                           | 필수 텍스트                                                                                                                                                    |
 | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Directly below the Purchase/Payment button | <ul><li>You agree that the product(s) is/are non-refundable.</li><li>If paid via LINE IAP, you agree to providing encrypted ID info to LY Corporation.</li></ul> |
+| 구매/결제 버튼 바로 아래 | <ul><li>귀하는 해당 상품이 환불 불가함을 동의합니다.</li><li>LINE IAP를 통해 결제할 경우, LY Corporation에 암호화된 ID 정보를 제공하는 데 동의합니다.</li></ul> |
 
-### Recommended Implementation
+### 권장 구현 방식
 
-| Requirement  | Description                                                    |
+| 요구사항    | 설명                                                    |
 | ------------ | -------------------------------------------------------------- |
-| Checkbox     | Users must check to acknowledge **non-refund policy**          |
-| Action Block | Purchase button must remain disabled until checkbox is checked |
-| View Details | Provide full refund policy and data usage details              |
+| 체크박스     | 사용자는 **환불 불가 정책**을 확인하기 위해 체크해야 함          |
+| 액션 블록 | 체크박스가 체크될 때까지 구매 버튼은 비활성화 상태 유지 |
+| 상세 정보 보기 | 전체 환불 정책 및 데이터 사용량 상세 정보 제공              |
 
-If you choose to implement the **View Details** option, please ensure that the following information is included.
+**상세 정보 보기** 옵션을 구현할 경우, 다음 정보가 포함되도록 하십시오.
 
-| Infomation                          | Requirement                                                                                              |
+| 정보                          | 요구사항                                                                                              |
 | ----------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| Receiving Party                     | LY Corporation                                                                                           |
-| Purpose for Provision               | Processing product payments                                                                              |
-| Personal Information to be provided | Encrypted Identification Information                                                                     |
-| Retention Period of Receiving Party | Until the purpose of provision is achieved                                                               |
-| Country of Incorporation            | Japan                                                                                                    |
-| Company URL                         | [https://www.lycorp.co.jp/](https://www.lycorp.co.jp/)                                                   |
-| Company Privacy Policy              | [https://www.lycorp.co.jp/en/company/privacypolicy/](https://www.lycorp.co.jp/en/company/privacypolicy/) |
+| 수신 당사자                     | LY Corporation                                                                                           |
+| 제공 목적               | 제품 결제 처리                                                                              |
+| 제공될 개인정보         | 암호화된 식별 정보                                                                     |
+| 수신 당사자의 보유 기간 | 제공 목적이 달성될 때까지                                                               |
+| 설립 국가             | 일본                                                                                                    |
+| 회사 URL                         | [https://www.lycorp.co.jp/](https://www.lycorp.co.jp/)                                                   |
+| 회사 개인정보 처리방침         | [https://www.lycorp.co.jp/en/company/privacypolicy/](https://www.lycorp.co.jp/en/company/privacypolicy/) |
 
 <figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+
 
 <figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>

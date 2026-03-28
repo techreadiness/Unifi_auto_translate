@@ -1,83 +1,73 @@
-# LINE Integration
+# 유니피 앱
 
-<mark style="color:red;">**Unifi Apps should build web application as LINE version with LIFF SDK.**</mark>
+## 유니피 앱 구축 방법
 
-<mark style="color:red;">**The LINE version can be built as either a LINE MINI App or a LINE Login LIFF.**</mark>
+<div data-full-width="true"><figure><img src="../.gitbook/assets/development_flow.png" alt=""><figcaption></figcaption></figure></div>
 
-## LINE MINI App
+이 가이드는 LINE 및 웹 환경에 유니파이 앱을 배포하기 위한 필수 통합 아키텍처와 순차적 단계를 설명합니다.
 
-### Introduction
+\
+지원할 특정 플랫폼 또는 통합 유형에 따라 각 단계를 따르십시오.
 
-Official Document : [LINE MINI App](https://developers.line.biz/en/reference/line-mini-app/)
+### ① LINE 버전 개발 — LIFF SDK 통합
 
-Utilize the advantages of LINE MINI App to provide the ultimate service experience to your users on LINE
+유니파이 앱은 두 가지 방식으로 LINE 기반 경험을 제공할 수 있습니다:
 
-### What is LINE MINI App?
+* LINE 미니 앱
+* LINE 로그인 LIFF
 
-<figure><img src="../../.gitbook/assets/LINEMINIApp_1.png" alt="" width="375"><figcaption></figcaption></figure>
+둘 다 LINE 모바일 앱 내에서 실행되며 **LIFF SDK**를 사용하여 구현되지만, 서로 다른 채널 유형을 사용하고 별도의 트랙을 통해 온보딩됩니다.
 
-LINE MINI App is a web application through which you can deliver services on LINE that meet various lifestyle needs of your users. Companies can utilize LINE MINI App’s advantages to provide users with a comfortable service experience, while gaining access to user data both online and offline.
+#### 주요 차이점
 
-### Simple service activation to help prevent user withdrawal
+| 항목                 | LINE 미니 앱                                                              | LINE 로그인 LIFF                                                                              |
+| -------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| 채널              | LINE 미니 앱 채널                                                      | LINE 로그인 채널                                                                           |
+| 앱 스토어 정책     | 앱 스토어 정책 준수                                                                 | -                                                                                            |
+| LIFF SDK 사용       | 예                                                                        | 예                                                                                          |
+| Unifi Apps SDK 사용 | <ul><li>예</li><li>WalletProvider</li><li>결제 제공자(IAP)</li></ul> | <ul><li>예</li><li>WalletProvider</li><li>결제 제공자<br>(암호화폐/Stripe 법정화폐)</li></ul> |
 
-<figure><img src="../../.gitbook/assets/LINEMINIApp_2.png" alt="" width="375"><figcaption></figcaption></figure>
+📌 자세한 지침은 [**LINE 통합**](../mini-dapp/line-integration/) 문서를 참조하세요.\
+📌 LINE MINI 앱과 LINE 로그인 LIFF는 기술적으로 Unifi Apps SDK를 기본 웹 서비스에 먼저 통합한 후, 그 위에 LIFF SDK를 추가하는 방식으로 구현됩니다.\
+따라서 기술적 관점에서 웹 및 Unifi Apps SDK 환경은 본질적으로 포함됩니다.
 
-LINE MINI App is available on LINE, eliminating the need for downloading service apps or complicated registration processes. This minimizes service bounce rates and improves CVR.
+### ② 웹 버전 개발
 
-### Quick access and repeated usage both inside and outside of LINE
+비(非) LINE 사용자를 위한 **웹 브라우저 버전** 개발을 **권장**합니다.
 
-<figure><img src="../../.gitbook/assets/LINEMINIApp_3.png" alt="" width="563"><figcaption></figcaption></figure>
+다음 기능을 지원하려면 웹 버전에 **Unifi Apps SDK를 반드시 통합**해야 합니다:
 
-LINE Mini Apps launch instantly from virtually anywhere. Access is supported through the LINE Home Tab, Official Accounts, and external channels like Web links and QR codes. This frictionless quick launch is the direct factor for increased user repeated usage.
+* **WalletProvider**
+* **PaymentProvider (암호화폐 / Stripe 법정화폐)**
 
-### Easy to notify users of service-related information
+### ③ Web3 통합 (WalletProvider)
 
-<figure><img src="../../.gitbook/assets/LINEMINIApp_4.png" alt="" width="563"><figcaption></figcaption></figure>
+Unifi Apps SDK는 계정 생성 및 소유권 확인과 같은 지갑 기능을 지원합니다.
 
-Service Messages allow you to send critical, transactional notifications (e.g., order confirmations) free of charge, even if the user has not friended your Official Account.
+| 버전         | 지원되는 지갑 유형                                                                     |
+| --------------- | ------------------------------------------------------------------------------------------ |
+| LINE MINI 앱   | <ul><li>LINE (Liff)</li><li>OKX, Bitget Wallet</li></ul>                                   |
+| LINE 로그인 LIFF | <ul><li>LINE (Liff)</li><li>OKX, Bitget 지갑</li></ul>                                   |
+| 웹             | <ul><li>소셜 로그인 (웹)</li><li>Kaia 지갑 앱/확장 프로그램, OKX, Bitget 지갑</li></ul> |
 
-### Easy to share with friends via LINE Talk
+📌 자세한 지침은 [**지갑 제공업체**](../mini-dapp/mini-dapp-sdk/wallet/) 문서를 참조하세요.
 
-<figure><img src="../../.gitbook/assets/LINEMINIApp_5.png" alt="" width="563"><figcaption></figcaption></figure>
+### ④ 결제 통합 (PaymentProvider)
 
-Users can share reservation information or coupons they acquired on LINE MINI App with their friends on LINE Talk, which further promotes your service.
+수익화를 지원하기 위해 모든 Unifi 앱은 **앱 내 아이템 구매 기능을 반드시 제공해야** 합니다.
 
-## LINE Login LIFF
+| 버전         | 지원 결제 수단       |
+| --------------- | ------------------------------- |
+| LINE MINI 앱   | IAP 결제                    |
+| LINE 로그인 LIFF | 암호화폐 및 Stripe(법정화폐) 결제 |
+| 웹             | 암호화폐 및 Stripe(법정화폐) 결제 |
 
-### Introduction
+📌 자세한 지침은 [결제 제공자](../mini-dapp/mini-dapp-sdk/payment/) 문서를 참조하세요.
 
-Official Document : [LINE Front-end Framework (LIFF)](https://developers.line.biz/en/docs/liff/overview/)
+### ⑤ 앱 심사 — 품질 및 규정 준수 점검
 
-### Web app connecting with LINE users
+제출 및 심사 제공자는 버전에 따라 다릅니다:
 
-The LINE Front-end Framework (LIFF) is a web application framework provided by LY Corporation. When you integrate the LIFF SDK into your web app, you will be able to access information provided by the LINE Platform or use functionalities provided by the LINE app.
+<table><thead><tr><th width="166.32421875">버전</th><th>데모 제출/검토 권한</th></tr></thead><tbody><tr><td>LINE MINI 앱</td><td><ul><li>LINE NEXT (사전 검토)</li><li>LY (최종 승인)</li><li><strong>LINE NEXT 검토 완료 후</strong> LY 제출 필수</li></ul></td></tr><tr><td>LINE 로그인 LIFF</td><td><ul><li>LINE NEXT</li><li>이메일 제출</li></ul></td></tr><tr><td>웹</td><td><ul><li>LINE NEXT</li><li>이메일 제출</li></ul></td></tr></tbody></table>⑥ 온보딩 및 출시
 
-### Integration with LINE Login and the LINE Platform
-
-<figure><img src="../../.gitbook/assets/p2-dark.svg" alt=""><figcaption></figcaption></figure>
-
-LIFF is integrated with LINE Login. Without having to deal with complicated settings, you can safely access a user's profile information via the LINE Platform's authorization flow.
-
-### Share target picker: A powerful tool for sending messages
-
-<figure><img src="../../.gitbook/assets/p3-dark.png" alt=""><figcaption></figcaption></figure>
-
-The share target picker is a tool for sending messages to LINE friends who you can select via LIFF app. Even without opening a chat room the developer can send messages to LINE friends, so you can use this feature to connect users with services, send information, and add social elements.
-
-### Cross-browser support
-
-<figure><img src="../../.gitbook/assets/p4-dark.png" alt=""><figcaption></figcaption></figure>
-
-LIFF is cross-browser compatible. Most APIs are compatible with desktop browsers, so they will work both with regular web browsers as well as with LINE apps.
-
-### Providing utility
-
-<figure><img src="../../.gitbook/assets/p5-dark.png" alt=""><figcaption></figcaption></figure>
-
-We offer various convenient utilities to support LIFF developers. You can easily retrieve information such as the LINE app's version or the device's OS type. Additionally, a QR code reader is provided out of the box.
-
-### Various screen sizes
-
-For running on the LINE app we're providing three different screen sizes that each have their own advantages.
-
-<figure><img src="../../.gitbook/assets/p6-dark.png" alt="" width="375"><figcaption></figcaption></figure>
+<table><thead><tr><th width="160.8515625">버전</th><th>추천 배치</th><th>노출 영역</th><th>서비스 제공 사용자</th></tr></thead><tbody><tr><td>LINE MINI 앱</td><td>LINE 앱 &amp; Unifi</td><td><ul><li>LINE 앱 내 MINI 탭</li><li>Unifi 내 앱</li></ul></td><td>일본 LINE 사용자</td></tr><tr><td>LINE 로그인 LIFF</td><td>Unifi</td><td>Unifi의 앱</td><td>글로벌 LINE 사용자</td></tr><tr><td>웹</td><td>Unifi</td><td>Unifi의 앱</td><td>글로벌 사용자</td></tr></tbody></table>또한 별도의 트랙을 통해 정보를 등록하면 유니피에 소개될 수 있으며 NFT를 판매할 수도 있습니다.

@@ -4,9 +4,9 @@ metaLinks:
     - https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/update-note-1/sdk-version
 ---
 
-# SDK Version
+# SDK 버젼
 
-## Latest Version (v1.5.2)
+## 최신버젼 (v1.5.2)
 
 
 

@@ -5,42 +5,38 @@ metaLinks:
       https://app.gitbook.com/s/juuhQ1BuKwYKE7NR6geM/unifi-apps/line-integration/invite-friends
 ---
 
-# Invite Friends
+# 친구 초대 기능
 
-## Overview
+## 개요
 
-The Invite Friends feature is available in LINE Versions (LINE MINI App and LINE Login LIFF).\
-This feature is one of the most important tools for **user acquisition** and **user activation**, helping your Unifi Apps grow organically within the LINE ecosystem.
+친구 초대 기능은 LINE 버전(LINE MINI 앱 및 LINE 로그인 LIFF)에서 이용 가능합니다. 이 기능은 **사용자 확보** 및 **사용자 활성화**를 위한 가장 중요한 도구 중 하나로, LINE 생태계 내에서 유니파이 앱의 유기적 성장을 돕습니다.
 
-Referrals play a key role in driving viral spread among LINE users.\
-We strongly recommend implementing this feature to maximize visibility and user engagement.
+추천은 LINE 사용자 간 바이럴 확산을 주도하는 핵심 역할을 합니다. 가시성과 사용자 참여도를 극대화하기 위해 이 기능 구현을 적극 권장합니다.
 
-## Invite Friends Support by Version
+## 버전별 친구 초대 지원 현황
 
-| Version         | Invite Friends | Notes                           |
-| --------------- | -------------- | ------------------------------- |
-| LINE MINI App   | Yes            | ShareTargetPicker supported     |
-| LINE Login LIFF | Yes            | ShareTargetPicker supported     |
-| Web             | No             | implement via referral URL copy |
+| 버전            | 친구 초대  | 참고사항              |
+| ------------- | ------ | ----------------- |
+| LINE 미니 앱     | 지원됨    | 공유대상선택기 지원        |
+| LINE 로그인 LIFF | 지원됨    | 공유대상선택기 지원        |
+| 웹             | 지원 안 됨 | 추천 URL 복사 방식으로 구현 |
 
-## How to Implement (Using LIFF APIs)
+## 구현 방법 (LIFF API 사용)
 
-To use the Invite Friends feature, refer to the following LIFF APIs:
+친구 초대 기능을 사용하려면 다음 LIFF API를 참조하세요:
 
-* [Sending Messages](https://developers.line.biz/en/docs/liff/developing-liff-apps/#sending-messages)
+* [메시지 전송](https://developers.line.biz/en/docs/liff/developing-liff-apps/#sending-messages)
 * [ShareTargetPicket](https://developers.line.biz/en/docs/liff/developing-liff-apps/#share-target-picker)
 
-### Restricting Message Targets
+### 메시지 대상 제한
 
-If you want to ensure that messages are sent **only to the user’s LINE friends**, and not to other Official Accounts or group chats, set:\
+메시지가 **사용자의 LINE 친구에게만** 전송되고 다른 공식 계정이나 그룹 채팅에는 전송되지 않도록 하려면 다음을 설정하세요:\
 [options.isMultiple as false >](https://developers.line.biz/en/reference/liff/#share-target-picker-arguments)
 
 ```
 options.isMultiple = false;
 ```
 
-## **Example UI**
+## **예시 UI**
 
-Below is an example of the “Invite a Friend” screen.
-
-<figure><img src="../../.gitbook/assets/스크린샷 2024-12-12 오후 3.55.06.png" alt=""><figcaption></figcaption></figure>
+아래는 "친구 초대" 화면의 예시입니다.
